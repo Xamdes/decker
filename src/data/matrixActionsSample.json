@@ -1,0 +1,25 @@
+{
+  "notes": [
+    {
+      "name": "",
+      "description": ""
+    }
+  ],
+  "matrixActions": [
+    {
+      "name": "",
+      "actionType": "",
+      "marks": "",
+      "test": {
+        "offense": ["None"],
+        "defense": ["None"]
+      },
+      "limit": {
+        "offense": "None",
+        "defense": "None"
+      },
+      "description": "",
+      "source": "N/A"
+    }
+  ]
+}

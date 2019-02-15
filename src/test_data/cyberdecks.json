@@ -1,0 +1,38 @@
+{
+  "name": "deckOne",
+  "attributes": {
+    "attack": 5,
+    "sleaze": 12,
+    "dataProcessing": 6,
+    "firewall": 5,
+    "logic": 6,
+    "intuition": 5,
+    "willpower": 5,
+    "reaction": 4
+  },
+  "config": [],
+  "deviceRating": 4,
+  "equipment": [],
+  "grid": "public",
+  "runningSilent": false,
+  "currentMatrixCondition": 10,
+  "mode": "AR",
+  "modules": {
+    "active": []
+  },
+  "programs": {
+    "max": 10,
+    "running": [],
+    "list": []
+  },
+  "qualities": ["overclocker"],
+  "skills": {
+    "computer": 6,
+    "cybercombat": 6,
+    "electronicWarfare": 6,
+    "hacking": 6,
+    "hardware": 4,
+    "software": 1,
+    "specializations": []
+  }
+}

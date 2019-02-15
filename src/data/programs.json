@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Browser",
+    "description": ""},
+  {
+    "name": "Configurator",
+    "description": ""},
+
+  {
+    "name": "Edit",
+    "description": ""
+  },
+  {
+    "name": "Encryption",
+    "description": ""
+  },
+  {
+    "name": "Signal Scrub",
+    "description": ""
+  },
+  {
+    "name": "Toolbox",
+    "description": ""
+  },
+  {
+    "name": "Virtual Machine",
+    "description": ""
+  },
+  {
+    "name": "",
+    "description": ""
+  },
+  {
+    "name": "",
+    "description": ""
+  },
+  {
+    "name": "",
+    "description": ""
+  }
+]

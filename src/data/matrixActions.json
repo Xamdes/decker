@@ -1,0 +1,86 @@
+{
+  "notes": [
+    {
+      "name": "Reckless Hacking",
+      "description": ""
+    }
+  ],
+  "actions": [
+    {
+      "name": "CALIBRATION",
+      "actionType": "SIMPLE ACTION",
+      "marks": "One per Persona",
+      "test": {
+        "offense": ["Electronic Warfare", "Logic"],
+        "defense": ["None"]
+      },
+      "limit": {
+        "offense": "Data Processing",
+        "defense": "None"
+      },
+      "description": "",
+      "source": "Kill Code p.37"
+    },
+    {
+      "name": "DENIAL OF SERVICE",
+      "actionType": "SIMPLE ACTION",
+      "marks": "See Description",
+      "test": {
+        "offense": ["Cybercombat", "Logic"],
+        "defense": ["Willpower", "Firewall"]
+      },
+      "limit": {
+        "offense": "Data Processing",
+        "defense": "None"
+      },
+      "description": "",
+      "source": "Kill Code p.37"
+    },
+
+    {
+      "name": "I AM THE FIREWALL",
+      "actionType": "COMPLEX ACTION/INTERRUPT [–5 INITIATIVE SCORE]",
+      "marks": "None",
+      "test": {
+        "offense": ["Computer", "Intuition"],
+        "defense": ["None"]
+      },
+      "limit": {
+        "offense": "Data Processing",
+        "defense": "None"
+      },
+      "description": "",
+      "source": "Kill Code p.37"
+    },
+    {
+      "name": "HACK ON THE FLY",
+      "actionType": "COMPLEX ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Hacking", "Logic"],
+        "defense": ["Intuition", "Firewall"]
+      },
+      "limit": {
+        "offense": "Sleaze",
+        "defense": "None"
+      },
+      "description": "",
+      "source": "Core p.240"
+    },
+    {
+      "name": "BRUTE FORCE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Cybercombat", "Logic"],
+        "defense": ["Willpower", "Firewall"]
+      },
+      "limit": {
+        "offense": "Attack",
+        "defense": "None"
+      },
+      "description": "",
+      "source": "Core p.238"
+    }
+  ]
+}
