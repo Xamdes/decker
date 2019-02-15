@@ -13,23 +13,28 @@
     "amd": true,
     "node": true
   },
-  "extends": ["eslint:recommended",
-    "plugin:react/recommended"
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-redux/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "modules": true,
+      "arrowFunctions": true,
+      "classes": true,
+      "spread": true
     },
-    "ecmaVersion": 2018,
+    "ecmaVersion": 2019,
     "sourceType": "module"
   },
-  "plugins": [
-    "react"
-  ],
+  "plugins": ["react", "react-redux", "babel"],
+  "parser": "babel-eslint",
   "rules": {
     "react/jsx-handler-names": 2,
     "react/require-render-return": 2,
-    "react/no-unused-state": 2,
+    "react/no-unused-state": 1,
     "react/prefer-stateless-function": 2,
     "react/no-direct-mutation-state": 2,
     "react/jsx-key": 2,
@@ -38,33 +43,35 @@
     "react/jsx-no-duplicate-props": 2,
     "react/jsx-no-undef": 2,
     "react/no-multi-comp": 2,
-    "react/jsx-indent-props": [
-      "error",
-      2
-    ],
+    "react/jsx-indent-props": ["error", 2],
     "react/jsx-pascal-case": 2,
     "react/prop-types": 2,
-    "react/jsx-indent": [
-      "error",
-      2
-    ],
-    "indent": [
-      "error",
-      2
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
-    "no-unused-vars": 1
+    "react/jsx-indent": ["error", 2],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "no-unused-vars": 1,
+    "no-console": 0,
+    "array-bracket-newline": 0,
+    "array-bracket-spacing": 0,
+    "array-element-newline": 0,
+    "no-unused-labels": 1,
+    "babel/new-cap": 1,
+    "babel/camelcase": 1,
+    "babel/no-invalid-this": 1,
+    "babel/object-curly-spacing": 0,
+    "babel/quotes": 0,
+    "babel/semi": 0,
+    "babel/no-unused-expressions": 1,
+    "babel/valid-typeof": 1,
+    "react-redux/prefer-separate-component-file": 0
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "detect"
+    }
   }
 }
-

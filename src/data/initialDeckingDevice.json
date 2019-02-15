@@ -1,0 +1,25 @@
+{
+  "name": "deckOne",
+  "attributes": {
+    "attack": { "ranks": 1 },
+    "sleaze": { "ranks": 1 },
+    "data processing": { "ranks": 1 },
+    "firewall": { "ranks": 1 }
+  },
+  "config": [],
+  "deviceRating": 1,
+  "equipment": [],
+  "grid": "public",
+  "runningSilent": false,
+  "currentMatrixCondition": 10,
+  "mode": "AR",
+  "modules": {
+    "active": []
+  },
+  "programs": {
+    "max": 1,
+    "running": [],
+    "list": []
+  },
+  "qualities": []
+}

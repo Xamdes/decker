@@ -3,14 +3,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './components/App';
 import { AppContainer } from 'react-hot-loader';
 import { HashRouter } from 'react-router-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { mainReducer } from './reducers/main.js';
+
+const store = createStore(mainReducer);
 
 const render = (Component) => {
   ReactDOM.render(
-    <AppContainer>
-      <HashRouter>
-        <Component/>
-      </HashRouter>
-    </AppContainer>,
+    <Provider store={store}>
+      <AppContainer>
+        <HashRouter>
+          <Component />
+        </HashRouter>
+      </AppContainer>
+    </Provider>,
     document.getElementById('react-app-root')
   );
 };
@@ -22,4 +29,3 @@ if (module.hot) {
     render(App);
   });
 }
-

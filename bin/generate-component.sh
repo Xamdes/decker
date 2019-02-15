@@ -30,10 +30,10 @@ $1.propTypes = {
 export default $1;
 
 const Main = styled.div\`
-background-color: black;
-font-family: sans-serif;
-padding-top: 50px;
-color: white;
+background-color: white;
+font-family: Courier New;
+color: black;
+font-weight: normal;
 \`;
 
 " > "$1.jsx"

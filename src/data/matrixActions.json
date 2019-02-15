@@ -1,0 +1,546 @@
+{
+  "notes": [
+    {
+      "name": "Reckless Hacking",
+      "description": ""
+    },
+    {
+      "name": "Attack Action",
+      "description": "For every net hit the target makes on its defence test, you take 1 box of unresistable Matrix Damage."
+    },
+    {
+      "name": "Sleaze Action",
+      "description": "If you fail the you get a mark placed on you."
+    }
+  ],
+  "actions": [
+    {
+      "name": "CALIBRATION",
+      "actionType": "SIMPLE ACTION",
+      "marks": "One per Persona",
+      "test": {
+        "offense": ["Electronic Warfare", "Logic"],
+        "defense": ["None"]
+      },
+      "limit": "Data Processing",
+      "description": "Increase the current Initiative Score of a number of personas on whom you have marks by 1 for every 2 hits. The number of personas affected cannot exceed your Data Processing.",
+      "source": "Kill Code p.37"
+    },
+    {
+      "name": "HACK ON THE FLY",
+      "actionType": "COMPLEX ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Hacking", "Logic"],
+        "defense": ["Intuition", "Firewall"]
+      },
+      "limit": "Sleaze",
+      "description": "2xhits = hit Matrix Perception test / -4 for 2 marks or -10 for 3 marks / 4 die for local grid or 6 die for global grid defence",
+      "source": "Core p.240"
+    },
+    {
+      "name": "BRUTE FORCE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Cybercombat", "Logic"],
+        "defense": ["Willpower", "Firewall"]
+      },
+      "limit": "Attack",
+      "description": "",
+      "source": "Core p.238"
+    },
+    {
+      "name": "CHANGE ICON",
+      "actionType": "SIMPLE ACTION",
+      "marks": "Owner",
+      "test": {
+        "offense": ["None"],
+        "defense": ["None"]
+      },
+      "limit": "Data Processing",
+      "description": "",
+      "source": "Core p.238"
+    },
+    {
+      "name": "CHECK OVERWATCH SCORE",
+      "actionType": "SIMPLE ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Electronic Warfare", "Logic"],
+        "defense": ["6 dice"]
+      },
+      "limit": "Data Processing",
+      "description": "",
+      "source": "Core p.238"
+    },
+    {
+      "name": "CONTROL DEVICE",
+      "actionType": "VARIABLE ACTION",
+      "marks": "Varies",
+      "test": {
+        "offense": ["Electronic Warfare", "Intuition"],
+        "defense": ["Intuition", "Firewall"]
+      },
+      "limit": "Sleaze",
+      "description": "",
+      "source": "Core p.238"
+    },
+    {
+      "name": "CRACK FILE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "1",
+      "test": {
+        "offense": ["Hacking", "Logic"],
+        "defense": ["Protection Rating x 2"]
+      },
+      "limit": "Attack",
+      "description": "",
+      "source": "Core p.238"
+    },
+    {
+      "name": "CRASH PROGRAM",
+      "actionType": "COMPLEX ACTION",
+      "marks": "1",
+      "test": {
+        "offense": ["Cybercombat", "Logic"],
+        "defense": ["Intuition", "Firewall"]
+      },
+      "limit": "Attack",
+      "description": "",
+      "source": "Core p.238"
+    },
+    {
+      "name": "DATA SPIKE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Cybercombat", "Logic"],
+        "defense": ["Intuition", "Firewall"]
+      },
+      "limit": "Attack",
+      "description": "DMG = (Attack + Net Hits + Marks x 2) vs Device Rating + Firewall",
+      "source": "Core p.239"
+    },
+    {
+      "name": "DISARM DATA BOMB",
+      "actionType": "COMPLEX ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Software", "Intuition"],
+        "defense": ["Data Bomb Rating x 2"]
+      },
+      "limit": "Firewall",
+      "description": "Disarm: Any net hit (deletes data bomb), Failure: triggers bomb",
+      "source": "Core p.239"
+    },
+    {
+      "name": "EDIT FILE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "1",
+      "test": {
+        "offense": ["Computer", "Logic"],
+        "defense": ["Intuition", "Firewall"]
+      },
+      "limit": "Data Processing",
+      "description": "Alter one detail / Copy / Protect: Simple test rating = net hits",
+      "source": "Core p.239"
+    },
+    {
+      "name": "ENTER/EXIT HOST",
+      "actionType": "COMPLEX ACTION",
+      "marks": "1",
+      "test": {
+        "offense": ["None"],
+        "defense": ["None"]
+      },
+      "limit": "None",
+      "description": "Exit: return to grid you entered from",
+      "source": "Core p.239"
+    },
+    {
+      "name": "ERASE MARK",
+      "actionType": "COMPLEX ACTION",
+      "marks": "Special",
+      "test": {
+        "offense": ["Computer", "Logic"],
+        "defense": ["Willpower", "Firewall"]
+      },
+      "limit": "Attack",
+      "description": "3 marks onn target to remove a mark / 2 marks -4 / 3 marks -10",
+      "source": "Core p.239"
+    },
+    {
+      "name": "ERASE MATRIX SIGNATURE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Computer", "Resonance"],
+        "defense": ["Signature Rating x 2"]
+      },
+      "limit": "Attack",
+      "description": "Erase signature left by Technomancer or a Sprite",
+      "source": "Core p.239"
+    },
+    {
+      "name": "FORMAT DEVICE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "3",
+      "test": {
+        "offense": ["Computer", "Logic"],
+        "defense": ["Willpower", "Firewall"]
+      },
+      "limit": "Sleaze",
+      "description": "Reboot it shuts down until Ext. Software + Logic [Mental] (12, 1 hour)",
+      "source": "Core p.239 - p.240"
+    },
+    {
+      "name": "FULL MATRIX DEFENSE",
+      "actionType": "INTERRUPT ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["None"],
+        "defense": ["None"]
+      },
+      "limit": "Firewall",
+      "description": "-10 Initiative lasts until end of Combat Turn / Add Willpower or add again",
+      "source": "Core p.240"
+    },
+    {
+      "name": "GRID HOP",
+      "actionType": "COMPLEX ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["None"],
+        "defense": ["None"]
+      },
+      "limit": "Data Processing",
+      "description": "Must have access or use Brute Force or Hack on the Fly",
+      "source": "Core p.240"
+    },
+    {
+      "name": "HIDE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "0",
+      "test": {
+        "offense": ["Electronic Warfare", "Intuition"],
+        "defense": ["Intuition", "Data Processing"]
+      },
+      "limit": "Sleaze",
+      "description": "Can't hide from a icon with mark on you",
+      "source": "Core p.240"
+    },
+    {
+      "name": "INVITE MARK",
+      "actionType": "SIMPLE ACTION",
+      "marks": "Owner",
+      "test": {
+        "offense": ["None"],
+        "defense": ["None"]
+      },
+      "limit": "Data Processing",
+      "description": "Number marks allowed, duration, duration offer, invitee mark with Free Action. revoke offer before mark made otherwise reboot or Erase Mark",
+      "source": "Core p.240"
+    },
+    {
+      "name": "JACK OUT",
+      "actionType": "SIMPLE ACTION",
+      "marks": "Owner",
+      "test": {
+        "offense": ["Hardware", "Willpower"],
+        "defense": ["Logic", "Attack"]
+      },
+      "limit": "Firewall",
+      "description": "leaves matrix and reboots device, defence only if link-locked Core p.229, single roll vs each persona link locking you, suffer dumpshock if in VR",
+      "source": "Core p.240"
+    },
+    {
+      "name": "JAM SIGNALS",
+      "actionType": "COMPLEX ACTION",
+      "marks": "Owner",
+      "test": {
+        "offense": ["Electronic Warfare", "Logic"],
+        "defense": ["None"]
+      },
+      "limit": "Attack",
+      "description": "Turns wireless device into jammer, net hits cause noise to any device in 100 meters",
+      "source": "Core p.240"
+    },
+    {
+      "name": "JUMP INTO RIGGED DEVICE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "3",
+      "test": {
+        "offense": ["Electronic Warfare", "Logic"],
+        "defense": ["Willpower", "Firewall"]
+      },
+      "limit": "Data Processing",
+      "description": "Req. rigger adaptation, be in VR, control rig, can't jump into if someone already is inside",
+      "source": "Core p.241"
+    },
+    {
+      "name": "MATRIX PERCEPTION",
+      "actionType": "COMPLEX ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Computer", "Intuition"],
+        "defense": ["Logic", "Sleaze"]
+      },
+      "limit": "Data Processing",
+      "description": "Each hit = 1 fact, recognize marks seen before or marks left by personas that you have marks on youself, esle only mark count, matrix spotting table p.241, 1st net hit spots target anymore gives facts",
+      "source": "Core p.241"
+    },
+    {
+      "name": "MATRIX SEARCH",
+      "actionType": "SPECIAL ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Computer", "Intuition"],
+        "defense": ["None"]
+      },
+      "limit": "Data Processing",
+      "description": "See Matrtix Search Table Core p.241",
+      "source": "Core p.241"
+    },
+    {
+      "name": "REBOOT DEVICE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "3",
+      "test": {
+        "offense": ["Computer", "Logic"],
+        "defense": ["Willpower", "Firewall"]
+      },
+      "limit": "Data Processing",
+      "description": "Device comes back online following Combat Turn, in VR suffer dumpshock, only works on devices, can't use if device is linked-locked",
+      "source": "Core p.242"
+    },
+    {
+      "name": "SEND MESSAGE",
+      "actionType": "SIMPLE ACTION",
+      "marks": "0(1)",
+      "test": {
+        "offense": ["None"],
+        "defense": ["None"]
+      },
+      "limit": "Data Processing",
+      "description": "Messages using DNI can be longer (paragraph size), live feed to 1+ recipients",
+      "source": "Core p.242"
+    },
+    {
+      "name": "SET DATA BOMB",
+      "actionType": "COMPLEX ACTION",
+      "marks": "1",
+      "test": {
+        "offense": ["Software", "Logic"],
+        "defense": ["Device Rating x 2"]
+      },
+      "limit": "Sleaze",
+      "description": "Rating up to net hits, set passcode, activates if read,edit,copy,protect,delete,set data bomb uused before deactivating current data bomb, (Rating)D6 Matrix Damge (Resit Normally), potentially deletes file attached to and deletes itself, use matrix perception to find",
+      "source": "Core p.242"
+    },
+    {
+      "name": "SNOOP",
+      "actionType": "COMPLEX ACTION",
+      "marks": "1",
+      "test": {
+        "offense": ["Electronic Warfare", "Intuition"],
+        "defense": ["Logic", "Firewall"]
+      },
+      "limit": "Sleaze",
+      "description": "intercept traffic to and from makred target",
+      "source": "Core p.242"
+    },
+    {
+      "name": "SPOOF COMMAND",
+      "actionType": "COMPLEX ACTION",
+      "marks": "1",
+      "test": {
+        "offense": ["Electronic Warfare", "Intuition"],
+        "defense": ["Logic", "Firewall"]
+      },
+      "limit": "Sleaze",
+      "description": "1 mark on devices owner your imitating, no need to mark target, only works on devices and agents",
+      "source": "Core p.242"
+    },
+    {
+      "name": "SWITCH INTERFACE MODE",
+      "actionType": "SIMPLE ACTION",
+      "marks": "Owner",
+      "test": {
+        "offense": ["None"],
+        "defense": ["None"]
+      },
+      "limit": "Data Processing",
+      "description": "Can't switch if link locked. Switching to AR lose bonus die see Core p.160",
+      "source": "Core p.243"
+    },
+    {
+      "name": "TRACE ICON",
+      "actionType": "COMPLEX ACTION",
+      "marks": "2",
+      "test": {
+        "offense": ["Computer", "Intuition"],
+        "defense": ["Willpower", "Sleaze"]
+      },
+      "limit": "Data Processing",
+      "description": "Find physical location of device or persona in matrix, know location as long as at least 1 mark",
+      "source": "Core p.243"
+    },
+    {
+      "name": "DENIAL OF SERVICE",
+      "actionType": "SIMPLE ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Cybercombat", "Logic"],
+        "defense": ["Willpower", "Firewall"]
+      },
+      "limit": "Attack",
+      "description": "Target a wirelessly active device or PAN. Apply the number of net hits x 2 as a negative dice pool modifier to all tests made with that device until the beginning of the next Combat Turn. Apply this effect to two additional devices slaved to the PAN for every mark on the PAN.",
+      "source": "Kill Code p.37"
+    },
+    {
+      "name": "I AM THE FIREWALL",
+      "actionType": "COMPLEX ACTION/INTERRUPT [–5 INITIATIVE SCORE]",
+      "marks": "None",
+      "test": {
+        "offense": ["Computer", "Intuition"],
+        "defense": []
+      },
+      "limit": "Data Processing",
+      "description": "Allies require an AR feed from the user in order to gain the bonus. The number of bonus dice is equal to the number of hits on the test. Bonus lasts until the beginning of the hacker’s next Initiative Pass. The hacker can only share their feed with a number of users equal to or less than their Data Processing attribute.",
+      "source": "Kill Code p.38"
+    },
+    {
+      "name": "HAYWIRE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Cybercombat", "Logic"],
+        "defense": ["Willpower", "Firewall"]
+      },
+      "limit": "Attack",
+      "description": "Target must be a persona not running in VR. Haywire disables all of the target’s PAN-related functions. Physical devices still function, so smart-guns can still fire and chemsuits still offer protection, but without wireless or PAN functions. This effect lasts until the target succeeds an extended Computer + Logic [Data Processing] (Hacker’s Net Hits, Simple Action) test with a threshold equal to the net hits from the attacker’s roll. See Kill Code p.38-39 for more info.",
+      "source": "Kill Code p.38-39"
+    },
+    {
+      "name": "INTERVENE",
+      "actionType": "INTERRUPT ACTION [–5 INITIATIVE SCORE]",
+      "marks": "None",
+      "test": {
+        "offense": ["Computer", "Intuition"],
+        "defense": []
+      },
+      "limit": "Data Processing",
+      "description": "This allows the hacker to give an immediate defense bonus to the owner of a device slaved to the hacker’s PAN. This action can be taken only if the device making the attack is wirelessly enabled and the hacker is aware of it. When you take this action, your Initiative Score is reduced by 5. Roll your Computer + Intuition [Data Processing], adding the number of hits to your ally’s Defense test. This bonus applies only to the current Defense test—it cannot be carried over to any other Combat Turn or Initiative Pass.",
+      "source": "Kill Code p.39"
+    },
+    {
+      "name": "MASQUERADE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "2/2",
+      "test": {
+        "offense": ["Hacking", "Intuition"],
+        "defense": ["Logic", "Firewall"]
+      },
+      "limit": "Sleaze",
+      "description": "This action allows a hacker to impersonate a persona on the Matrix. This action requires 2 marks on one target being impersonated and 2 marks on a second target you are trying to fool. For every net hit scored on the test against the second target, you have convinced them you are target one for one minute. This can be used to impersonate someone online causing creative mischief, but processes like changing device owners or performing major financial actions (like bank transfers) have too many double-checks for Masquerade to work. If the persona you’re impersonating logs off, those marks are immediately lost, and the disguise drops. While masquerading, you are never considered the owner with regard to any of the impersonated persona’s devices.",
+      "source": "Kill Code p.39"
+    },
+    {
+      "name": "POPUP",
+      "actionType": "SIMPLE ACTION",
+      "marks": "1",
+      "test": {
+        "offense": ["Hacking", "Logic"],
+        "defense": ["Willpower", "Firewall"]
+      },
+      "limit": "Sleaze",
+      "description": "Target must be a persona not running in VR. If the target has wireless-enabled AR, they are flooded with Matrix spam, taking a penalty to all actions equal to [net hits] until the start of the attacker’s next Combat Turn. If the attacker uses Hacking + Logic, they may immediately act as if the net hits on the attack were net hits on a Matrix Perception test, and they gain any relevant information.",
+      "source": "Kill Code p.39"
+    },
+    {
+      "name": "POPUP",
+      "actionType": "SIMPLE ACTION",
+      "marks": "1",
+      "test": {
+        "offense": ["Cybercombat", "Logic"],
+        "defense": ["Willpower", "Firewall"]
+      },
+      "limit": "Attack",
+      "description": "Target must be a persona not running in VR. If the target has wireless-enabled AR, they are flooded with Matrix spam, taking a penalty to all actions equal to [net hits] until the start of the attacker’s next Combat Turn. If the attacker uses Cybercombat + Logic, the attack also deals Matrix damage equal to net hits.",
+      "source": "Kill Code p.39"
+    },
+    {
+      "name": "SQUELCH",
+      "actionType": "SIMPLE ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Electronic Warfare", "Logic"],
+        "defense": ["Intuition", "Sleaze"]
+      },
+      "limit": "Attack",
+      "description": "A successful Squelch test prevents the target device from calling or sending messages for a number of minutes equal to the net hits scored.",
+      "source": "Kill Code p.39"
+    },
+    {
+      "name": "SUBVERT INFRASTRUCTURE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "1",
+      "test": {
+        "offense": ["Electronic Warfare", "Intuition"],
+        "defense": ["Intuition", "Firewall"]
+      },
+      "limit": "Sleaze",
+      "description": "This action allows a decker or technomancer to slightly alter the operation of multiple physical devices so they respond to the hacker’s commands. If the hacker has at least 1 mark on the host, a successful Test allows them to control one similar simple device at gamemaster discretion slaved to that host for every net hit. This action cannot be used to make an attack. The hacker can sustain controlling these devices as a Complex Action each Combat Turn. See book for more info.",
+      "source": "Kill Code p.39"
+    },
+    {
+      "name": "TAG",
+      "actionType": "SIMPLE ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Computer", "Logic"],
+        "defense": ["Sleaze", "Intuition"]
+      },
+      "limit": "Data Processing",
+      "description": "The hacker may “tag” a number of targets on a single PAN, equal to their net hits, within their line of sight. They can then relay those tags wirelessly to allies. Tagging a target negates up to 2 dice in pen-alties from Visibility and Light/Glare to any affected ranged attack rolls allies may be making against that target, including blind-fire due to invisibility or shoot-ing through cover. Allies who can see a tag may also take one additional Take Aim Action against that tar-get as a Free Action on each Initiative Pass.Tags may be sustained by spending a Sim-ple Action to refresh the tags each Combat Turn. When using a PI-Tac, the hacker may add the PI-Tac’s level to the number of targets they may tag. Note: In order for allies to receive this bonus, they must have the ability to see AROs.",
+      "source": "Kill Code p.40"
+    },
+    {
+      "name": "WATCHDOG",
+      "actionType": "COMPLEX ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Electronic Warfare", "Logic"],
+        "defense": ["Logic", "firewall"]
+      },
+      "limit": "Sleaze",
+      "description": "Target must be a persona or device. If successful, place one mark on the target. The user is now aware of the Matrix actions the target is going to use before they use them, and they may attempt to stop them. A Watchdog mark allows the hacker to use Haywire or Popup as Interrupt Actions (for –10 initiative) or Squelch as an Interrupt Action (for –5 initiative) against the target with the Watchdog mark. This ability lasts as long as the target is marked by the user.",
+      "source": "Kill Code p.40"
+    },
+    {
+      "name": "GARBAGE IN/GARBAGE OUT",
+      "actionType": "COMPLEX ACTION",
+      "marks": "3",
+      "test": {
+        "offense": ["Software", "Logic"],
+        "defense": ["Logic", "firewall"]
+      },
+      "limit": "Sleaze",
+      "description": "",
+      "source": "Data Trails p.178-179"
+    },
+    {
+      "name": "TRACKBACK",
+      "actionType": "SPECIAL ACTION",
+      "marks": "Owner",
+      "test": {
+        "offense": ["Computer", "Intuition"],
+        "defense": []
+      },
+      "limit": "Data Processing",
+      "description": "Extended 30 min test and only possible on grids. The number of hits required to track the persona is equal to 10 + the Sleaze rating of the persona who marked the device.",
+      "source": "Data Trails p.179"
+    }
+  ]
+}
