@@ -22,7 +22,6 @@ class App extends React.Component {
     this.state = {
       cyberdeckDataMaster: defaultCyberdeckData,
       matrixActions: defaultMatrixActions,
-      matrixActionBonusMaster: 0,
     };
     this.onHandleConfigAttributes = this.onHandleConfigAttributes.bind(this);
     this.onHandleConfigSkills = this.onHandleConfigSkills.bind(this);
@@ -70,7 +69,6 @@ class App extends React.Component {
                 <MatrixActions
                   cyberdeckData={this.state.cyberdeckDataMaster}
                   matrixActions={this.state.matrixActions}
-                  matrixActionBonus={this.state.matrixActionBonusMaster}
                 />
               </div>
             )}

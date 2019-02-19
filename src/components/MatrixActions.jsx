@@ -30,6 +30,7 @@ function MatrixActions(props) {
     runningSilent: deck.runningSilent,
     grid: deck.grid,
     mode: deck.mode,
+    matrixActionBonus: 0,
   };
 
   const actionsSorted = props.matrixActions.actions.sort((a, b) => {
@@ -45,13 +46,67 @@ function MatrixActions(props) {
     // return b.name.toLowerCase() < a.name.toLowerCase() ? 1 : -1;
   });
 
+  const actionValues = action => {
+    const placeholder = true;
+    const offenseLimit = isNaN(values[action.limit.offense])
+      ? 'None'
+      : values[action.limit.offense];
+
+    let offenseCalc = 0 + values.matrixActionBonus;
+    let defenseCalc = 0 + values.matrixActionBonus;
+    offenseCalc += values.mode === 'hot' ? 2 : 0;
+    defenseCalc += values.mode === 'hot' ? 2 : 0;
+    offenseCalc += values.runningSilent === 'hot' ? -2 : 0;
+    defenseCalc += values.runningSilent === 'hot' ? -2 : 0;
+
+    const offenceNames = action.test.offense.map((item, key, arr) =>
+      arr.length - 1 != key ? (
+        <span key={key}>{item} + </span>
+      ) : (
+        <span key={key}>{item}</span>
+      )
+    );
+
+    const defenceNames = action.test.defense.map((item, key, arr) =>
+      arr.length - 1 != key ? (
+        <span key={key}>{item} + </span>
+      ) : (
+        <span key={key}>{item}</span>
+      )
+    );
+
+    action.test.offense.map(item => {
+      offenseCalc += isNaN(values[item]) ? 0 : values[item];
+    });
+
+    action.test.defense.map(item => {
+      defenseCalc += isNaN(values[item]) ? 0 : values[item];
+    });
+
+    defenseCalc = defenseCalc === 0 ? 'N/A' : defenseCalc;
+
+    const desc = placeholder
+      ? 'Placeholder Description Text'
+      : action.description;
+
+    return {
+      actionType: action.actionType,
+      marks: action.marks,
+      defenseCalc,
+      defenceNames,
+      desc,
+      limit: action.limit.offense,
+      name: action.name,
+      offenseLimit,
+      offenseCalc,
+      offenceNames,
+      source: action.source,
+    };
+  };
+
   const matrixAction = actionsSorted.map((item, key) => (
     <div className="col-2" key={key}>
-      <MatrixAction
-        matrixAction={item}
-        matrixActionBonus={props.matrixActionBonus}
-        values={values}
-      />
+      <MatrixAction matrixAction={item} values={actionValues(item)} />
     </div>
   ));
 
@@ -70,7 +125,6 @@ function MatrixActions(props) {
 MatrixActions.propTypes = {
   cyberdeckData: PropTypes.object,
   matrixActions: PropTypes.object,
-  matrixActionBonus: PropTypes.number,
 };
 
 export default MatrixActions;

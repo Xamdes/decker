@@ -9,82 +9,34 @@ import styled from 'styled-components';
 // import { Link, Switch, Route } from 'react-router-dom';
 
 function MatrixAction(props) {
-  const placeholder = true;
-  const action = props.matrixAction;
-  const values = props.values;
-  const offenseLimit = isNaN(values[action.limit.offense])
-    ? 'None'
-    : values[action.limit.offense];
-  const defenseLimit = isNaN(values[action.limit.defense])
-    ? 'None'
-    : values[action.limit.defense];
-  let offenseCalc = 0 + props.matrixActionBonus;
-  let defenseCalc = 0 + props.matrixActionBonus;
-  offenseCalc += values.mode === 'hot' ? 2 : 0;
-  defenseCalc += values.mode === 'hot' ? 2 : 0;
-  offenseCalc += values.runningSilent === 'hot' ? -2 : 0;
-  defenseCalc += values.runningSilent === 'hot' ? -2 : 0;
-
-  const offenceNames = action.test.offense.map((item, key, arr) =>
-    arr.length - 1 != key ? (
-      <span key={key}>{item} + </span>
-    ) : (
-      <span key={key}>{item}</span>
-    )
-  );
-
-  const defenceNames = action.test.defense.map((item, key, arr) =>
-    arr.length - 1 != key ? (
-      <span key={key}>{item} + </span>
-    ) : (
-      <span key={key}>{item}</span>
-    )
-  );
-
-  action.test.offense.map(item => {
-    offenseCalc += isNaN(values[item]) ? 0 : values[item];
-  });
-
-  action.test.defense.map(item => {
-    defenseCalc += isNaN(values[item]) ? 0 : values[item];
-  });
-
-  defenseCalc = defenseCalc === 0 ? 'N/A' : defenseCalc;
-
-  const desc = placeholder
-    ? 'Placeholder Description Text'
-    : action.description;
-
+  const action = props.values;
   return (
     <Main>
       <div className="card">
+        <h5 className="card-header d-flex justify-content-center">
+          {action.name}
+        </h5>
         <div className="card-body">
-          <h5 className="card-title d-flex justify-content-center">
-            {action.name}
-          </h5>
-          <div className="card-text">
-            {action.actionType}
+          <h6 className="card-title">{action.actionType}</h6>
+          <p className="card-text">
+            Marks: {action.marks}
             <br />
-            {action.marks}
+            Attack: {action.offenceNames} <br />[{action.limit}]
+            <br /> Value: {action.offenseCalc} [{action.offenseLimit}]
             <br />
-            Attack: {offenceNames} <br />[{action.limit.offense}]
-            <br /> Value: {offenseCalc} [{offenseLimit}]
+            Defence: {action.defenceNames}
+            <br /> Value: {action.defenseCalc}
             <br />
-            Defence: {defenceNames} <br />[{action.limit.defense}]
-            <br /> Value: {defenseCalc} [{defenseLimit}]
-            <br />
-            {desc}
-          </div>
-          <div className="card-footer text-muted">{action.source}</div>
+            {action.desc}
+          </p>
         </div>
+        <div className="card-footer text-muted">{action.source}</div>
       </div>
     </Main>
   );
 }
 
 MatrixAction.propTypes = {
-  matrixAction: PropTypes.object,
-  matrixActionBonus: PropTypes.number,
   values: PropTypes.object,
 };
 
