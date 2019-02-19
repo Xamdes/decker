@@ -68,6 +68,7 @@ module.exports = [
         appMountId: 'react-app-root',
         title: 'decker',
         filename: resolve(__dirname, 'build', 'index.html'),
+        favicon: 'src/images/favicon.ico',
       }),
     ],
 
@@ -160,6 +161,7 @@ module.exports = [
         appMountId: 'react-app-root',
         title: 'decker',
         filename: resolve(__dirname, 'build', 'index.html'),
+        favicon: 'src/images/favicon.ico',
       }),
     ],
 
