@@ -28,7 +28,7 @@ class App extends React.Component {
   }
 
   onHandleConfigAttributes(attributeName, value) {
-    this.setState(state => {
+    this.setState((state) => {
       let attributes = state.cyberdeckDataMaster.attributes;
       attributes[attributeName] = value;
       return { player: attributes };
@@ -36,7 +36,7 @@ class App extends React.Component {
   }
 
   onHandleConfigSkills(skillName, value) {
-    this.setState(state => {
+    this.setState((state) => {
       let skills = state.cyberdeckDataMaster.skills;
       skills[skillName] = value;
       return { player: skills };

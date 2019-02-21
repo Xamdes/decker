@@ -11,10 +11,6 @@ import styled from 'styled-components';
 class Cyberdeck extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      attributes: props.cyberdeckData.attributes,
-      skills: props.cyberdeckData.skills,
-    };
     this.handleSkillsChange = this.handleSkillsChange.bind(this);
     this.handleAttributesChange = this.handleAttributesChange.bind(this);
   }
@@ -45,7 +41,7 @@ class Cyberdeck extends React.Component {
                 <input
                   name="attack"
                   type="number"
-                  value={this.state.attributes.attack}
+                  value={this.props.cyberdeckData.attributes.attack}
                   onChange={this.handleAttributesChange}
                 />
               </div>
@@ -58,7 +54,7 @@ class Cyberdeck extends React.Component {
                 <input
                   name="sleaze"
                   type="number"
-                  value={this.state.attributes.sleaze}
+                  value={this.props.cyberdeckData.attributes.sleaze}
                   onChange={this.handleAttributesChange}
                 />
               </div>
@@ -71,7 +67,7 @@ class Cyberdeck extends React.Component {
                 <input
                   name="dataProcessing"
                   type="number"
-                  value={this.state.attributes.dataProcessing}
+                  value={this.props.cyberdeckData.attributes.dataProcessing}
                   onChange={this.handleAttributesChange}
                 />
               </div>
@@ -84,7 +80,7 @@ class Cyberdeck extends React.Component {
                 <input
                   name="firewall"
                   type="number"
-                  value={this.state.attributes.firewall}
+                  value={this.props.cyberdeckData.attributes.firewall}
                   onChange={this.handleAttributesChange}
                 />
               </div>
@@ -99,7 +95,7 @@ class Cyberdeck extends React.Component {
                 <input
                   name="logic"
                   type="number"
-                  value={this.state.attributes.logic}
+                  value={this.props.cyberdeckData.attributes.logic}
                   onChange={this.handleAttributesChange}
                 />
               </div>
@@ -112,7 +108,7 @@ class Cyberdeck extends React.Component {
                 <input
                   name="intuition"
                   type="number"
-                  value={this.state.attributes.intuition}
+                  value={this.props.cyberdeckData.attributes.intuition}
                   onChange={this.handleAttributesChange}
                 />
               </div>
@@ -125,7 +121,7 @@ class Cyberdeck extends React.Component {
                 <input
                   name="willpower"
                   type="number"
-                  value={this.state.attributes.willpower}
+                  value={this.props.cyberdeckData.attributes.willpower}
                   onChange={this.handleAttributesChange}
                 />
               </div>
@@ -138,7 +134,7 @@ class Cyberdeck extends React.Component {
                 <input
                   name="reaction"
                   type="number"
-                  value={this.state.attributes.reaction}
+                  value={this.props.cyberdeckData.attributes.reaction}
                   onChange={this.handleAttributesChange}
                 />
               </div>
@@ -153,7 +149,7 @@ class Cyberdeck extends React.Component {
                 <input
                   name="computer"
                   type="number"
-                  value={this.state.skills.computer}
+                  value={this.props.cyberdeckData.skills.computer}
                   onChange={this.handleSkillsChange}
                 />
               </div>
@@ -166,7 +162,7 @@ class Cyberdeck extends React.Component {
                 <input
                   name="cybercombat"
                   type="number"
-                  value={this.state.skills.cybercombat}
+                  value={this.props.cyberdeckData.skills.cybercombat}
                   onChange={this.handleSkillsChange}
                 />
               </div>
@@ -179,7 +175,7 @@ class Cyberdeck extends React.Component {
                 <input
                   name="electronicWarfare"
                   type="number"
-                  value={this.state.skills.electronicWarfare}
+                  value={this.props.cyberdeckData.skills.electronicWarfare}
                   onChange={this.handleSkillsChange}
                 />
               </div>
@@ -192,7 +188,7 @@ class Cyberdeck extends React.Component {
                 <input
                   name="hacking"
                   type="number"
-                  value={this.state.skills.hacking}
+                  value={this.props.cyberdeckData.skills.hacking}
                   onChange={this.handleSkillsChange}
                 />
               </div>
@@ -205,7 +201,7 @@ class Cyberdeck extends React.Component {
                 <input
                   name="hardware"
                   type="number"
-                  value={this.state.skills.hardware}
+                  value={this.props.cyberdeckData.skills.hardware}
                   onChange={this.handleSkillsChange}
                 />
               </div>
@@ -218,7 +214,7 @@ class Cyberdeck extends React.Component {
                 <input
                   name="software"
                   type="number"
-                  value={this.state.skills.software}
+                  value={this.props.cyberdeckData.skills.software}
                   onChange={this.handleSkillsChange}
                 />
               </div>
