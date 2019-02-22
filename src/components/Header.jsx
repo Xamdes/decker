@@ -11,9 +11,9 @@ import { Link } from 'react-router-dom';
 function Header() {
   return (
     <Main>
-      <Link to="/">Home</Link>
-      <span> </span>
-      <Link to="/cyberdeck">Cyberdeck</Link>
+      <Link to="/">dev</Link>
+      <span>/</span>
+      <Link to="/cyberdeck">cyberdeck</Link>
     </Main>
   );
 }
@@ -27,7 +27,7 @@ Header.propTypes = {
 export default Header;
 
 const Main = styled.div`
-  font-family: sans-serif;
-  padding-top: 50px;
-  color: black;
+  font-family: Courier New;
+  color: lightgrey;
+  font-weight: 600;
 `;

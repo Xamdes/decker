@@ -21,9 +21,9 @@
   "author": "Steven Colburn",
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "ajv": "^6.5.3",
     "bootstrap": "^4.1.3",
-    "@babel/polyfill": "^7.0.0",
     "fetch": "^1.1.0",
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.3.1",
@@ -32,6 +32,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.0.0",
+    "react-table": "^6.9.2",
     "styled-components": "^3.4.5",
     "styled-jsx": "^3.0.2",
     "uuid": "^3.3.2",

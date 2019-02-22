@@ -21,10 +21,10 @@ function MatrixAction(props) {
           <p className="card-text">
             Marks: {action.marks}
             <br />
-            Attack: {action.offenceNames} <br />[{action.limit}]
+            Attack: {action.offenseNames} <br />[{action.limit}]
             <br /> Value: {action.offenseCalc} [{action.offenseLimit}]
             <br />
-            Defence: {action.defenceNames}
+            Defence: {action.defenseNames}
             <br /> Value: {action.defenseCalc}
             <br />
             {action.desc}
@@ -43,7 +43,7 @@ MatrixAction.propTypes = {
 export default MatrixAction;
 
 const Main = styled.div`
-  background-color: white;
   font-family: Courier New;
   color: black;
+  font-weight: normal;
 `;

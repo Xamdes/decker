@@ -46,7 +46,7 @@ class App extends React.Component {
   componentDidMount() {}
 
   render() {
-    const title = 'Shadowrun 5th Edition Helper';
+    const title = 'Shadowrun 5e Decker Edition';
     return (
       <Main className="container-fluid bg-dark">
         <HeaderStyle>
@@ -90,13 +90,13 @@ App.propTypes = {
 export default App;
 
 const Main = styled.div`
-  font-family: sans-serif;
-  padding-top: 50px;
+  font-family: Courier New;
   color: black;
 `;
 
 const Title = styled.h1`
   text-align: center;
+  font-weight: 800;
 `;
 
 const HeaderStyle = styled.div`

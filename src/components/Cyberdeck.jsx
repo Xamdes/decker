@@ -34,11 +34,11 @@ class Cyberdeck extends React.Component {
     return (
       <Main className="container-fluid">
         <div className="d-flex justify-content-center">
-          <div className="card">
+          <CardStyle className="card">
             <div className="card-body">
-              <h5 className="card-title">Attack</h5>
-              <div className="card-text input-group input-group-sm mb-3">
-                <input
+              <TitleHeader className="card-title">Attack</TitleHeader>
+              <div className="card-text">
+                <Input
                   name="attack"
                   type="number"
                   value={this.props.cyberdeckData.attributes.attack}
@@ -46,12 +46,12 @@ class Cyberdeck extends React.Component {
                 />
               </div>
             </div>
-          </div>
-          <div className="card">
+          </CardStyle>
+          <CardStyle className="card">
             <div className="card-body">
-              <h5 className="card-title">Sleaze</h5>
-              <div className="card-text input-group input-group-sm mb-3">
-                <input
+              <TitleHeader className="card-title">Sleaze</TitleHeader>
+              <div className="card-text mb-3">
+                <Input
                   name="sleaze"
                   type="number"
                   value={this.props.cyberdeckData.attributes.sleaze}
@@ -59,12 +59,12 @@ class Cyberdeck extends React.Component {
                 />
               </div>
             </div>
-          </div>
-          <div className="card">
+          </CardStyle>
+          <CardStyle className="card">
             <div className="card-body">
-              <h5 className="card-title">Data Processing</h5>
-              <div className="card-text input-group input-group-sm mb-3">
-                <input
+              <TitleHeader className="card-title">Data Processing</TitleHeader>
+              <div className="card-text mb-3">
+                <Input
                   name="dataProcessing"
                   type="number"
                   value={this.props.cyberdeckData.attributes.dataProcessing}
@@ -72,12 +72,12 @@ class Cyberdeck extends React.Component {
                 />
               </div>
             </div>
-          </div>
-          <div className="card">
+          </CardStyle>
+          <CardStyle className="card">
             <div className="card-body">
-              <h5 className="card-title">Firewall</h5>
-              <div className="card-text input-group input-group-sm mb-3">
-                <input
+              <TitleHeader className="card-title">Firewall</TitleHeader>
+              <div className="card-text mb-3">
+                <Input
                   name="firewall"
                   type="number"
                   value={this.props.cyberdeckData.attributes.firewall}
@@ -85,14 +85,14 @@ class Cyberdeck extends React.Component {
                 />
               </div>
             </div>
-          </div>
+          </CardStyle>
         </div>
         <div className="d-flex justify-content-center">
-          <div className="card">
+          <CardStyle className="card">
             <div className="card-body">
-              <h5 className="card-title">Logic</h5>
-              <div className="card-text input-group input-group-sm mb-3">
-                <input
+              <TitleHeader className="card-title">Logic</TitleHeader>
+              <div className="card-text mb-3">
+                <Input
                   name="logic"
                   type="number"
                   value={this.props.cyberdeckData.attributes.logic}
@@ -100,12 +100,12 @@ class Cyberdeck extends React.Component {
                 />
               </div>
             </div>
-          </div>
-          <div className="card">
+          </CardStyle>
+          <CardStyle className="card">
             <div className="card-body">
-              <h5 className="card-title">Intuition</h5>
-              <div className="card-text input-group input-group-sm mb-3">
-                <input
+              <TitleHeader className="card-title">Intuition</TitleHeader>
+              <div className="card-text mb-3">
+                <Input
                   name="intuition"
                   type="number"
                   value={this.props.cyberdeckData.attributes.intuition}
@@ -113,12 +113,12 @@ class Cyberdeck extends React.Component {
                 />
               </div>
             </div>
-          </div>
-          <div className="card">
+          </CardStyle>
+          <CardStyle className="card">
             <div className="card-body">
-              <h5 className="card-title">Willpower</h5>
-              <div className="card-text input-group input-group-sm mb-3">
-                <input
+              <TitleHeader className="card-title">Willpower</TitleHeader>
+              <div className="card-text mb-3">
+                <Input
                   name="willpower"
                   type="number"
                   value={this.props.cyberdeckData.attributes.willpower}
@@ -126,12 +126,12 @@ class Cyberdeck extends React.Component {
                 />
               </div>
             </div>
-          </div>
-          <div className="card">
+          </CardStyle>
+          <CardStyle className="card">
             <div className="card-body">
-              <h5 className="card-title">Reaction</h5>
-              <div className="card-text input-group input-group-sm mb-3">
-                <input
+              <TitleHeader className="card-title">Reaction</TitleHeader>
+              <div className="card-text mb-3">
+                <Input
                   name="reaction"
                   type="number"
                   value={this.props.cyberdeckData.attributes.reaction}
@@ -139,14 +139,14 @@ class Cyberdeck extends React.Component {
                 />
               </div>
             </div>
-          </div>
+          </CardStyle>
         </div>
         <div className="d-flex justify-content-center">
-          <div className="card">
+          <CardStyle className="card">
             <div className="card-body">
-              <h5 className="card-title">Computer</h5>
-              <div className="card-text input-group input-group-sm mb-3">
-                <input
+              <TitleHeader className="card-title">Computer</TitleHeader>
+              <div className="card-text mb-3">
+                <Input
                   name="computer"
                   type="number"
                   value={this.props.cyberdeckData.skills.computer}
@@ -154,12 +154,12 @@ class Cyberdeck extends React.Component {
                 />
               </div>
             </div>
-          </div>
-          <div className="card">
+          </CardStyle>
+          <CardStyle className="card">
             <div className="card-body">
-              <h5 className="card-title">Cybercombat</h5>
-              <div className="card-text input-group input-group-sm mb-3">
-                <input
+              <TitleHeader className="card-title">Cybercombat</TitleHeader>
+              <div className="card-text mb-3">
+                <Input
                   name="cybercombat"
                   type="number"
                   value={this.props.cyberdeckData.skills.cybercombat}
@@ -167,12 +167,14 @@ class Cyberdeck extends React.Component {
                 />
               </div>
             </div>
-          </div>
-          <div className="card">
+          </CardStyle>
+          <CardStyle className="card">
             <div className="card-body">
-              <h5 className="card-title">Electronic Warfare</h5>
-              <div className="card-text input-group input-group-sm mb-3">
-                <input
+              <TitleHeader className="card-title">
+                Electronic Warfare
+              </TitleHeader>
+              <div className="card-text mb-3">
+                <Input
                   name="electronicWarfare"
                   type="number"
                   value={this.props.cyberdeckData.skills.electronicWarfare}
@@ -180,12 +182,12 @@ class Cyberdeck extends React.Component {
                 />
               </div>
             </div>
-          </div>
-          <div className="card">
+          </CardStyle>
+          <CardStyle className="card">
             <div className="card-body">
-              <h5 className="card-title">Hacking</h5>
-              <div className="card-text input-group input-group-sm mb-3">
-                <input
+              <TitleHeader className="card-title">Hacking</TitleHeader>
+              <div className="card-text mb-3">
+                <Input
                   name="hacking"
                   type="number"
                   value={this.props.cyberdeckData.skills.hacking}
@@ -193,12 +195,12 @@ class Cyberdeck extends React.Component {
                 />
               </div>
             </div>
-          </div>
-          <div className="card">
+          </CardStyle>
+          <CardStyle className="card">
             <div className="card-body">
-              <h5 className="card-title">Hardware</h5>
-              <div className="card-text input-group input-group-sm mb-3">
-                <input
+              <TitleHeader className="card-title">Hardware</TitleHeader>
+              <div className="card-text mb-3">
+                <Input
                   name="hardware"
                   type="number"
                   value={this.props.cyberdeckData.skills.hardware}
@@ -206,12 +208,12 @@ class Cyberdeck extends React.Component {
                 />
               </div>
             </div>
-          </div>
-          <div className="card">
+          </CardStyle>
+          <CardStyle className="card">
             <div className="card-body">
-              <h5 className="card-title">Software</h5>
-              <div className="card-text input-group input-group-sm mb-3">
-                <input
+              <TitleHeader className="card-title">Software</TitleHeader>
+              <div className="card-text mb-3">
+                <Input
                   name="software"
                   type="number"
                   value={this.props.cyberdeckData.skills.software}
@@ -219,7 +221,7 @@ class Cyberdeck extends React.Component {
                 />
               </div>
             </div>
-          </div>
+          </CardStyle>
         </div>
       </Main>
     );
@@ -235,7 +237,25 @@ Cyberdeck.propTypes = {
 export default Cyberdeck;
 
 const Main = styled.div`
-  font-family: sans-serif;
-  padding-top: 10px;
+  font-family: Courier new;
   color: black;
+  font-size: 1em;
+`;
+
+const Input = styled.input`
+  font-family: Courier new;
+  color: black;
+  font-size: 1em;
+  width: 100px;
+  text-align: center;
+`;
+
+const CardStyle = styled.div`
+  width: 250px;
+  font-size: 0.8em;
+  text-align: center;
+`;
+
+const TitleHeader = styled.div`
+  font-size: 1.5em;
 `;

@@ -38,8 +38,13 @@ module.exports = [
             drop_console: true,
             keep_infinity: true,
             mangle: true,
-            passes: 5,
+            compress: {
+              passes: 3,
+            },
             warnings: false,
+            output: {
+              comments: false,
+            },
           },
         }),
       ],

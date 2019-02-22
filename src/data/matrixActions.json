@@ -3,6 +3,14 @@
     {
       "name": "Reckless Hacking",
       "description": ""
+    },
+    {
+      "name": "Attack Action",
+      "description": "For every net hit the target makes on its defence test, you take 1 box of unresistable Matrix Damage."
+    },
+    {
+      "name": "Sleaze Action",
+      "description": "If you fail the you get a mark placed on you."
     }
   ],
   "actions": [
@@ -14,10 +22,7 @@
         "offense": ["Electronic Warfare", "Logic"],
         "defense": ["None"]
       },
-      "limit": {
-        "offense": "Data Processing",
-        "defense": "None"
-      },
+      "limit": "Data Processing",
       "description": "",
       "source": "Kill Code p.37"
     },
@@ -29,10 +34,7 @@
         "offense": ["Cybercombat", "Logic"],
         "defense": ["Willpower", "Firewall"]
       },
-      "limit": {
-        "offense": "Data Processing",
-        "defense": "None"
-      },
+      "limit": "Data Processing",
       "description": "",
       "source": "Kill Code p.37"
     },
@@ -45,10 +47,7 @@
         "offense": ["Computer", "Intuition"],
         "defense": ["None"]
       },
-      "limit": {
-        "offense": "Data Processing",
-        "defense": "None"
-      },
+      "limit": "Data Processing",
       "description": "",
       "source": "Kill Code p.37"
     },
@@ -60,10 +59,7 @@
         "offense": ["Hacking", "Logic"],
         "defense": ["Intuition", "Firewall"]
       },
-      "limit": {
-        "offense": "Sleaze",
-        "defense": "None"
-      },
+      "limit": "Sleaze",
       "description": "",
       "source": "Core p.240"
     },
@@ -75,11 +71,80 @@
         "offense": ["Cybercombat", "Logic"],
         "defense": ["Willpower", "Firewall"]
       },
-      "limit": {
-        "offense": "Attack",
-        "defense": "None"
-      },
+      "limit": "Attack",
       "description": "",
+      "source": "Core p.238"
+    },
+    {
+      "name": "CHANGE ICON",
+      "actionType": "SIMPLE ACTION",
+      "marks": "Owner",
+      "test": {
+        "offense": ["None"],
+        "defense": ["None"]
+      },
+      "limit": "Data Processing",
+      "description": "",
+      "source": "Core p.238"
+    },
+    {
+      "name": "CHECK OVERWATCH SCORE",
+      "actionType": "SIMPLE ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Electronic Warfare", "Logic"],
+        "defense": ["6 dice"]
+      },
+      "limit": "Data Processing",
+      "description": "",
+      "source": "Core p.238"
+    },
+    {
+      "name": "CONTROL DEVICE",
+      "actionType": "VARIABLE ACTION",
+      "marks": "Varies",
+      "test": {
+        "offense": ["(Varies)", "Electronic Warfare", "Intuition"],
+        "defense": ["(Varies)", "Intuition", "Firewall"]
+      },
+      "limit": "Sleaze",
+      "description": "",
+      "source": "Core p.238"
+    },
+    {
+      "name": "CRACK FILE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "1",
+      "test": {
+        "offense": ["Hacking", "Logic"],
+        "defense": ["Protection Rating x 2"]
+      },
+      "limit": "Attack",
+      "description": "",
+      "source": "Core p.238"
+    },
+    {
+      "name": "CRACK PROGRAM",
+      "actionType": "COMPLEX ACTION",
+      "marks": "1",
+      "test": {
+        "offense": ["Cybercombat", "Logic"],
+        "defense": ["Intuition", "Firewall"]
+      },
+      "limit": "Attack",
+      "description": "",
+      "source": "Core p.238"
+    },
+    {
+      "name": "DATA SPIKE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Cybercombat", "Logic"],
+        "defense": ["Intuition", "Firewall"]
+      },
+      "limit": "Attack",
+      "description": "DMG = (Net Hits + Marks x 2) Resist Damage DR + Firewall",
       "source": "Core p.238"
     }
   ]

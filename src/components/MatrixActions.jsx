@@ -35,9 +35,9 @@ function MatrixActions(props) {
 
   const actionsSorted = props.matrixActions.actions.sort((a, b) => {
     const itemOneName = a.name.toLowerCase();
-    const itemOneLimit = a.limit.offense.toLowerCase();
+    const itemOneLimit = a.limit.toLowerCase();
     const itemTwoName = b.name.toLowerCase();
-    const itemTwoLimit = b.limit.offense.toLowerCase();
+    const itemTwoLimit = b.limit.toLowerCase();
     if (itemOneLimit > itemTwoLimit) return 1;
     if (itemOneLimit < itemTwoLimit) return -1;
     if (itemOneName > itemTwoName) return 1;
@@ -46,78 +46,67 @@ function MatrixActions(props) {
     // return b.name.toLowerCase() < a.name.toLowerCase() ? 1 : -1;
   });
 
-  const actionValues = action => {
-    const placeholder = true;
-    const offenseLimit = isNaN(values[action.limit.offense])
+  const actionValues = (action) => {
+    const placeholder = false;
+    const offenseLimit = isNaN(values[action.limit])
       ? 'None'
-      : values[action.limit.offense];
+      : values[action.limit];
 
     let offenseCalc = 0 + values.matrixActionBonus;
     let defenseCalc = 0 + values.matrixActionBonus;
     offenseCalc += values.mode === 'hot' ? 2 : 0;
     defenseCalc += values.mode === 'hot' ? 2 : 0;
-    offenseCalc += values.runningSilent === 'hot' ? -2 : 0;
-    defenseCalc += values.runningSilent === 'hot' ? -2 : 0;
+    offenseCalc += values.runningSilent ? -2 : 0;
+    defenseCalc += values.runningSilent ? -2 : 0;
 
-    const offenceNames = action.test.offense.map((item, key, arr) =>
-      arr.length - 1 != key ? (
-        <span key={key}>{item} + </span>
-      ) : (
-        <span key={key}>{item}</span>
-      )
-    );
+    const offenseNames = action.test.offense.join(' + ');
 
-    const defenceNames = action.test.defense.map((item, key, arr) =>
-      arr.length - 1 != key ? (
-        <span key={key}>{item} + </span>
-      ) : (
-        <span key={key}>{item}</span>
-      )
-    );
+    const defenseNames = action.test.defense.join(' + ');
 
-    action.test.offense.map(item => {
+    action.test.offense.map((item) => {
       offenseCalc += isNaN(values[item]) ? 0 : values[item];
     });
 
-    action.test.defense.map(item => {
+    action.test.defense.map((item) => {
       defenseCalc += isNaN(values[item]) ? 0 : values[item];
     });
 
-    defenseCalc = defenseCalc === 0 ? 'N/A' : defenseCalc;
+    defenseCalc = !defenseCalc ? 'N/A' : defenseCalc;
+    offenseCalc = !offenseCalc ? 'N/A' : offenseCalc;
 
     const desc = placeholder
       ? 'Placeholder Description Text'
       : action.description;
 
     return {
-      actionType: action.actionType,
-      marks: action.marks,
+      ...action,
       defenseCalc,
-      defenceNames,
+      defenseNames,
       desc,
-      limit: action.limit.offense,
-      name: action.name,
       offenseLimit,
       offenseCalc,
-      offenceNames,
-      source: action.source,
+      offenseNames,
     };
   };
 
-  const matrixAction = actionsSorted.map((item, key) => (
+  const matrixAction = actionsSorted.map((action, key) => (
     <div className="col-2" key={key}>
-      <MatrixAction matrixAction={item} values={actionValues(item)} />
+      <MatrixAction values={actionValues(action)} />
     </div>
   ));
 
-  return (
-    <Main className="container-fluid">
-      <h2 className="jumbotron d-flex justify-content-center">
-        Matrix Actions
-      </h2>
+  const matrixTableActions = actionsSorted.map((action) => {
+    return actionValues(action);
+  });
 
-      <MatrixActionTable values={values} actions={actionsSorted} />
-      <div className="d-flex flex-wrap">{matrixAction}</div>
+  return (
+    <Main className="container-fluid bg-dark">
+      <Jumbo className="jumbotron d-flex justify-content-center">
+        Matrix Actions
+      </Jumbo>
+
+      <MatrixActionTable actions={matrixTableActions} />
+      <ActionCards className="d-flex flex-wrap">{matrixAction}</ActionCards>
     </Main>
   );
 }
@@ -130,7 +119,15 @@ MatrixActions.propTypes = {
 export default MatrixActions;
 
 const Main = styled.div`
-  font-family: sans-serif;
+  font-family: Courier New;
   padding-top: 20px;
-  color: black;
+  font-weight: 600;
+`;
+
+const ActionCards = styled.div`
+  padding-top: 1.2em;
+`;
+
+const Jumbo = styled.h2`
+  font-weight: 700;
 `;
