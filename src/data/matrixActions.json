@@ -60,7 +60,7 @@
         "defense": ["Intuition", "Firewall"]
       },
       "limit": "Sleaze",
-      "description": "",
+      "description": "2xhits = hit Matrix Perception test / -4 for 2 marks or -10 for 3 marks / 4 die for local grid or 6 die for global grid defence",
       "source": "Core p.240"
     },
     {
@@ -144,8 +144,272 @@
         "defense": ["Intuition", "Firewall"]
       },
       "limit": "Attack",
-      "description": "DMG = (Net Hits + Marks x 2) Resist Damage DR + Firewall",
-      "source": "Core p.238"
+      "description": "DMG = (Attack + Net Hits + Marks x 2) vs Device Rating + Firewall",
+      "source": "Core p.239"
+    },
+    {
+      "name": "DISARM DATA BOMB",
+      "actionType": "COMPLEX ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Software", "Intuition"],
+        "defense": ["Data Bomb Rating x 2"]
+      },
+      "limit": "Firewall",
+      "description": "Disarm: Any net hit (deletes data bomb), Failure: triggers bomb",
+      "source": "Core p.239"
+    },
+    {
+      "name": "EDIT FILE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "1",
+      "test": {
+        "offense": ["Computer", "Logic"],
+        "defense": ["Intuition", "Firewall"]
+      },
+      "limit": "Data Processing",
+      "description": "Alter one detail / Copy / Protect: Simple test rating = net hits",
+      "source": "Core p.239"
+    },
+    {
+      "name": "ENTER/EXIT HOST",
+      "actionType": "COMPLEX ACTION",
+      "marks": "1",
+      "test": {
+        "offense": ["None"],
+        "defense": ["None"]
+      },
+      "limit": "None",
+      "description": "Exit: return to grid you entered from",
+      "source": "Core p.239"
+    },
+    {
+      "name": "ERASE MARK",
+      "actionType": "COMPLEX ACTION",
+      "marks": "Special",
+      "test": {
+        "offense": ["Computer", "Logic"],
+        "defense": ["Willpower", "Firewall"]
+      },
+      "limit": "Attack",
+      "description": "3 marks onn target to remove a mark / 2 marks -4 / 3 marks -10",
+      "source": "Core p.239"
+    },
+    {
+      "name": "ERASE MATRIX SIGNATURE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Computer", "Resonance"],
+        "defense": ["Signature Rating x 2"]
+      },
+      "limit": "Attack",
+      "description": "Erase signature left by Technomancer or a Sprite",
+      "source": "Core p.239"
+    },
+    {
+      "name": "FORMAT DEVICE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "3",
+      "test": {
+        "offense": ["Computer", "Logic"],
+        "defense": ["Willpower", "Firewall"]
+      },
+      "limit": "Sleaze",
+      "description": "Reboot it shuts down until Ext. Software + Logic [Mental] (12, 1 hour)",
+      "source": "Core p.239 - p.240"
+    },
+    {
+      "name": "FULL MATRIX DEFENSE",
+      "actionType": "INTERRUPT ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["None"],
+        "defense": ["None"]
+      },
+      "limit": "Firewall",
+      "description": "-10 Initiative lasts until end of Combat Turn / Add Willpower or add again",
+      "source": "Core p.240"
+    },
+    {
+      "name": "GRID HOP",
+      "actionType": "COMPLEX ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["None"],
+        "defense": ["None"]
+      },
+      "limit": "Data Processing",
+      "description": "No Access you Brute Force or Hack on the Fly",
+      "source": "Core p.240"
+    },
+    {
+      "name": "HIDE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "0",
+      "test": {
+        "offense": ["Electronic Warfare", "Intuition"],
+        "defense": ["Intuition", "Data Processing"]
+      },
+      "limit": "Sleaze",
+      "description": "Can't hide from a icon with mark on you",
+      "source": "Core p.240"
+    },
+    {
+      "name": "INVITE MARK",
+      "actionType": "SIMPLE ACTION",
+      "marks": "Owner",
+      "test": {
+        "offense": ["None"],
+        "defense": ["None"]
+      },
+      "limit": "Data Processing",
+      "description": "Number marks allowed, duration, duration offer, invitee mark with Free Action. revoke offer before mark made otherwise reboot or Erase Mark",
+      "source": "Core p.240"
+    },
+    {
+      "name": "JACK OUT",
+      "actionType": "SIMPLE ACTION",
+      "marks": "Owner",
+      "test": {
+        "offense": ["Hardware", "Willpower"],
+        "defense": ["Logic", "Attack"]
+      },
+      "limit": "Firewall",
+      "description": "leaves matrix and reboots device, defence only if link-locked Core p.229, single roll vs each persona link locking you, suffer dumpshock if in VR",
+      "source": "Core p.240"
+    },
+    {
+      "name": "JAM SIGNALS",
+      "actionType": "COMPLEX ACTION",
+      "marks": "Owner",
+      "test": {
+        "offense": ["Electronic Warfare", "Logic"],
+        "defense": ["None"]
+      },
+      "limit": "Attack",
+      "description": "Turns wireless device into jammer, net hits cause noise to any device in 100 meters",
+      "source": "Core p.240"
+    },
+    {
+      "name": "JUMP INTO RIGGED DEVICE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "3",
+      "test": {
+        "offense": ["Electronic Warfare", "Logic"],
+        "defense": ["Willpower", "Firewall"]
+      },
+      "limit": "Data Processing",
+      "description": "Req. rigger adaptation, be in VR, control rig, can't jump into if someone already is inside",
+      "source": "Core p.241"
+    },
+    {
+      "name": "MATRIX PERCEPTION",
+      "actionType": "COMPLEX ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Computer", "Intuition"],
+        "defense": ["Logic", "Sleaze"]
+      },
+      "limit": "Data Processing",
+      "description": "Each hit = 1 fact, recognize marks seen before or marks left by personas that you have marks on youself, esle only mark count, matrix spotting table p.241, 1st net hit spots target anymore gives facts",
+      "source": "Core p.241"
+    },
+    {
+      "name": "MATRIX SEARCH",
+      "actionType": "SPECIAL ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Computer", "Intuition"],
+        "defense": ["None"]
+      },
+      "limit": "Data Processing",
+      "description": "See Matrtix Search Table Core p.241",
+      "source": "Core p.241"
+    },
+    {
+      "name": "REBOOT DEVICE",
+      "actionType": "COMPLEX ACTION",
+      "marks": "3",
+      "test": {
+        "offense": ["Computer", "Logic"],
+        "defense": ["Willpower", "Firewall"]
+      },
+      "limit": "Data Processing",
+      "description": "Device comes back online following Combat Turn, in VR suffer dumpshock, only works on devices, can't use if device is linked-locked",
+      "source": "Core p.242"
+    },
+    {
+      "name": "SEND MESSAGE",
+      "actionType": "SIMPLE ACTION",
+      "marks": "0(1)",
+      "test": {
+        "offense": ["None"],
+        "defense": ["None"]
+      },
+      "limit": "Data Processing",
+      "description": "Messages using DNI can be longer (paragraph size), live feed to 1+ recipients",
+      "source": "Core p.242"
+    },
+    {
+      "name": "SET DATA BOMB",
+      "actionType": "COMPLEX ACTION",
+      "marks": "1",
+      "test": {
+        "offense": ["Software", "Logic"],
+        "defense": ["Device Rating x 2"]
+      },
+      "limit": "Sleaze",
+      "description": "Rating up to net hits, set passcode, activates if read,edit,copy,protect,delete,set data bomb uused before deactivating current data bomb, (Rating)D6 Matrix Damge (Resit Normally), potentially deletes file attached to and deletes itself, use matrix perception to find",
+      "source": "Core p.242"
+    },
+    {
+      "name": "SNOOP",
+      "actionType": "COMPLEX ACTION",
+      "marks": "1",
+      "test": {
+        "offense": ["Electronic Warfare", "Intuition"],
+        "defense": ["Logic", "Firewall"]
+      },
+      "limit": "Sleaze",
+      "description": "intercept traffic to and from makred target",
+      "source": "Core p.242"
+    },
+    {
+      "name": "SPOOF COMMAND",
+      "actionType": "COMPLEX ACTION",
+      "marks": "1",
+      "test": {
+        "offense": ["Electronic Warfare", "Intuition"],
+        "defense": ["Logic", "Firewall"]
+      },
+      "limit": "Sleaze",
+      "description": "1 mark on devices owner your imitating, no need to mark target, only works on devices and agents",
+      "source": "Core p.242"
+    },
+    {
+      "name": "SWITCH INTERFACE MODE",
+      "actionType": "SIMPLE ACTION",
+      "marks": "Owner",
+      "test": {
+        "offense": ["None"],
+        "defense": ["None"]
+      },
+      "limit": "Data Processing",
+      "description": "Can't switch if link locked. Switching to AR lose bonus die see Core p.160",
+      "source": "Core p.243"
+    },
+    {
+      "name": "TRACE ICON",
+      "actionType": "COMPLEX ACTION",
+      "marks": "2",
+      "test": {
+        "offense": ["Computer", "Intuition"],
+        "defense": ["Willpower", "Sleaze"]
+      },
+      "limit": "Data Processing",
+      "description": "Find physical location of device or persona in matrix, know location as long as at least 1 mark",
+      "source": "Core p.243"
     }
   ]
 }

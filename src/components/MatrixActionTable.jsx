@@ -77,6 +77,7 @@ function MatrixActionTable(props) {
         resizable={false}
         filterable={true}
         minRows={0}
+        defaultPageSize={100}
         showPagination={false}
         style={{
           width: 'auto',
