@@ -15,49 +15,41 @@ function MatrixActionTable(props) {
     {
       Header: 'Matrix Action',
       accessor: 'name',
-      width: 200,
       style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
     },
     {
       Header: 'Type',
       accessor: 'actionType',
-      width: 300,
       style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
     },
     {
       Header: 'Limit',
       accessor: 'limit',
-      width: 150,
       style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
     },
     {
       Header: 'Offense Value',
       accessor: 'offenseCalc',
-      width: 150,
       style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
     },
     {
       Header: 'Defense Value',
       accessor: 'defenseCalc',
-      width: 150,
       style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
     },
     {
       Header: 'Offense Roll',
       accessor: 'offenseNames',
-      width: 300,
       style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
     },
     {
       Header: 'Defense Roll',
       accessor: 'defenseNames',
-      width: 300,
       style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
     },
     {
       Header: 'Marks',
       accessor: 'marks',
-      width: 150,
       style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
     },
     {
@@ -68,7 +60,6 @@ function MatrixActionTable(props) {
     {
       Header: 'Source',
       accessor: 'source',
-      width: 150,
       style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
     },
   ];
@@ -94,6 +85,6 @@ MatrixActionTable.propTypes = {
 export default MatrixActionTable;
 
 const Main = styled.div`
-  font-family: Courier New;
+  font-family: Open Sans;
   font-size: 1em;
 `;

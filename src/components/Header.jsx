@@ -27,7 +27,7 @@ Header.propTypes = {
 export default Header;
 
 const Main = styled.div`
-  font-family: Courier New;
+  font-family: Open Sans;
   color: lightgrey;
   font-weight: 600;
 `;

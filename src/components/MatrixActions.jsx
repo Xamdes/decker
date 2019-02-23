@@ -119,7 +119,7 @@ MatrixActions.propTypes = {
 export default MatrixActions;
 
 const Main = styled.div`
-  font-family: Courier New;
+  font-family: Open Sans;
   padding-top: 20px;
   font-weight: 600;
 `;

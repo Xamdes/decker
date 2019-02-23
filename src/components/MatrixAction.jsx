@@ -43,7 +43,7 @@ MatrixAction.propTypes = {
 export default MatrixAction;
 
 const Main = styled.div`
-  font-family: Courier New;
+  font-family: Open Sans;
   color: black;
   font-weight: normal;
 `;

@@ -237,13 +237,13 @@ Cyberdeck.propTypes = {
 export default Cyberdeck;
 
 const Main = styled.div`
-  font-family: Courier new;
+  font-family: Open Sans;
   color: black;
   font-size: 1em;
 `;
 
 const Input = styled.input`
-  font-family: Courier new;
+  font-family: Open Sans;
   color: black;
   font-size: 1em;
   width: 100px;

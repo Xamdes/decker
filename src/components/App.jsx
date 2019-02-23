@@ -90,7 +90,7 @@ App.propTypes = {
 export default App;
 
 const Main = styled.div`
-  font-family: Courier New;
+  font-family: Open Sans;
   color: black;
 `;
 
