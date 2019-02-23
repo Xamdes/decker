@@ -7,7 +7,7 @@
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import styled from 'styled-components';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import { Link, Switch, Route } from 'react-router-dom';
 
 function MatrixActionTable(props) {
@@ -15,64 +15,74 @@ function MatrixActionTable(props) {
     {
       Header: 'Matrix Action',
       accessor: 'name',
-      style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
+      style: { width: 'auto', height: 'auto', 'white-space': 'normal' },
     },
     {
       Header: 'Type',
       accessor: 'actionType',
-      style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
+      style: { width: 'auto', height: 'auto', 'white-space': 'normal' },
     },
     {
       Header: 'Limit',
       accessor: 'limit',
-      style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
+      style: { width: 'auto', height: 'auto', 'white-space': 'normal' },
     },
     {
       Header: 'Offense Value',
       accessor: 'offenseCalc',
-      style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
+      style: { width: 'auto', height: 'auto', 'white-space': 'normal' },
     },
     {
       Header: 'Defense Value',
       accessor: 'defenseCalc',
-      style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
+      style: { width: 'auto', height: 'auto', 'white-space': 'normal' },
     },
     {
       Header: 'Offense Roll',
       accessor: 'offenseNames',
-      style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
+      style: { width: 'auto', height: 'auto', 'white-space': 'normal' },
     },
     {
       Header: 'Defense Roll',
       accessor: 'defenseNames',
-      style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
+      style: { width: 'auto', height: 'auto', 'white-space': 'normal' },
     },
     {
       Header: 'Marks',
       accessor: 'marks',
-      style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
+      style: { width: 'auto', height: 'auto', 'white-space': 'normal' },
     },
     {
       Header: 'Description',
       accessor: 'desc',
-      style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
+      style: { width: 'auto', height: 'auto', 'white-space': 'normal' },
     },
     {
       Header: 'Source',
       accessor: 'source',
-      style: { width: 'auto', height: 'auto', 'white-space': 'unset' },
+      style: {
+        width: 'auto',
+        height: 'auto',
+        'white-space': 'normal',
+      },
     },
   ];
 
   return (
     <Main className="">
       <ReactTable
-        className="container-fluid bg-info -striped -highlight"
+        className="table table-sm bg-info -striped -highlight"
         data={props.actions}
         columns={columns}
         resizable={false}
         filterable={true}
-        style={{ width: 'auto', height: 'auto', 'word-wrap': 'normal' }}
+        minRows={0}
+        showPagination={false}
+        style={{
+          width: 'auto',
+          height: 'auto',
+          'word-wrap': 'normal',
+        }}
       />
     </Main>
   );

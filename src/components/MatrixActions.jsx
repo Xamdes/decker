@@ -7,7 +7,7 @@ import MatrixAction from './MatrixAction';
  * <MatrixActions/>
  */
 import styled from 'styled-components';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import { Link, Switch, Route } from 'react-router-dom';
 
 function MatrixActions(props) {

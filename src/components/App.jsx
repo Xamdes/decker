@@ -91,7 +91,6 @@ export default App;
 
 const Main = styled.div`
   font-family: Open Sans;
-  color: black;
 `;
 
 const Title = styled.h1`
