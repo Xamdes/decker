@@ -28,31 +28,23 @@ class App extends React.Component {
   }
 
   onHandleConfigStats(name, value) {
-    console.log(name + ' | ' + value);
+    let type = 'none';
+    if (
+      Object.keys(this.state.cyberdeckDataMaster.attributes).indexOf(name) > -1
+    ) {
+      type = 'attributes';
+    } else if (
+      Object.keys(this.state.cyberdeckDataMaster.skills).indexOf(name) > -1
+    ) {
+      type = 'skills';
+    }
+
     this.setState((state) => {
-      if (
-        Object.keys(state.cyberdeckDataMaster.attributes).indexOf(name) > -1
-      ) {
-        const attributes = state.cyberdeckDataMaster.attributes;
-        attributes[name] = value;
-        return { player: attributes };
-      } else if (
-        Object.keys(state.cyberdeckDataMaster.skills).indexOf(name) > -1
-      ) {
-        const skills = state.cyberdeckDataMaster.skills;
-        skills[name] = value;
-        return { player: skills };
-      }
+      const stats = state.cyberdeckDataMaster[type];
+      stats[name] = value;
+      return { player: stats };
     });
   }
-
-  // onHandleConfigSkills(skillName, value) {
-  //   this.setState((state) => {
-  //     let skills = state.cyberdeckDataMaster.skills;
-  //     skills[skillName] = value;
-  //     return { player: skills };
-  //   });
-  // }
 
   componentDidMount() {}
 

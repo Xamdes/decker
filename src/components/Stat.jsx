@@ -20,7 +20,7 @@ class Stat extends React.Component {
   render() {
     return (
       <Main>
-        <CardStyle className="card">
+        <CardStyle className="card bg-info">
           <div className="card-body">
             <TitleHeader className="card-title">{this.props.title}</TitleHeader>
             <div className="card-text">
