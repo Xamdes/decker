@@ -5,31 +5,44 @@
  * <Stat/>
  */
 import styled from 'styled-components';
-// import PropTypes from 'prop-types';
-// import { Link, Switch, Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-function Stat() {
-  return (
-    <Main>
-      <CardStyle className="card">
-        <div className="card-body">
-          <TitleHeader className="card-title">Attack</TitleHeader>
-          <div className="card-text">
-            <Input
-              name="attack"
-              type="number"
-              value={this.props.cyberdeckData.attributes.attack}
-              onChange={this.handleAttributesChange}
-            />
+class Stat extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleStatChange = this.handleStatChange.bind(this);
+  }
+  handleStatChange(event) {
+    const name = event.target.getAttribute('name');
+    const newValue = parseInt(event.target.value);
+    this.props.onHandleConfigStats(name, newValue);
+  }
+  render() {
+    return (
+      <Main>
+        <CardStyle className="card">
+          <div className="card-body">
+            <TitleHeader className="card-title">{this.props.title}</TitleHeader>
+            <div className="card-text">
+              <Input
+                name={this.props.name}
+                type="number"
+                value={this.props.value}
+                onChange={this.handleStatChange}
+              />
+            </div>
           </div>
-        </div>
-      </CardStyle>
-    </Main>
-  );
+        </CardStyle>
+      </Main>
+    );
+  }
 }
 
 Stat.propTypes = {
-  //  [variable-name]: PropTypes.[type],
+  name: PropTypes.string,
+  value: PropTypes.number,
+  onHandleConfigStats: PropTypes.func,
+  title: PropTypes.string,
 };
 
 export default Stat;

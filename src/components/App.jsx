@@ -28,6 +28,7 @@ class App extends React.Component {
   }
 
   onHandleConfigStats(name, value) {
+    console.log(name + ' | ' + value);
     this.setState((state) => {
       if (
         Object.keys(state.cyberdeckDataMaster.attributes).indexOf(name) > -1

@@ -7,218 +7,103 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Stat from './Stat';
-// import { Link, Switch, Route } from 'react-router-dom';
 
-class Stats extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleStatChange = this.handleStatChange.bind(this);
-  }
-
-  //Skills
-  handleStatChange(event) {
-    const name = event.target.getAttribute('name');
-    const newValue = parseInt(event.target.value);
-    this.props.handleConfigStats(name, newValue);
-  }
-
-  render() {
-    // console.log(this.props.cyberdeckData);
-    return (
-      <Main className="container-fluid">
-        <div className="d-flex justify-content-center">
-          <CardStyle className="card">
-            <div className="card-body">
-              <TitleHeader className="card-title">Attack</TitleHeader>
-              <div className="card-text">
-                <Input
-                  name="attack"
-                  type="number"
-                  value={this.props.cyberdeckData.attributes.attack}
-                  onChange={this.handleStatChange}
-                />
-              </div>
-            </div>
-          </CardStyle>
-          <CardStyle className="card">
-            <div className="card-body">
-              <TitleHeader className="card-title">Sleaze</TitleHeader>
-              <div className="card-text mb-3">
-                <Input
-                  name="sleaze"
-                  type="number"
-                  value={this.props.cyberdeckData.attributes.sleaze}
-                  onChange={this.handleStatChange}
-                />
-              </div>
-            </div>
-          </CardStyle>
-          <CardStyle className="card">
-            <div className="card-body">
-              <TitleHeader className="card-title">Data Processing</TitleHeader>
-              <div className="card-text mb-3">
-                <Input
-                  name="dataProcessing"
-                  type="number"
-                  value={this.props.cyberdeckData.attributes.dataProcessing}
-                  onChange={this.handleStatChange}
-                />
-              </div>
-            </div>
-          </CardStyle>
-          <CardStyle className="card">
-            <div className="card-body">
-              <TitleHeader className="card-title">Firewall</TitleHeader>
-              <div className="card-text mb-3">
-                <Input
-                  name="firewall"
-                  type="number"
-                  value={this.props.cyberdeckData.attributes.firewall}
-                  onChange={this.handleStatChange}
-                />
-              </div>
-            </div>
-          </CardStyle>
-        </div>
-        <div className="d-flex justify-content-center">
-          <CardStyle className="card">
-            <div className="card-body">
-              <TitleHeader className="card-title">Logic</TitleHeader>
-              <div className="card-text mb-3">
-                <Input
-                  name="logic"
-                  type="number"
-                  value={this.props.cyberdeckData.attributes.logic}
-                  onChange={this.handleStatChange}
-                />
-              </div>
-            </div>
-          </CardStyle>
-          <CardStyle className="card">
-            <div className="card-body">
-              <TitleHeader className="card-title">Intuition</TitleHeader>
-              <div className="card-text mb-3">
-                <Input
-                  name="intuition"
-                  type="number"
-                  value={this.props.cyberdeckData.attributes.intuition}
-                  onChange={this.handleStatChange}
-                />
-              </div>
-            </div>
-          </CardStyle>
-          <CardStyle className="card">
-            <div className="card-body">
-              <TitleHeader className="card-title">Willpower</TitleHeader>
-              <div className="card-text mb-3">
-                <Input
-                  name="willpower"
-                  type="number"
-                  value={this.props.cyberdeckData.attributes.willpower}
-                  onChange={this.handleStatChange}
-                />
-              </div>
-            </div>
-          </CardStyle>
-          <CardStyle className="card">
-            <div className="card-body">
-              <TitleHeader className="card-title">Reaction</TitleHeader>
-              <div className="card-text mb-3">
-                <Input
-                  name="reaction"
-                  type="number"
-                  value={this.props.cyberdeckData.attributes.reaction}
-                  onChange={this.handleStatChange}
-                />
-              </div>
-            </div>
-          </CardStyle>
-        </div>
-        <div className="d-flex justify-content-center">
-          <CardStyle className="card">
-            <div className="card-body">
-              <TitleHeader className="card-title">Computer</TitleHeader>
-              <div className="card-text mb-3">
-                <Input
-                  name="computer"
-                  type="number"
-                  value={this.props.cyberdeckData.skills.computer}
-                  onChange={this.handleStatChange}
-                />
-              </div>
-            </div>
-          </CardStyle>
-          <CardStyle className="card">
-            <div className="card-body">
-              <TitleHeader className="card-title">Cybercombat</TitleHeader>
-              <div className="card-text mb-3">
-                <Input
-                  name="cybercombat"
-                  type="number"
-                  value={this.props.cyberdeckData.skills.cybercombat}
-                  onChange={this.handleStatChange}
-                />
-              </div>
-            </div>
-          </CardStyle>
-          <CardStyle className="card">
-            <div className="card-body">
-              <TitleHeader className="card-title">
-                Electronic Warfare
-              </TitleHeader>
-              <div className="card-text mb-3">
-                <Input
-                  name="electronicWarfare"
-                  type="number"
-                  value={this.props.cyberdeckData.skills.electronicWarfare}
-                  onChange={this.handleStatChange}
-                />
-              </div>
-            </div>
-          </CardStyle>
-          <CardStyle className="card">
-            <div className="card-body">
-              <TitleHeader className="card-title">Hacking</TitleHeader>
-              <div className="card-text mb-3">
-                <Input
-                  name="hacking"
-                  type="number"
-                  value={this.props.cyberdeckData.skills.hacking}
-                  onChange={this.handleStatChange}
-                />
-              </div>
-            </div>
-          </CardStyle>
-          <CardStyle className="card">
-            <div className="card-body">
-              <TitleHeader className="card-title">Hardware</TitleHeader>
-              <div className="card-text mb-3">
-                <Input
-                  name="hardware"
-                  type="number"
-                  value={this.props.cyberdeckData.skills.hardware}
-                  onChange={this.handleStatChange}
-                />
-              </div>
-            </div>
-          </CardStyle>
-          <CardStyle className="card">
-            <div className="card-body">
-              <TitleHeader className="card-title">Software</TitleHeader>
-              <div className="card-text mb-3">
-                <Input
-                  name="software"
-                  type="number"
-                  value={this.props.cyberdeckData.skills.software}
-                  onChange={this.handleStatChange}
-                />
-              </div>
-            </div>
-          </CardStyle>
-        </div>
-      </Main>
-    );
-  }
+function Stats(props) {
+  // console.log(this.props.cyberdeckData);
+  return (
+    <Main className="container-fluid">
+      <div className="d-flex justify-content-center">
+        <Stat
+          name={'attack'}
+          title={'Attack'}
+          value={props.cyberdeckData.attributes.attack}
+          onHandleConfigStats={props.handleConfigStats}
+        />
+        <Stat
+          name={'sleaze'}
+          title={'Sleaze'}
+          value={props.cyberdeckData.attributes.sleaze}
+          onHandleConfigStats={props.handleConfigStats}
+        />
+        <Stat
+          name={'dataProcessing'}
+          title={'Data Processing'}
+          value={props.cyberdeckData.attributes.dataProcessing}
+          onHandleConfigStats={props.handleConfigStats}
+        />
+        <Stat
+          name={'firewall'}
+          title={'Firewall'}
+          value={props.cyberdeckData.attributes.firewall}
+          onHandleConfigStats={props.handleConfigStats}
+        />
+      </div>
+      <div className="d-flex justify-content-center">
+        <Stat
+          name={'logic'}
+          title={'Logic'}
+          value={props.cyberdeckData.attributes.logic}
+          onHandleConfigStats={props.handleConfigStats}
+        />
+        <Stat
+          name={'intuition'}
+          title={'Intuition'}
+          value={props.cyberdeckData.attributes.intuition}
+          onHandleConfigStats={props.handleConfigStats}
+        />
+        <Stat
+          name={'willpower'}
+          title={'Willpower'}
+          value={props.cyberdeckData.attributes.willpower}
+          onHandleConfigStats={props.handleConfigStats}
+        />
+        <Stat
+          name={'reaction'}
+          title={'Reaction'}
+          value={props.cyberdeckData.attributes.reaction}
+          onHandleConfigStats={props.handleConfigStats}
+        />
+      </div>
+      <div className="d-flex justify-content-center">
+        <Stat
+          name={'computer'}
+          title={'Computer'}
+          value={props.cyberdeckData.skills.computer}
+          onHandleConfigStats={props.handleConfigStats}
+        />
+        <Stat
+          name={'cybercombat'}
+          title={'Cybercombat'}
+          value={props.cyberdeckData.skills.cybercombat}
+          onHandleConfigStats={props.handleConfigStats}
+        />
+        <Stat
+          name={'electronicWarfare'}
+          title={'Electronic Warfare'}
+          value={props.cyberdeckData.skills.electronicWarfare}
+          onHandleConfigStats={props.handleConfigStats}
+        />
+        <Stat
+          name={'hacking'}
+          title={'Hacking'}
+          value={props.cyberdeckData.skills.hacking}
+          onHandleConfigStats={props.handleConfigStats}
+        />
+        <Stat
+          name={'hardware'}
+          title={'Hardware'}
+          value={props.cyberdeckData.skills.hardware}
+          onHandleConfigStats={props.handleConfigStats}
+        />
+        <Stat
+          name={'software'}
+          title={'Software'}
+          value={props.cyberdeckData.skills.software}
+          onHandleConfigStats={props.handleConfigStats}
+        />
+      </div>
+    </Main>
+  );
 }
 
 Stats.propTypes = {
@@ -232,22 +117,4 @@ const Main = styled.div`
   font-family: Open Sans;
   color: black;
   font-size: 1em;
-`;
-
-const Input = styled.input`
-  font-family: Open Sans;
-  color: black;
-  font-size: 1em;
-  width: 100px;
-  text-align: center;
-`;
-
-const CardStyle = styled.div`
-  width: 250px;
-  font-size: 0.8em;
-  text-align: center;
-`;
-
-const TitleHeader = styled.div`
-  font-size: 1.5em;
 `;
