@@ -6,7 +6,7 @@
  */
 import Error404 from './Error404';
 import Header from './Header';
-import Cyberdeck from './cyberdeck';
+import Stats from './Stats';
 import MatrixActions from './MatrixActions';
 import styled from 'styled-components';
 import Footer from './Footer';
@@ -23,25 +23,35 @@ class App extends React.Component {
       cyberdeckDataMaster: defaultCyberdeckData,
       matrixActions: defaultMatrixActions,
     };
-    this.onHandleConfigAttributes = this.onHandleConfigAttributes.bind(this);
-    this.onHandleConfigSkills = this.onHandleConfigSkills.bind(this);
+    this.onHandleConfigStats = this.onHandleConfigStats.bind(this);
+    // this.onHandleConfigSkills = this.onHandleConfigSkills.bind(this);
   }
 
-  onHandleConfigAttributes(attributeName, value) {
+  onHandleConfigStats(name, value) {
     this.setState((state) => {
-      let attributes = state.cyberdeckDataMaster.attributes;
-      attributes[attributeName] = value;
-      return { player: attributes };
+      if (
+        Object.keys(state.cyberdeckDataMaster.attributes).indexOf(name) > -1
+      ) {
+        const attributes = state.cyberdeckDataMaster.attributes;
+        attributes[name] = value;
+        return { player: attributes };
+      } else if (
+        Object.keys(state.cyberdeckDataMaster.skills).indexOf(name) > -1
+      ) {
+        const skills = state.cyberdeckDataMaster.skills;
+        skills[name] = value;
+        return { player: skills };
+      }
     });
   }
 
-  onHandleConfigSkills(skillName, value) {
-    this.setState((state) => {
-      let skills = state.cyberdeckDataMaster.skills;
-      skills[skillName] = value;
-      return { player: skills };
-    });
-  }
+  // onHandleConfigSkills(skillName, value) {
+  //   this.setState((state) => {
+  //     let skills = state.cyberdeckDataMaster.skills;
+  //     skills[skillName] = value;
+  //     return { player: skills };
+  //   });
+  // }
 
   componentDidMount() {}
 
@@ -60,10 +70,10 @@ class App extends React.Component {
             path="/cyberdeck"
             render={() => (
               <div>
-                <Cyberdeck
+                <Stats
                   cyberdeckData={this.state.cyberdeckDataMaster}
-                  handleConfigAttributes={this.onHandleConfigAttributes}
-                  handleConfigSkills={this.onHandleConfigSkills}
+                  handleConfigStats={this.onHandleConfigStats}
+                  // handleConfigSkills={this.onHandleConfigSkills}
                 />
                 <br />
                 <MatrixActions

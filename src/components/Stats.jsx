@@ -6,27 +6,20 @@
  */
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import Stat from './Stat';
 // import { Link, Switch, Route } from 'react-router-dom';
 
-class Cyberdeck extends React.Component {
+class Stats extends React.Component {
   constructor(props) {
     super(props);
-    this.handleSkillsChange = this.handleSkillsChange.bind(this);
-    this.handleAttributesChange = this.handleAttributesChange.bind(this);
+    this.handleStatChange = this.handleStatChange.bind(this);
   }
 
   //Skills
-  handleSkillsChange(event) {
+  handleStatChange(event) {
     const name = event.target.getAttribute('name');
     const newValue = parseInt(event.target.value);
-    this.props.handleConfigSkills(name, newValue);
-  }
-
-  //Attributes
-  handleAttributesChange(event) {
-    const name = event.target.getAttribute('name');
-    const newValue = parseInt(event.target.value);
-    this.props.handleConfigAttributes(name, newValue);
+    this.props.handleConfigStats(name, newValue);
   }
 
   render() {
@@ -42,7 +35,7 @@ class Cyberdeck extends React.Component {
                   name="attack"
                   type="number"
                   value={this.props.cyberdeckData.attributes.attack}
-                  onChange={this.handleAttributesChange}
+                  onChange={this.handleStatChange}
                 />
               </div>
             </div>
@@ -55,7 +48,7 @@ class Cyberdeck extends React.Component {
                   name="sleaze"
                   type="number"
                   value={this.props.cyberdeckData.attributes.sleaze}
-                  onChange={this.handleAttributesChange}
+                  onChange={this.handleStatChange}
                 />
               </div>
             </div>
@@ -68,7 +61,7 @@ class Cyberdeck extends React.Component {
                   name="dataProcessing"
                   type="number"
                   value={this.props.cyberdeckData.attributes.dataProcessing}
-                  onChange={this.handleAttributesChange}
+                  onChange={this.handleStatChange}
                 />
               </div>
             </div>
@@ -81,7 +74,7 @@ class Cyberdeck extends React.Component {
                   name="firewall"
                   type="number"
                   value={this.props.cyberdeckData.attributes.firewall}
-                  onChange={this.handleAttributesChange}
+                  onChange={this.handleStatChange}
                 />
               </div>
             </div>
@@ -96,7 +89,7 @@ class Cyberdeck extends React.Component {
                   name="logic"
                   type="number"
                   value={this.props.cyberdeckData.attributes.logic}
-                  onChange={this.handleAttributesChange}
+                  onChange={this.handleStatChange}
                 />
               </div>
             </div>
@@ -109,7 +102,7 @@ class Cyberdeck extends React.Component {
                   name="intuition"
                   type="number"
                   value={this.props.cyberdeckData.attributes.intuition}
-                  onChange={this.handleAttributesChange}
+                  onChange={this.handleStatChange}
                 />
               </div>
             </div>
@@ -122,7 +115,7 @@ class Cyberdeck extends React.Component {
                   name="willpower"
                   type="number"
                   value={this.props.cyberdeckData.attributes.willpower}
-                  onChange={this.handleAttributesChange}
+                  onChange={this.handleStatChange}
                 />
               </div>
             </div>
@@ -135,7 +128,7 @@ class Cyberdeck extends React.Component {
                   name="reaction"
                   type="number"
                   value={this.props.cyberdeckData.attributes.reaction}
-                  onChange={this.handleAttributesChange}
+                  onChange={this.handleStatChange}
                 />
               </div>
             </div>
@@ -150,7 +143,7 @@ class Cyberdeck extends React.Component {
                   name="computer"
                   type="number"
                   value={this.props.cyberdeckData.skills.computer}
-                  onChange={this.handleSkillsChange}
+                  onChange={this.handleStatChange}
                 />
               </div>
             </div>
@@ -163,7 +156,7 @@ class Cyberdeck extends React.Component {
                   name="cybercombat"
                   type="number"
                   value={this.props.cyberdeckData.skills.cybercombat}
-                  onChange={this.handleSkillsChange}
+                  onChange={this.handleStatChange}
                 />
               </div>
             </div>
@@ -178,7 +171,7 @@ class Cyberdeck extends React.Component {
                   name="electronicWarfare"
                   type="number"
                   value={this.props.cyberdeckData.skills.electronicWarfare}
-                  onChange={this.handleSkillsChange}
+                  onChange={this.handleStatChange}
                 />
               </div>
             </div>
@@ -191,7 +184,7 @@ class Cyberdeck extends React.Component {
                   name="hacking"
                   type="number"
                   value={this.props.cyberdeckData.skills.hacking}
-                  onChange={this.handleSkillsChange}
+                  onChange={this.handleStatChange}
                 />
               </div>
             </div>
@@ -204,7 +197,7 @@ class Cyberdeck extends React.Component {
                   name="hardware"
                   type="number"
                   value={this.props.cyberdeckData.skills.hardware}
-                  onChange={this.handleSkillsChange}
+                  onChange={this.handleStatChange}
                 />
               </div>
             </div>
@@ -217,7 +210,7 @@ class Cyberdeck extends React.Component {
                   name="software"
                   type="number"
                   value={this.props.cyberdeckData.skills.software}
-                  onChange={this.handleSkillsChange}
+                  onChange={this.handleStatChange}
                 />
               </div>
             </div>
@@ -228,13 +221,12 @@ class Cyberdeck extends React.Component {
   }
 }
 
-Cyberdeck.propTypes = {
+Stats.propTypes = {
   cyberdeckData: PropTypes.object,
-  handleConfigSkills: PropTypes.func,
-  handleConfigAttributes: PropTypes.func,
+  handleConfigStats: PropTypes.func,
 };
 
-export default Cyberdeck;
+export default Stats;
 
 const Main = styled.div`
   font-family: Open Sans;

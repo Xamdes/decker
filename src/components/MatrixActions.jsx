@@ -83,8 +83,7 @@ function MatrixActions(props) {
       defenseCalc,
       defenseNames,
       desc,
-      offenseLimit,
-      offenseCalc,
+      offenseCalcLimit: offenseCalc.toString() + ' [' + offenseLimit + ']',
       offenseNames,
     };
   };

@@ -22,7 +22,7 @@ function MatrixAction(props) {
             Marks: {action.marks}
             <br />
             Attack: {action.offenseNames} <br />[{action.limit}]
-            <br /> Value: {action.offenseCalc} [{action.offenseLimit}]
+            <br /> Value: {action.offenseCalcLimit}
             <br />
             Defence: {action.defenseNames}
             <br /> Value: {action.defenseCalc}

@@ -15,47 +15,47 @@ function MatrixActionTable(props) {
     {
       Header: 'Matrix Action',
       accessor: 'name',
-      style: { width: 'auto', height: 'auto', 'white-space': 'normal' },
+      style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
     },
     {
       Header: 'Type',
       accessor: 'actionType',
-      style: { width: 'auto', height: 'auto', 'white-space': 'normal' },
+      style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
     },
     {
       Header: 'Limit',
       accessor: 'limit',
-      style: { width: 'auto', height: 'auto', 'white-space': 'normal' },
+      style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
     },
     {
       Header: 'Offense Value',
-      accessor: 'offenseCalc',
-      style: { width: 'auto', height: 'auto', 'white-space': 'normal' },
+      accessor: 'offenseCalcLimit',
+      style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
     },
     {
       Header: 'Defense Value',
       accessor: 'defenseCalc',
-      style: { width: 'auto', height: 'auto', 'white-space': 'normal' },
+      style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
     },
     {
       Header: 'Offense Roll',
       accessor: 'offenseNames',
-      style: { width: 'auto', height: 'auto', 'white-space': 'normal' },
+      style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
     },
     {
       Header: 'Defense Roll',
       accessor: 'defenseNames',
-      style: { width: 'auto', height: 'auto', 'white-space': 'normal' },
+      style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
     },
     {
       Header: 'Marks',
       accessor: 'marks',
-      style: { width: 'auto', height: 'auto', 'white-space': 'normal' },
+      style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
     },
     {
       Header: 'Description',
       accessor: 'desc',
-      style: { width: 'auto', height: 'auto', 'white-space': 'normal' },
+      style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
     },
     {
       Header: 'Source',
@@ -63,7 +63,7 @@ function MatrixActionTable(props) {
       style: {
         width: 'auto',
         height: 'auto',
-        'white-space': 'normal',
+        whiteSpace: 'normal',
       },
     },
   ];
@@ -82,7 +82,7 @@ function MatrixActionTable(props) {
         style={{
           width: 'auto',
           height: 'auto',
-          'word-wrap': 'normal',
+          wordWrap: 'normal',
         }}
       />
     </Main>
