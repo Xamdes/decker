@@ -12,11 +12,13 @@ class Stat extends React.Component {
     super(props);
     this.handleStatChange = this.handleStatChange.bind(this);
   }
+
   handleStatChange(event) {
     const name = event.target.getAttribute('name');
     const newValue = parseInt(event.target.value);
     this.props.onHandleConfigStats(name, newValue);
   }
+  
   render() {
     return (
       <Main>

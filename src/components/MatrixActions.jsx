@@ -8,7 +8,6 @@ import MatrixAction from './MatrixAction';
  */
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-// import { Link, Switch, Route } from 'react-router-dom';
 
 function MatrixActions(props) {
   const deck = props.cyberdeckData;
