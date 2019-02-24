@@ -8,7 +8,7 @@ import Program from './Program';
  */
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-// import ProgramData from '../data/programs.json';
+import ProgramData from '../data/programs.json';
 
 class Programs extends React.Component {
   constructor(props) {
@@ -24,25 +24,21 @@ class Programs extends React.Component {
   }
 
   render() {
+    const Programs = ProgramData.map((program, key) => (
+      <Program
+        key={key}
+        onHandleProgramChange={this.props.handleProgramChange}
+        onHandleConfigStats={this.props.handleConfigStats}
+        onHandleButtonHover={this.handleButtonHover}
+        cyberdeckData={this.props.cyberdeckData}
+        name={program.name}
+        description={program.description}
+      />
+    ));
     return (
       <Main className="bg-info">
         <div>Description: {this.state.description}</div>
-        <div className="d-flex">
-          <Program
-            onHandleProgramChange={this.props.handleProgramChange}
-            onHandleConfigStats={this.props.handleConfigStats}
-            onHandleButtonHover={this.handleButtonHover}
-            cyberdeckData={this.props.cyberdeckData}
-            name={'Decryption'}
-          />
-          <Program
-            onHandleProgramChange={this.props.handleProgramChange}
-            onHandleConfigStats={this.props.handleConfigStats}
-            onHandleButtonHover={this.handleButtonHover}
-            cyberdeckData={this.props.cyberdeckData}
-            name={'Decryption'}
-          />
-        </div>
+        <div className="d-flex flex-wrap">{Programs}</div>
       </Main>
     );
   }

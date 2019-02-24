@@ -7,18 +7,17 @@
     "name": "Configurator",
     "description": ""
   },
-
   {
     "name": "Edit",
     "description": ""
   },
   {
     "name": "Encryption",
-    "description": ""
+    "description": "+1 Firewall"
   },
   {
     "name": "Signal Scrub",
-    "description": ""
+    "description": "-2 Noise"
   },
   {
     "name": "Toolbox",
@@ -30,7 +29,7 @@
   },
   {
     "name": "Decryption",
-    "description": ""
+    "description": "+1 to Attack"
   },
   {
     "name": "",

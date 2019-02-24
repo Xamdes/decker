@@ -50,27 +50,25 @@ class Program extends React.Component {
   handleButtonIsActive(active) {
     return active ? (
       <button
-        className="btn btn-dark"
+        className="btn btn-light"
         onClick={this.handleButtonClick}
         onMouseOver={this.handleButtonOver}
-        onMouseOut={this.handleButtonOut}
-        name={this.props.name}>
-        Decryption
+        onMouseOut={this.handleButtonOut}>
+        {this.props.name}
       </button>
     ) : (
       <button
         className="btn btn-success"
         onClick={this.handleButtonClick}
         onMouseOver={this.handleButtonOver}
-        onMouseOut={this.handleButtonOut}
-        name={this.props.name}>
-        Decryption
+        onMouseOut={this.handleButtonOut}>
+        {this.props.name}
       </button>
     );
   }
 
   handleButtonOver() {
-    this.props.onHandleButtonHover('+1 to Attack');
+    this.props.onHandleButtonHover(this.props.description);
   }
 
   handleButtonOut() {
@@ -80,9 +78,8 @@ class Program extends React.Component {
   render() {
     const button = this.handleButtonIsActive(this.state.active);
     return (
-      <Main>
+      <Main classname="p-2">
         <div>{button}</div>
-        <HideTest>description</HideTest>
       </Main>
     );
   }
@@ -93,6 +90,7 @@ Program.propTypes = {
   onHandleConfigStats: PropTypes.func,
   onHandleButtonHover: PropTypes.func,
   name: PropTypes.string,
+  description: PropTypes.string,
   cyberdeckData: PropTypes.object,
 };
 
@@ -101,8 +99,5 @@ export default Program;
 const Main = styled.div`
   font-family: Open Sans;
   font-weight: normal;
-`;
-
-const HideTest = styled.p`
-  visibility: hidden;
+  margin: 3px;
 `;
