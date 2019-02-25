@@ -124,7 +124,7 @@
       "source": "Core p.238"
     },
     {
-      "name": "CRACK PROGRAM",
+      "name": "CRASH PROGRAM",
       "actionType": "COMPLEX ACTION",
       "marks": "1",
       "test": {
@@ -240,7 +240,7 @@
         "defense": ["None"]
       },
       "limit": "Data Processing",
-      "description": "No Access you Brute Force or Hack on the Fly",
+      "description": "Must have access or use Brute Force or Hack on the Fly",
       "source": "Core p.240"
     },
     {

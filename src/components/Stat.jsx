@@ -18,13 +18,13 @@ class Stat extends React.Component {
     const newValue = parseInt(event.target.value);
     this.props.onHandleConfigStats(name, newValue);
   }
-  
+
   render() {
     return (
-      <Main>
+      <Main className="">
         <CardStyle className="card bg-info">
+          <TitleHeader className="card-header">{this.props.title}</TitleHeader>
           <div className="card-body">
-            <TitleHeader className="card-title">{this.props.title}</TitleHeader>
             <div className="card-text">
               <Input
                 name={this.props.name}

@@ -24,7 +24,10 @@ class Programs extends React.Component {
   }
 
   render() {
-    const Programs = ProgramData.map((program, key) => (
+    const sortedPrograms = ProgramData.sort((a, b) => {
+      a.name > b.name ? 1 : -1;
+    });
+    const Programs = sortedPrograms.map((program, key) => (
       <Program
         key={key}
         onHandleProgramChange={this.props.handleProgramChange}
@@ -36,9 +39,18 @@ class Programs extends React.Component {
       />
     ));
     return (
-      <Main className="bg-info">
-        <div>Description: {this.state.description}</div>
-        <div className="d-flex flex-wrap">{Programs}</div>
+      <Main className="container">
+        <div className="card bg-info">
+          <Title className="card-header">Programs</Title>
+          <div className="card-body">
+            <div className="card-text">
+              <div className="flex-wrap flex-align btn-group">{Programs}</div>
+            </div>
+            <div className="card-footer">
+              Description: {this.state.description}
+            </div>
+          </div>
+        </div>
       </Main>
     );
   }
@@ -55,4 +67,10 @@ export default Programs;
 const Main = styled.div`
   font-family: Open Sans;
   font-weight: normal;
+`;
+
+const Title = styled.h4`
+  font-family: Open Sans;
+  font-weight: normal;
+  text-align: center;
 `;

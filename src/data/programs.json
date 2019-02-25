@@ -32,11 +32,35 @@
     "description": "+1 to Attack"
   },
   {
-    "name": "",
+    "name": "Smoke & Mirrors",
+    "description": "Add 1-5 to Noise and Sleaze"
+  },
+  {
+    "name": "Placeholder",
     "description": ""
   },
   {
-    "name": "",
+    "name": "Placeholder",
+    "description": ""
+  },
+  {
+    "name": "Placeholder",
+    "description": ""
+  },
+  {
+    "name": "Placeholder",
+    "description": ""
+  },
+  {
+    "name": "Placeholder",
+    "description": ""
+  },
+  {
+    "name": "Placeholder",
+    "description": ""
+  },
+  {
+    "name": "Placeholder",
     "description": ""
   }
 ]

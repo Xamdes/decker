@@ -11,7 +11,7 @@ import Stat from './Stat';
 function Stats(props) {
   // console.log(this.props.cyberdeckData);
   return (
-    <Main className="container-fluid">
+    <Main className="">
       <div className="d-flex justify-content-center">
         <Stat
           name={'attack'}

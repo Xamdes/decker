@@ -89,7 +89,7 @@ function MatrixActions(props) {
 
   const matrixAction = actionsSorted.map((action, key) => (
     <div className="col-2" key={key}>
-      <MatrixAction values={actionValues(action)} />
+      <MatrixAction key={key} values={actionValues(action)} />
     </div>
   ));
 
@@ -98,13 +98,15 @@ function MatrixActions(props) {
   });
 
   return (
-    <Main className="container-fluid bg-dark">
+    <Main className="bg-dark">
       <Jumbo className="jumbotron d-flex justify-content-center">
         Matrix Actions
       </Jumbo>
 
       <MatrixActionTable actions={matrixTableActions} />
-      <ActionCards className="d-flex flex-wrap">{matrixAction}</ActionCards>
+      <ActionCards className="d-flex card-group flex-wrap ">
+        {matrixAction}
+      </ActionCards>
     </Main>
   );
 }

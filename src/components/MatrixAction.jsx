@@ -11,27 +11,25 @@ import PropTypes from 'prop-types';
 function MatrixAction(props) {
   const action = props.values;
   return (
-    <Main>
-      <div className="card">
-        <h5 className="card-header d-flex justify-content-center">
-          {action.name}
-        </h5>
-        <div className="card-body">
-          <h6 className="card-title">{action.actionType}</h6>
-          <p className="card-text">
-            Marks: {action.marks}
-            <br />
-            Attack: {action.offenseNames} <br />[{action.limit}]
-            <br /> Value: {action.offenseCalcLimit}
-            <br />
-            Defence: {action.defenseNames}
-            <br /> Value: {action.defenseCalc}
-            <br />
-            {action.desc}
-          </p>
-        </div>
-        <div className="card-footer text-muted">{action.source}</div>
+    <Main className="card">
+      <h5 className="card-header d-flex justify-content-center">
+        {action.name}
+      </h5>
+      <div className="card-body">
+        <h6 className="card-title">{action.actionType}</h6>
+        <p className="card-text">
+          Marks: {action.marks}
+          <br />
+          Attack: {action.offenseNames} <br />[{action.limit}]
+          <br /> Value: {action.offenseCalcLimit}
+          <br />
+          Defence: {action.defenseNames}
+          <br /> Value: {action.defenseCalc}
+          <br />
+          {action.desc}
+        </p>
       </div>
+      <div className="card-footer text-muted">{action.source}</div>
     </Main>
   );
 }

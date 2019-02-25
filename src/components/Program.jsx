@@ -11,60 +11,42 @@ class Program extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { active: true };
+    this.state = { count: 0 };
     this.handleButtonClick = this.handleButtonClick.bind(this);
-    this.handleButtonIsActive = this.handleButtonIsActive.bind(this);
     this.handleButtonOver = this.handleButtonOver.bind(this);
     this.handleButtonOut = this.handleButtonOut.bind(this);
+    this.handleAddCountValue = this.handleAddCountValue.bind(this);
+    this.handleUpdateStat = this.handleUpdateStat.bind(this);
+  }
+
+  handleAddCountValue(value) {
+    this.setState((state) => {
+      state.count += value;
+    });
+  }
+
+  handleUpdateStat(name, increment, max) {
+    const value = this.state.count >= max ? -max : increment;
+    this.handleAddCountValue(value);
+    this.props.onHandleConfigStats(
+      name,
+      this.props.cyberdeckData.attributes[name] + value
+    );
   }
 
   handleButtonClick() {
-    this.setState((state) => {
-      const newBool = !state.active;
-      state.active = newBool;
-    });
-
-    if (this.state.active) {
-      switch (this.props.name) {
-        case 'Decryption':
-          this.props.onHandleConfigStats(
-            'attack',
-            this.props.cyberdeckData.attributes.attack + 1
-          );
-          break;
-        default:
-      }
-    } else {
-      switch (this.props.name) {
-        case 'Decryption':
-          this.props.onHandleConfigStats(
-            'attack',
-            this.props.cyberdeckData.attributes.attack - 1
-          );
-          break;
-        default:
-      }
+    switch (this.props.name) {
+      case 'Decryption':
+        this.handleUpdateStat('attack', 1, 1);
+        break;
+      case 'Encryption':
+        this.handleUpdateStat('firewall', 1, 1);
+        break;
+      case 'Smoke & Mirrors':
+        this.handleUpdateStat('sleaze', 1, 5);
+        break;
+      default:
     }
-  }
-
-  handleButtonIsActive(active) {
-    return active ? (
-      <button
-        className="btn btn-light"
-        onClick={this.handleButtonClick}
-        onMouseOver={this.handleButtonOver}
-        onMouseOut={this.handleButtonOut}>
-        {this.props.name}
-      </button>
-    ) : (
-      <button
-        className="btn btn-success"
-        onClick={this.handleButtonClick}
-        onMouseOver={this.handleButtonOver}
-        onMouseOut={this.handleButtonOut}>
-        {this.props.name}
-      </button>
-    );
   }
 
   handleButtonOver() {
@@ -76,10 +58,19 @@ class Program extends React.Component {
   }
 
   render() {
-    const button = this.handleButtonIsActive(this.state.active);
+    const currentClass =
+      this.state.count <= 0 ? 'btn btn-light' : 'btn btn-success';
     return (
-      <Main classname="p-2">
-        <div>{button}</div>
+      <Main classname="">
+        <div>
+          <button
+            className={currentClass}
+            onClick={this.handleButtonClick}
+            onMouseOver={this.handleButtonOver}
+            onMouseOut={this.handleButtonOut}>
+            {this.props.name}
+          </button>
+        </div>
       </Main>
     );
   }

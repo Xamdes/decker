@@ -29,21 +29,14 @@ class App extends React.Component {
   }
 
   onHandleConfigStats(name, value) {
-    let type = 'none';
-    if (
-      Object.keys(this.state.cyberdeckDataMaster.attributes).indexOf(name) > -1
-    ) {
-      type = 'attributes';
-    } else if (
-      Object.keys(this.state.cyberdeckDataMaster.skills).indexOf(name) > -1
-    ) {
-      type = 'skills';
-    }
-
     this.setState((state) => {
-      const stats = state.cyberdeckDataMaster[type];
-      stats[name] = value;
-      return { player: stats };
+      const isAttribute = state.cyberdeckDataMaster.attributes[name];
+      const stat = isAttribute
+        ? state.cyberdeckDataMaster.attributes
+        : state.cyberdeckDataMaster.skills;
+
+      stat[name] = value;
+      return { stat };
     });
   }
 
@@ -66,20 +59,18 @@ class App extends React.Component {
             path="/cyberdeck"
             render={() => (
               <div>
-                <div className="row">
-                  <div className="col-8">
-                    <Stats
-                      cyberdeckData={this.state.cyberdeckDataMaster}
-                      handleConfigStats={this.onHandleConfigStats}
-                    />
-                  </div>
-                  <div className="col-4">
-                    <Programs
-                      cyberdeckData={this.state.cyberdeckDataMaster}
-                      handleProgramChange={this.state.onHandleProgramChange}
-                      handleConfigStats={this.onHandleConfigStats}
-                    />
-                  </div>
+                <div className="d-flex flex-wrap justify-content-center">
+                  <Stats
+                    className=""
+                    cyberdeckData={this.state.cyberdeckDataMaster}
+                    handleConfigStats={this.onHandleConfigStats}
+                  />
+                  <Programs
+                    className=""
+                    cyberdeckData={this.state.cyberdeckDataMaster}
+                    handleProgramChange={this.state.onHandleProgramChange}
+                    handleConfigStats={this.onHandleConfigStats}
+                  />
                 </div>
                 <div>
                   <MatrixActions
