@@ -2,7 +2,7 @@
   "name": "deckOne",
   "attributes": {
     "attack": 5,
-    "sleaze": 12,
+    "sleaze": 6,
     "dataProcessing": 6,
     "firewall": 5,
     "logic": 6,

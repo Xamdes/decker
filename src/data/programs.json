@@ -1,5 +1,13 @@
 [
   {
+    "name": "Agent",
+    "description": "level up to 6. As smart as equivalent Pilot program Core p.269",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.246"
+  },
+  {
     "name": "Browser",
     "description": "Cut Matrix Action Search time in half.",
     "modify": "None",
@@ -90,7 +98,7 @@
   },
   {
     "name": "Blackout",
-    "description": "cuases Stun damage to target even if they are in hot-sim.",
+    "description": "causes Stun damage to target even if they are in hot-sim.",
     "modify": "None",
     "max": 1,
     "increment": 1,
@@ -137,11 +145,123 @@
     "source": "Core p.245"
   },
   {
+    "name": "Guard",
+    "description": "Reduce extra damage from marks by 1DV per mark.",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.246"
+  },
+  {
+    "name": "Hammer",
+    "description": "Whenever yopu cause matrix damage, excluding failed attacks against you, inflict an additional +2 DV.",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.246"
+  },
+  {
+    "name": "Lockdown",
+    "description": "Link-lock persona when you deal damage to them.",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.246"
+  },
+  {
+    "name": "Mugger",
+    "description": "+1 DV per mark.",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.246"
+  },
+  {
+    "name": "Shell",
+    "description": "+1 to resist matrix and biofeedback damage.",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.246"
+  },
+  {
+    "name": "Sneak",
+    "description": "+2 dice pool to defend agaisnt trace icon actions. DemiGod doesn't get physical location on convergence.",
+    "modify": "iconActions",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.246"
+  },
+  {
+    "name": "Stealth",
+    "description": "+1 to sleaze",
+    "modify": "sleaze",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.246"
+  },
+  {
+    "name": "Track",
+    "description": "Add 2 to Data Processing with tracing an icon or negates Sneak bonus.",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.246"
+  },
+  {
+    "name": "Wrapper",
+    "description": "Icons can be anything. Other personas need to at least suspect a wrapped icon.",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.246"
+  },
+  {
+    "name": "Bootsrap",
+    "description": "Change boot record of a device.",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Data Trails p.56"
+  },
+  {
+    "name": "Search",
+    "description": "Uses specific search algorythm on a host to find specific data. +2 to die pool when using Matrix Search.",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Data Trails p.56"
+  },
+  {
+    "name": "Shredder",
+    "description": "Add 2 to a Data Processing for deleting a file using Edit File.",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Data Trails p.56"
+  },
+  {
+    "name": "Cat's Paw",
+    "description": "Instead of dealing damage when using Data Spike cause negative die pool to target equal to 2 + marks. Marks added or removed will modify accordingly.",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Data Trails p.56"
+  },
+  {
+    "name": "Cloudless",
+    "description": "Move data off matrix to single device. Opposed by grid when using Edit File. Public: 6 |Local: 8 | Global: 10",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Data Trails p.56"
+  },
+  {
     "name": "Smoke & Mirrors",
     "description": "Add 1-5 to Noise and Sleaze",
     "modify": "sleaze",
     "max": 5,
     "increment": 1,
-    "source": ""
+    "source": "Data Trails p.57"
   }
 ]
