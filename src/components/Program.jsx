@@ -16,7 +16,6 @@ class Program extends React.Component {
     this.handleButtonOver = this.handleButtonOver.bind(this);
     this.handleButtonOut = this.handleButtonOut.bind(this);
     this.handleAddCountValue = this.handleAddCountValue.bind(this);
-    this.handleUpdateStat = this.handleUpdateStat.bind(this);
   }
 
   handleAddCountValue(value) {
@@ -25,32 +24,24 @@ class Program extends React.Component {
     });
   }
 
-  handleUpdateStat(name, increment, max) {
+  handleButtonClick() {
+    const program = this.props.program;
+    console.log(program);
+    const max = program.max;
+    const increment = program.increment;
     const value = this.state.count >= max ? -max : increment;
     this.handleAddCountValue(value);
+    const name = program.modify;
+    console.log(name);
+    console.log(value);
     this.props.onHandleConfigStats(
       name,
       this.props.cyberdeckData.attributes[name] + value
     );
   }
 
-  handleButtonClick() {
-    switch (this.props.name) {
-      case 'Decryption':
-        this.handleUpdateStat('attack', 1, 1);
-        break;
-      case 'Encryption':
-        this.handleUpdateStat('firewall', 1, 1);
-        break;
-      case 'Smoke & Mirrors':
-        this.handleUpdateStat('sleaze', 1, 5);
-        break;
-      default:
-    }
-  }
-
   handleButtonOver() {
-    this.props.onHandleButtonHover(this.props.description);
+    this.props.onHandleButtonHover(this.props.program.description);
   }
 
   handleButtonOut() {
@@ -68,7 +59,7 @@ class Program extends React.Component {
             onClick={this.handleButtonClick}
             onMouseOver={this.handleButtonOver}
             onMouseOut={this.handleButtonOut}>
-            {this.props.name}
+            {this.props.program.name}
           </button>
         </div>
       </Main>
@@ -80,8 +71,7 @@ Program.propTypes = {
   onHandleProgramChange: PropTypes.func,
   onHandleConfigStats: PropTypes.func,
   onHandleButtonHover: PropTypes.func,
-  name: PropTypes.string,
-  description: PropTypes.string,
+  program: PropTypes.object,
   cyberdeckData: PropTypes.object,
 };
 

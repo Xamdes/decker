@@ -1,66 +1,147 @@
 [
   {
     "name": "Browser",
-    "description": ""
+    "description": "Cut Matrix Action Search time in half.",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.245"
   },
   {
     "name": "Configurator",
-    "description": ""
+    "description": "Choose a configuration for your deck. May switch using full config stored in program.",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.245"
   },
   {
     "name": "Edit",
-    "description": ""
+    "description": "+2 to Data Processing limit on Edit tests.",
+    "modify": "edit",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.245"
   },
   {
     "name": "Encryption",
-    "description": "+1 Firewall"
+    "description": "+1 Firewall",
+    "modify": "firewall",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.245"
   },
   {
     "name": "Signal Scrub",
-    "description": "-2 Noise"
+    "description": "-2 Noise",
+    "modify": "noise",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.245"
   },
   {
     "name": "Toolbox",
-    "description": ""
+    "description": "+1 Data Processing",
+    "modify": "dataProcessing",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.245"
   },
   {
     "name": "Virtual Machine",
-    "description": ""
+    "description": "Run 2 additional programs but take 1 additional unresisted matrix damage each time your persona takes matrix damage.",
+    "modify": "programs",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.245"
+  },
+
+  {
+    "name": "Armor",
+    "description": "+2 to resist matrix damage.",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.245"
+  },
+  {
+    "name": "Baby Monitor",
+    "description": "Always know current Overwatch Score.",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.245"
+  },
+  {
+    "name": "Biofeedback",
+    "description": "Only works on biological matter. Target is hit with stun or physical damage equal to matrix damage. All causes damage to failed attack actions against you. Resisted with Willpower + Firewall.",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.245"
+  },
+  {
+    "name": "Biofeedback Filter",
+    "description": "+2 to resist biofeedback",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.245"
+  },
+  {
+    "name": "Blackout",
+    "description": "cuases Stun damage to target even if they are in hot-sim.",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.245"
   },
   {
     "name": "Decryption",
-    "description": "+1 to Attack"
+    "description": "+1 to Attack",
+    "modify": "attack",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.245"
+  },
+  {
+    "name": "Defuse",
+    "description": "+4 to resist damage from data bomb",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.245"
+  },
+  {
+    "name": "Demolitions",
+    "description": "+1 to Data Bomb rating.",
+    "modify": "dataBomb",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.245"
+  },
+  {
+    "name": "Exploit",
+    "description": "+2 to Sleaze when using Hack on the Fly",
+    "modify": "hackOntheFly",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.245"
+  },
+  {
+    "name": "Fork",
+    "description": "Single Matrix action vs two targets. Target defend using their own dice pools.",
+    "modify": "None",
+    "max": 1,
+    "increment": 1,
+    "source": "Core p.245"
   },
   {
     "name": "Smoke & Mirrors",
-    "description": "Add 1-5 to Noise and Sleaze"
-  },
-  {
-    "name": "Placeholder",
-    "description": ""
-  },
-  {
-    "name": "Placeholder",
-    "description": ""
-  },
-  {
-    "name": "Placeholder",
-    "description": ""
-  },
-  {
-    "name": "Placeholder",
-    "description": ""
-  },
-  {
-    "name": "Placeholder",
-    "description": ""
-  },
-  {
-    "name": "Placeholder",
-    "description": ""
-  },
-  {
-    "name": "Placeholder",
-    "description": ""
+    "description": "Add 1-5 to Noise and Sleaze",
+    "modify": "sleaze",
+    "max": 5,
+    "increment": 1,
+    "source": ""
   }
 ]

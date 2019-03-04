@@ -34,8 +34,7 @@ class Programs extends React.Component {
         onHandleConfigStats={this.props.handleConfigStats}
         onHandleButtonHover={this.handleButtonHover}
         cyberdeckData={this.props.cyberdeckData}
-        name={program.name}
-        description={program.description}
+        program={program}
       />
     ));
     return (
