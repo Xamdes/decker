@@ -62,6 +62,7 @@ module.exports = [
         React: 'react',
         ReactDOM: 'react-dom',
         PropTypes: 'prop-types',
+        Redux: 'redux',
       }),
       new webpack.DefinePlugin({
         APINAME: JSON.stringify(configApiUrl),
@@ -155,6 +156,7 @@ module.exports = [
         React: 'react',
         ReactDOM: 'react-dom',
         PropTypes: 'prop-types',
+        Redux: 'redux',
       }),
       new webpack.DefinePlugin({
         APINAME: JSON.stringify(''),
