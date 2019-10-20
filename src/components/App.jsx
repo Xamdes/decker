@@ -11,6 +11,7 @@ import Stats from './Stats';
 import MatrixActions from './MatrixActions';
 import styled from 'styled-components';
 import Footer from './Footer';
+import ShadowrunStore from './ShadowrunStore';
 // import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 
@@ -59,6 +60,7 @@ class App extends React.Component {
             path="/cyberdeck"
             render={() => (
               <div>
+                <ShadowrunStore></ShadowrunStore>
                 <div className="d-flex flex-wrap justify-content-center">
                   <Stats
                     className=""

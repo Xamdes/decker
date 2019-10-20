@@ -96,7 +96,11 @@ module.exports = [
           exclude: /node_modules/,
           options: {
             presets: ['@babel/preset-react', '@babel/preset-env'],
-            plugins: ['react-hot-loader/babel', 'styled-jsx/babel'],
+            plugins: [
+              'react-hot-loader/babel',
+              'styled-jsx/babel',
+              ['@babel/plugin-proposal-class-properties', { loose: true }],
+            ],
           },
         },
         {
@@ -190,7 +194,11 @@ module.exports = [
           exclude: /node_modules/,
           options: {
             presets: ['@babel/preset-react', '@babel/preset-env'],
-            plugins: ['react-hot-loader/babel', 'styled-jsx/babel'],
+            plugins: [
+              'react-hot-loader/babel',
+              'styled-jsx/babel',
+              ['@babel/plugin-proposal-class-properties', { loose: true }],
+            ],
           },
         },
         {

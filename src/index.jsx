@@ -4,24 +4,43 @@ import App from './components/App';
 import { AppContainer } from 'react-hot-loader';
 import { HashRouter } from 'react-router-dom';
 import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
 const initialState = {
-  count: 0,
+  count: 999,
 };
 
 function reducer(state = initialState, action) {
   console.log('reducer', state, action);
-  return state;
+  switch (action.type) {
+    case 'INCREMENT':
+      return {
+        count: state.count + 1,
+      };
+    case 'DECREMENT':
+      return {
+        count: state.count - 1,
+      };
+    case 'RESET':
+      return {
+        count: 0,
+      };
+    default:
+      return state;
+  }
 }
+
 const store = createStore(reducer);
 
 const render = (Component) => {
   ReactDOM.render(
-    <AppContainer>
-      <HashRouter>
-        <Component />
-      </HashRouter>
-    </AppContainer>,
+    <Provider store={store}>
+      <AppContainer>
+        <HashRouter>
+          <Component />
+        </HashRouter>
+      </AppContainer>
+    </Provider>,
     document.getElementById('react-app-root')
   );
 };
