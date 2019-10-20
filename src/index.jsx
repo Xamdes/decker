@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 
 const initialState = {
   count: 999,
+  programDescription: 'test',
 };
 
 function reducer(state = initialState, action) {
@@ -24,6 +25,10 @@ function reducer(state = initialState, action) {
     case 'RESET':
       return {
         count: 0,
+      };
+    case 'SETPROGRAMDESCRIPTION':
+      return {
+        programDescription: action.text,
       };
     default:
       return state;

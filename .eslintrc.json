@@ -64,7 +64,8 @@
     "babel/quotes": 0,
     "babel/semi": 0,
     "babel/no-unused-expressions": 1,
-    "babel/valid-typeof": 1
+    "babel/valid-typeof": 1,
+    "react-redux/prefer-separate-component-file": 0
   },
   "settings": {
     "react": {

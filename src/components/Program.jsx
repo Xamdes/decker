@@ -6,15 +6,14 @@
  */
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { setProgramDescription } from './actions.js';
 
 class Program extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = { count: 0 };
-    this.handleButtonClick = this.handleButtonClick.bind(this);
-    this.handleButtonOver = this.handleButtonOver.bind(this);
-    this.handleButtonOut = this.handleButtonOut.bind(this);
     this.handleAddCountValue = this.handleAddCountValue.bind(this);
   }
 
@@ -24,16 +23,20 @@ class Program extends React.Component {
     });
   }
 
+  /* 
+  handleButtonHover(description) {
+    this.setState((state) => {
+      state.description = description;
+    });
+  } */
+
   handleButtonClick() {
     const program = this.props.program;
-    console.log(program);
     const max = program.max;
     const increment = program.increment;
     const value = this.state.count >= max ? -max : increment;
     this.handleAddCountValue(value);
     const name = program.modify;
-    console.log(name);
-    console.log(value);
     this.props.onHandleConfigStats(
       name,
       this.props.cyberdeckData.attributes[name] + value
@@ -41,11 +44,12 @@ class Program extends React.Component {
   }
 
   handleButtonOver() {
-    this.props.onHandleButtonHover(this.props.program.description);
+    console.log(this.props.program.description);
+    this.props.setProgramDescription(this.props.program.description);
   }
 
   handleButtonOut() {
-    this.props.onHandleButtonHover('');
+    this.props.setProgramDescription('');
   }
 
   render() {
@@ -56,9 +60,9 @@ class Program extends React.Component {
         <div>
           <button
             className={currentClass}
-            onClick={this.handleButtonClick}
-            onMouseOver={this.handleButtonOver}
-            onMouseOut={this.handleButtonOut}>
+            onClick={() => this.handleButtonClick()}
+            onMouseOver={() => this.handleButtonOver()}
+            onMouseOut={() => this.handleButtonOut()}>
             {this.props.program.name}
           </button>
         </div>
@@ -70,12 +74,25 @@ class Program extends React.Component {
 Program.propTypes = {
   //onHandleProgramChange: PropTypes.func,
   onHandleConfigStats: PropTypes.func,
-  onHandleButtonHover: PropTypes.func,
+  setProgramDescription: PropTypes.func,
   program: PropTypes.object,
   cyberdeckData: PropTypes.object,
 };
 
-export default Program;
+function mapStateToProps(state) {
+  return {
+    programDescription: state.programDescription,
+  };
+}
+
+const mapDispatchToProps = {
+  setProgramDescription,
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Program);
 
 const Main = styled.div`
   font-family: Open Sans;

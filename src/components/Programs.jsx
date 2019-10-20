@@ -6,23 +6,12 @@ import Program from './Program';
  * import Programs from './Programs';
  * <Programs/>
  */
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ProgramData from '../data/programs.json';
 
 class Programs extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { description: '' };
-    this.handleButtonHover = this.handleButtonHover.bind(this);
-  }
-
-  handleButtonHover(description) {
-    this.setState((state) => {
-      state.description = description;
-    });
-  }
-
   render() {
     const sortedPrograms = ProgramData.sort((a, b) => {
       return a.name > b.name ? 1 : -1;
@@ -32,7 +21,6 @@ class Programs extends React.Component {
         key={key}
         onHandleProgramChange={this.props.handleProgramChange}
         onHandleConfigStats={this.props.handleConfigStats}
-        onHandleButtonHover={this.handleButtonHover}
         cyberdeckData={this.props.cyberdeckData}
         program={program}
       />
@@ -46,7 +34,7 @@ class Programs extends React.Component {
               <div className="flex-wrap flex-align btn-group">{Programs}</div>
             </div>
             <div className="card-footer">
-              Description: {this.state.description}
+              Description: {this.props.programDescription}
             </div>
           </div>
         </div>
@@ -59,9 +47,21 @@ Programs.propTypes = {
   cyberdeckData: PropTypes.object,
   handleProgramChange: PropTypes.func,
   handleConfigStats: PropTypes.func,
+  programDescription: PropTypes.string,
 };
 
-export default Programs;
+function mapStateToProps(state) {
+  return {
+    programDescription: state.programDescription,
+  };
+}
+
+const mapDispatchToProps = {};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Programs);
 
 const Main = styled.div`
   font-family: Open Sans;
