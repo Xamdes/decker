@@ -25,7 +25,7 @@ class Programs extends React.Component {
 
   render() {
     const sortedPrograms = ProgramData.sort((a, b) => {
-      a.name > b.name ? 1 : -1;
+      return a.name > b.name ? 1 : -1;
     });
     const Programs = sortedPrograms.map((program, key) => (
       <Program

@@ -20,12 +20,17 @@
   ],
   "parserOptions": {
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "modules": true,
+      "arrowFunctions": true,
+      "classes": true,
+      "spread": true
     },
-    "ecmaVersion": 2018,
+    "ecmaVersion": 2019,
     "sourceType": "module"
   },
-  "plugins": ["react", "react-redux"],
+  "plugins": ["react", "react-redux", "babel"],
+  "parser": "babel-eslint",
   "rules": {
     "react/jsx-handler-names": 2,
     "react/require-render-return": 2,
@@ -51,7 +56,15 @@
     "array-bracket-newline": 0,
     "array-bracket-spacing": 0,
     "array-element-newline": 0,
-    "no-unused-labels": 1
+    "no-unused-labels": 1,
+    "babel/new-cap": 1,
+    "babel/camelcase": 1,
+    "babel/no-invalid-this": 1,
+    "babel/object-curly-spacing": 0,
+    "babel/quotes": 0,
+    "babel/semi": 0,
+    "babel/no-unused-expressions": 1,
+    "babel/valid-typeof": 1
   },
   "settings": {
     "react": {
