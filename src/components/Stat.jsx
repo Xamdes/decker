@@ -6,17 +6,33 @@
  */
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import {
+  setSkill,
+  setAttribute,
+  setDeckingDeviceStat,
+} from '../data/actions.js';
 
 class Stat extends React.Component {
   constructor(props) {
     super(props);
-    this.handleStatChange = this.handleStatChange.bind(this);
   }
 
   handleStatChange(event) {
-    const name = event.target.getAttribute('name');
+    const text = this.props.name;
     const newValue = parseInt(event.target.value);
-    this.props.onHandleConfigStats(name, newValue);
+    console.log(newValue);
+    switch (this.props.actionType) {
+      case 'SETSKILL':
+        this.props.setSkill(text, newValue);
+        break;
+      case 'SETATTRIBUTE':
+        this.props.setAttribute(text, newValue);
+        break;
+      case 'SETDECKINGDEVICESTAT':
+        this.props.setDeckingDeviceStat(text, newValue);
+        break;
+    }
   }
 
   render() {
@@ -27,10 +43,11 @@ class Stat extends React.Component {
           <div className="card-body">
             <div className="card-text">
               <Input
+                key={1}
                 name={this.props.name}
                 type="number"
+                onChange={(event) => this.handleStatChange(event)}
                 value={this.props.value}
-                onChange={this.handleStatChange}
               />
             </div>
           </div>
@@ -42,12 +59,35 @@ class Stat extends React.Component {
 
 Stat.propTypes = {
   name: PropTypes.string,
-  value: PropTypes.number,
-  onHandleConfigStats: PropTypes.func,
+  setSkill: PropTypes.func,
+  setAttribute: PropTypes.func,
+  setDeckingDeviceStat: PropTypes.func,
   title: PropTypes.string,
+  actionType: PropTypes.string,
+  attributes: PropTypes.object,
+  skills: PropTypes.object,
+  deckingDevice: PropTypes.object,
+  value: PropTypes.number,
 };
 
-export default Stat;
+function mapStateToProps(state) {
+  return {
+    attributes: state.attributes,
+    skills: state.skills,
+    deckingDevice: state.deckingDevice,
+  };
+}
+
+const mapDispatchToProps = {
+  setSkill,
+  setAttribute,
+  setDeckingDeviceStat,
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Stat);
 
 const Main = styled.div`
   font-family: Open Sans;

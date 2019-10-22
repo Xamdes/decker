@@ -9,8 +9,6 @@
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { increment, decrement } from '../data/actions.js';
-// import PropTypes from 'prop-types';
-// import { Link, Switch, Route } from 'react-router-dom';
 
 class ShadowrunStore extends React.Component {
   increment() {
@@ -35,6 +33,10 @@ class ShadowrunStore extends React.Component {
   }
 }
 
+ShadowrunStore.propTypes = {
+  count: PropTypes.number,
+};
+
 function mapStateToProps(state) {
   return {
     count: state.count,
@@ -44,10 +46,6 @@ function mapStateToProps(state) {
 const mapDispatchToProps = {
   increment,
   decrement,
-};
-
-ShadowrunStore.propTypes = {
-  count: PropTypes.number,
 };
 
 export default connect(

@@ -62,11 +62,7 @@ class App extends React.Component {
               <div>
                 <ShadowrunStore></ShadowrunStore>
                 <div className="d-flex flex-wrap justify-content-center">
-                  <Stats
-                    className=""
-                    cyberdeckData={this.state.cyberdeckDataMaster}
-                    handleConfigStats={this.onHandleConfigStats}
-                  />
+                  <Stats className="" />
                   <Programs
                     className=""
                     cyberdeckData={this.state.cyberdeckDataMaster}

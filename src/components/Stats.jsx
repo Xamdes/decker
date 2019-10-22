@@ -7,111 +7,110 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Stat from './Stat';
+import { connect } from 'react-redux';
 
-function Stats(props) {
-  // console.log(this.props.cyberdeckData);
-  return (
-    <Main className="">
-      <div className="d-flex justify-content-center">
+class Stats extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  listDeckAttribs = () => {
+    const deckingStats = ['Attack', 'Sleaze', 'Data Processing', 'Firewall'];
+    const renderStats = [];
+    deckingStats.forEach((stat, index) => {
+      const statLowerCase = stat.toLowerCase();
+      renderStats.push(
         <Stat
-          name={'attack'}
-          title={'Attack'}
-          value={props.cyberdeckData.attributes.attack}
-          onHandleConfigStats={props.handleConfigStats}
+          key={index}
+          name={statLowerCase}
+          title={stat}
+          actionType={'SETDECKINGDEVICESTAT'}
+          value={this.props.deckingDevice.attributes[statLowerCase]}
         />
+      );
+    });
+    return renderStats;
+  };
+
+  listCharAttribs = () => {
+    const attributes = ['Logic', 'Intuition', 'Willpower', 'Reaction'];
+    const renderStats = [];
+    attributes.forEach((stat, index) => {
+      const statLowerCase = stat.toLowerCase();
+      renderStats.push(
         <Stat
-          name={'sleaze'}
-          title={'Sleaze'}
-          value={props.cyberdeckData.attributes.sleaze}
-          onHandleConfigStats={props.handleConfigStats}
+          key={index}
+          name={statLowerCase}
+          title={stat}
+          actionType={'SETATTRIBUTE'}
+          value={this.props.attributes[statLowerCase]}
         />
+      );
+    });
+    return renderStats;
+  };
+
+  listSkillStats = () => {
+    const skillStats = [
+      'Computer',
+      'Cybercombat',
+      'Electronic Warfare',
+      'Hacking',
+      'Hardware',
+      'Software',
+    ];
+    const renderStats = [];
+    skillStats.forEach((stat, index) => {
+      const statLowerCase = stat.toLowerCase();
+      renderStats.push(
         <Stat
-          name={'dataProcessing'}
-          title={'Data Processing'}
-          value={props.cyberdeckData.attributes.dataProcessing}
-          onHandleConfigStats={props.handleConfigStats}
+          key={index}
+          name={statLowerCase}
+          title={stat}
+          actionType={'SETSKILL'}
+          value={this.props.skills[statLowerCase]}
         />
-        <Stat
-          name={'firewall'}
-          title={'Firewall'}
-          value={props.cyberdeckData.attributes.firewall}
-          onHandleConfigStats={props.handleConfigStats}
-        />
-      </div>
-      <div className="d-flex justify-content-center">
-        <Stat
-          name={'logic'}
-          title={'Logic'}
-          value={props.cyberdeckData.attributes.logic}
-          onHandleConfigStats={props.handleConfigStats}
-        />
-        <Stat
-          name={'intuition'}
-          title={'Intuition'}
-          value={props.cyberdeckData.attributes.intuition}
-          onHandleConfigStats={props.handleConfigStats}
-        />
-        <Stat
-          name={'willpower'}
-          title={'Willpower'}
-          value={props.cyberdeckData.attributes.willpower}
-          onHandleConfigStats={props.handleConfigStats}
-        />
-        <Stat
-          name={'reaction'}
-          title={'Reaction'}
-          value={props.cyberdeckData.attributes.reaction}
-          onHandleConfigStats={props.handleConfigStats}
-        />
-      </div>
-      <div className="d-flex justify-content-center">
-        <Stat
-          name={'computer'}
-          title={'Computer'}
-          value={props.cyberdeckData.skills.computer}
-          onHandleConfigStats={props.handleConfigStats}
-        />
-        <Stat
-          name={'cybercombat'}
-          title={'Cybercombat'}
-          value={props.cyberdeckData.skills.cybercombat}
-          onHandleConfigStats={props.handleConfigStats}
-        />
-        <Stat
-          name={'electronicWarfare'}
-          title={'Electronic Warfare'}
-          value={props.cyberdeckData.skills.electronicWarfare}
-          onHandleConfigStats={props.handleConfigStats}
-        />
-        <Stat
-          name={'hacking'}
-          title={'Hacking'}
-          value={props.cyberdeckData.skills.hacking}
-          onHandleConfigStats={props.handleConfigStats}
-        />
-        <Stat
-          name={'hardware'}
-          title={'Hardware'}
-          value={props.cyberdeckData.skills.hardware}
-          onHandleConfigStats={props.handleConfigStats}
-        />
-        <Stat
-          name={'software'}
-          title={'Software'}
-          value={props.cyberdeckData.skills.software}
-          onHandleConfigStats={props.handleConfigStats}
-        />
-      </div>
-    </Main>
-  );
+      );
+    });
+    return renderStats;
+  };
+
+  render() {
+    return (
+      <Main className="">
+        <div className="d-flex justify-content-center">
+          {this.listDeckAttribs()}
+        </div>
+        <div className="d-flex justify-content-center">
+          {this.listCharAttribs()}
+        </div>
+        <div className="d-flex justify-content-center">
+          {this.listSkillStats()}
+        </div>
+      </Main>
+    );
+  }
 }
 
 Stats.propTypes = {
-  cyberdeckData: PropTypes.object,
-  handleConfigStats: PropTypes.func,
+  attributes: PropTypes.object,
+  skills: PropTypes.object,
+  deckingDevice: PropTypes.object,
 };
 
-export default Stats;
+function mapStateToProps(state) {
+  return {
+    attributes: state.attributes,
+    skills: state.skills,
+    deckingDevice: state.deckingDevice,
+  };
+}
+
+const mapDispatchToProps = {};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Stats);
 
 const Main = styled.div`
   font-family: Open Sans;

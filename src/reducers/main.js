@@ -1,10 +1,11 @@
-const defaultCyberdeckData = require('../test_data/cyberdecks.json');
+const initialDeckingDevice = require('../data/initialDeckingDevice.json');
 const defaultMatrixActions = require('../data/matrixActions.json');
+const initialSkills = require('../data/initialSkills.json');
 
 const initialState = {
   count: 10,
   programDescription: '',
-  cyberdeckDataMaster: defaultCyberdeckData,
+  deckingDevice: initialDeckingDevice,
   matrixActions: defaultMatrixActions,
   characterName: '',
   playerName: '',
@@ -22,44 +23,59 @@ const initialState = {
     essence: 1,
     initiative: 1,
   },
-  skills: {},
+  skills: initialSkills,
 };
 
 export function mainReducer(state = initialState, action) {
+  console.log(state);
+  console.log(action);
   switch (action.type) {
-    case 'INCREMENT':
-      return {
-        count: state.count + 1,
-      };
-    case 'DECREMENT':
-      return {
-        count: state.count - 1,
-      };
-    case 'RESET':
-      return {
-        count: 0,
-      };
-    case 'SETPROGRAMDESCRIPTION':
-      return {
-        programDescription: action.text,
-      };
+    case 'INCREMENT': {
+      const newState = { ...state };
+      newState.count++;
+      return newState;
+    }
+
+    case 'DECREMENT': {
+      const newState = { ...state };
+      newState.count--;
+      return newState;
+    }
+
+    case 'RESET': {
+      const newState = { ...state };
+      newState.count = 0;
+      return newState;
+    }
+    case 'SETPROGRAMDESCRIPTION': {
+      const newState = { ...state };
+      newState.programDescription = action.text;
+      return newState;
+    }
     case 'SETATTRIBUTE': {
       const newState = { ...state };
-      newState.attributes[action.text] = action.value;
-      return {
-        newState,
-      };
+      const newAttributes = { ...newState.attributes };
+      newAttributes[action.text] = action.value;
+      newState.attributes = newAttributes;
+      return newState;
     }
     case 'SETSKILL': {
       const newState = { ...state };
-      newState.skills[action.text] = action.value;
-      return {
-        newState,
-      };
+      const newSkills = { ...newState.skills };
+      newSkills[action.text] = action.value;
+      newState.skills = newSkills;
+      return newState;
+    }
+    case 'SETDECKINGDEVICESTAT': {
+      const newState = { ...state };
+      const newDevice = { ...newState.deckingDevice };
+      const newAttributes = { ...newDevice.attributes };
+      newAttributes[action.text] = action.value;
+      newDevice.attributes = newAttributes;
+      newState.deckingDevice = newDevice;
+      return newState;
     }
     default:
       return state;
   }
 }
-
-export function findStat(name, value) {}
