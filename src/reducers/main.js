@@ -53,26 +53,24 @@ export function mainReducer(state = initialState, action) {
       return newState;
     }
     case 'SETATTRIBUTE': {
-      const newState = { ...state };
-      const newAttributes = { ...newState.attributes };
-      newAttributes[action.text] = action.value;
-      newState.attributes = newAttributes;
+      const newState = { ...state, attributes: { ...state.attributes } };
+      newState.attributes[action.text] = action.value;
       return newState;
     }
     case 'SETSKILL': {
-      const newState = { ...state };
-      const newSkills = { ...newState.skills };
-      newSkills[action.text] = action.value;
-      newState.skills = newSkills;
+      const newState = { ...state, skills: { ...state.skills } };
+      newState.skills[action.text] = action.value;
       return newState;
     }
     case 'SETDECKINGDEVICESTAT': {
-      const newState = { ...state };
-      const newDevice = { ...newState.deckingDevice };
-      const newAttributes = { ...newDevice.attributes };
-      newAttributes[action.text] = action.value;
-      newDevice.attributes = newAttributes;
-      newState.deckingDevice = newDevice;
+      const newState = {
+        ...state,
+        deckingDevice: {
+          ...state.deckingDevice,
+          attributes: { ...state.deckingDevice.attributes },
+        },
+      };
+      newState.deckingDevice.attributes[action.text] = action.value;
       return newState;
     }
     default:
