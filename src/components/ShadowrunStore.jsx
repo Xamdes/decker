@@ -8,7 +8,7 @@
  */
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { increment, decrement } from './actions.js';
+import { increment, decrement } from '../data/actions.js';
 // import PropTypes from 'prop-types';
 // import { Link, Switch, Route } from 'react-router-dom';
 

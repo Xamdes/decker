@@ -7,7 +7,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setProgramDescription } from './actions.js';
+import { setProgramDescription } from '../data/actions.js';
 
 class Program extends React.Component {
   constructor(props) {

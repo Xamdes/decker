@@ -104,9 +104,6 @@ function MatrixActions(props) {
       </Jumbo>
 
       <MatrixActionTable actions={matrixTableActions} />
-      <ActionCards className="d-flex card-group flex-wrap ">
-        {matrixAction}
-      </ActionCards>
     </Main>
   );
 }
