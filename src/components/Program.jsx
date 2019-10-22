@@ -23,18 +23,12 @@ class Program extends React.Component {
     });
   }
 
-  /* 
-  handleButtonHover(description) {
-    this.setState((state) => {
-      state.description = description;
-    });
-  } */
-
   handleButtonClick() {
     const program = this.props.program;
     const max = program.max;
     const increment = program.increment;
     const value = this.state.count >= max ? -max : increment;
+    console.log(value);
     this.handleAddCountValue(value);
     const name = program.modify;
     this.props.onHandleConfigStats(
@@ -44,7 +38,6 @@ class Program extends React.Component {
   }
 
   handleButtonOver() {
-    console.log(this.props.program.description);
     this.props.setProgramDescription(this.props.program.description);
   }
 

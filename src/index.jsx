@@ -5,37 +5,9 @@ import { AppContainer } from 'react-hot-loader';
 import { HashRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { mainReducer } from './reducers/main.js';
 
-const initialState = {
-  count: 999,
-  programDescription: 'test',
-};
-
-function reducer(state = initialState, action) {
-  console.log('reducer', state, action);
-  switch (action.type) {
-    case 'INCREMENT':
-      return {
-        count: state.count + 1,
-      };
-    case 'DECREMENT':
-      return {
-        count: state.count - 1,
-      };
-    case 'RESET':
-      return {
-        count: 0,
-      };
-    case 'SETPROGRAMDESCRIPTION':
-      return {
-        programDescription: action.text,
-      };
-    default:
-      return state;
-  }
-}
-
-const store = createStore(reducer);
+const store = createStore(mainReducer);
 
 const render = (Component) => {
   ReactDOM.render(
