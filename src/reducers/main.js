@@ -4,7 +4,7 @@ const defaultMatrixActions = require('../data/matrixActions.json');
 const initialSkills = require('../data/initialSkills.json');
 
 const initialState = {
-  count: 10,
+  // count: 10,
   programDescription: '',
   deckingDevice: initialDeckingDevice,
   matrixActions: defaultMatrixActions,

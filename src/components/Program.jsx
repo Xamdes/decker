@@ -7,14 +7,15 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setProgramDescription } from '../data/actions.js';
+import {
+  setProgramDescription,
+  setDeckingDeviceStat,
+} from '../data/actions.js';
 
 class Program extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = { count: 0 };
-    this.handleAddCountValue = this.handleAddCountValue.bind(this);
   }
 
   handleAddCountValue(value) {
@@ -28,13 +29,13 @@ class Program extends React.Component {
     const max = program.max;
     const increment = program.increment;
     const value = this.state.count >= max ? -max : increment;
-    console.log(value);
     this.handleAddCountValue(value);
     const name = program.modify;
-    // this.props.onHandleConfigStats(
-    //   name,
-    //   this.props.cyberdeckData.attributes[name] + value
-    // );
+    const modify = this.props.deckingDeviceAttributes[name];
+    if (modify) {
+      console.log('test');
+      this.props.setDeckingDeviceStat(name, modify + value);
+    }
   }
 
   handleButtonOver() {
@@ -66,17 +67,21 @@ class Program extends React.Component {
 
 Program.propTypes = {
   setProgramDescription: PropTypes.func,
+  deckingDeviceAttributes: PropTypes.object,
   program: PropTypes.object,
+  setDeckingDeviceStat: PropTypes.func,
 };
 
 function mapStateToProps(state) {
   return {
     programDescription: state.programDescription,
+    deckingDeviceAttributes: state.deckingDevice.attributes,
   };
 }
 
 const mapDispatchToProps = {
   setProgramDescription,
+  setDeckingDeviceStat,
 };
 
 export default connect(

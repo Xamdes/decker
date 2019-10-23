@@ -50,7 +50,7 @@
   {
     "name": "Toolbox",
     "description": "+1 Data Processing",
-    "modify": "dataProcessing",
+    "modify": "data processing",
     "max": 1,
     "increment": 1,
     "source": "Core p.245"
@@ -154,7 +154,7 @@
   },
   {
     "name": "Hammer",
-    "description": "Whenever yopu cause matrix damage, excluding failed attacks against you, inflict an additional +2 DV.",
+    "description": "Whenever you cause matrix damage, excluding failed attacks against you, inflict an additional +2 DV.",
     "modify": "None",
     "max": 1,
     "increment": 1,
