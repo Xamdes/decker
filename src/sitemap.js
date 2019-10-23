@@ -6,7 +6,7 @@ const Sitemap = require('react-router-sitemap').default;
 const router = (
   <Switch>
     <Route exact path="/" />
-    <Route path="/cyberdeck" />
+    <Route path="/matrix" />
     <Route path="/Error404" />
   </Switch>
 );

@@ -1,38 +1,28 @@
-import Programs from './Programs';
+import Skills from './Skills';
+import Character from './Character';
+import Matrix from './Matrix';
 import Error404 from './Error404';
 import Header from './Header';
-import Stats from './Stats';
-import MatrixActions from './MatrixActions';
 import styled from 'styled-components';
 import Footer from './Footer';
-// import ShadowrunStore from './ShadowrunStore';
 import { Switch, Route } from 'react-router-dom';
+import shadowrunLogo from '../data/sr5_publicity_kit/sr5_logo_full.png';
 
 function App() {
-  const title = 'Shadowrun 5e Decker Edition';
+  const title = '5e Fansite';
   return (
     <Main className="container-fluid bg-dark">
-      <HeaderStyle>
-        <Header />
-      </HeaderStyle>
-      <Title className="jumbotron">{title}</Title>
+      <Title className="jumbotron bg-light">
+        <img src={shadowrunLogo} alt="Shadowrun Logo"></img>
+        <span> </span>
+        {title}
+      </Title>
+      <Header />
       <Switch>
         <Route exact path="/" />
-        <Route
-          exact
-          path="/cyberdeck"
-          render={() => (
-            <div>
-              <div className="d-flex flex-wrap justify-content-center">
-                <Stats className="" />
-                <Programs className="" />
-              </div>
-              <div>
-                <MatrixActions />
-              </div>
-            </div>
-          )}
-        />
+        <Route exact path="/matrix" component={Matrix} />
+        <Route exact path="/character" component={Character} />
+        <Route exact path="/skills" component={Skills} />
         <Route component={Error404} />
       </Switch>
       <Footer />
@@ -44,14 +34,17 @@ export default App;
 
 const Main = styled.div`
   font-family: Open Sans;
+  height: 100vh;
+  overflow: scroll;
 `;
 
 const Title = styled.h1`
   text-align: center;
   font-weight: 800;
-`;
-
-const HeaderStyle = styled.div`
-  font-size: 1.5em;
-  text-align: center;
+  line-height: 1.4;
+  font-size: 3em;
+  img {
+    height: 2em;
+    vertical-align: bottom;
+  }
 `;
