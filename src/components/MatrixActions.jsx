@@ -9,6 +9,7 @@ function MatrixActions(props) {
     ...props.attributes,
     ...props.skills,
     ...props.deckingDevice,
+    ...props.deckingDevice.attributes,
     matrixActionBonus: 0,
   };
 
@@ -21,8 +22,6 @@ function MatrixActions(props) {
     if (itemOneLimit < itemTwoLimit) return -1;
     if (itemOneName > itemTwoName) return 1;
     if (itemOneName < itemTwoName) return -1;
-
-    // return b.name.toLowerCase() < a.name.toLowerCase() ? 1 : -1;
   });
 
   const actionValues = (action) => {
