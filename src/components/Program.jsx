@@ -38,6 +38,12 @@ class Program extends React.Component {
     }
   }
 
+  handleKeyDown(e) {
+    if (e.key != 'Tab' && e.key != 'Shift') {
+      this.handleButtonClick();
+    }
+  }
+
   handleButtonOver() {
     this.props.setProgramDescription(this.props.program.description);
   }
@@ -55,10 +61,15 @@ class Program extends React.Component {
           <button
             className={currentClass}
             onClick={() => this.handleButtonClick()}
+            onKeyDown={(e) => this.handleKeyDown(e)}
+            onFocus={() => this.handleButtonOver()}
             onMouseOver={() => this.handleButtonOver()}
             onMouseOut={() => this.handleButtonOut()}>
             {this.props.program.name}
           </button>
+          <div hidden>
+            Program Description: {this.props.program.description}
+          </div>
         </div>
       </Main>
     );

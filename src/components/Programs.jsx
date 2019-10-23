@@ -21,9 +21,9 @@ class Programs extends React.Component {
             <div className="card-text">
               <div className="flex-wrap flex-align btn-group">{Programs}</div>
             </div>
-            <div className="card-footer">
-              Description: {this.props.programDescription}
-            </div>
+            <Description className="card-footer">
+              Program Description: {this.props.programDescription}
+            </Description>
           </div>
         </div>
       </Main>
@@ -57,4 +57,8 @@ const Title = styled.h4`
   font-family: Open Sans;
   font-weight: normal;
   text-align: center;
+`;
+
+const Description = styled.div`
+  min-height: 75px;
 `;
