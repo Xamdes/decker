@@ -72,7 +72,7 @@ module.exports = [
       new HtmlWebpackPlugin({
         template: 'template.ejs',
         appMountId: 'react-app-root',
-        title: 'decker',
+        title: 'Shadowrun 5e Fansite',
         filename: resolve(__dirname, 'build', 'index.html'),
         favicon: 'src/images/favicon.ico',
       }),
@@ -170,7 +170,7 @@ module.exports = [
       new HtmlWebpackPlugin({
         template: 'template.ejs',
         appMountId: 'react-app-root',
-        title: 'decker',
+        title: 'Shadowrun 5e Fansite',
         filename: resolve(__dirname, 'build', 'index.html'),
         favicon: 'src/images/favicon.ico',
       }),
