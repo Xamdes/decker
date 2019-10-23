@@ -1,3 +1,4 @@
+import produce from 'immer';
 const initialDeckingDevice = require('../data/initialDeckingDevice.json');
 const defaultMatrixActions = require('../data/matrixActions.json');
 const initialSkills = require('../data/initialSkills.json');
@@ -27,51 +28,36 @@ const initialState = {
 };
 
 export function mainReducer(state = initialState, action) {
-  console.log(state);
-  console.log(action);
   switch (action.type) {
     case 'INCREMENT': {
-      const newState = { ...state };
-      newState.count++;
-      return newState;
+      return produce(state, (draft) => {
+        draft.count++;
+      });
     }
-
     case 'DECREMENT': {
-      const newState = { ...state };
-      newState.count--;
-      return newState;
-    }
-
-    case 'RESET': {
-      const newState = { ...state };
-      newState.count = 0;
-      return newState;
+      return produce(state, (draft) => {
+        draft.count--;
+      });
     }
     case 'SETPROGRAMDESCRIPTION': {
-      const newState = { ...state };
-      newState.programDescription = action.text;
-      return newState;
+      return produce(state, (draft) => {
+        draft.programDescription = action.text;
+      });
     }
     case 'SETATTRIBUTE': {
-      const newState = { ...state, attributes: { ...state.attributes } };
-      newState.attributes[action.text] = action.value;
-      return newState;
+      return produce(state, (draft) => {
+        draft.attributes[action.text] = action.value;
+      });
     }
     case 'SETSKILL': {
-      const newState = { ...state, skills: { ...state.skills } };
-      newState.skills[action.text] = action.value;
-      return newState;
+      return produce(state, (draft) => {
+        draft.skills[action.text] = action.value;
+      });
     }
     case 'SETDECKINGDEVICESTAT': {
-      const newState = {
-        ...state,
-        deckingDevice: {
-          ...state.deckingDevice,
-          attributes: { ...state.deckingDevice.attributes },
-        },
-      };
-      newState.deckingDevice.attributes[action.text] = action.value;
-      return newState;
+      return produce(state, (draft) => {
+        draft.deckingDevice.attributes[action.text] = action.value;
+      });
     }
     default:
       return state;

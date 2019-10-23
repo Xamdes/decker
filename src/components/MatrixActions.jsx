@@ -2,14 +2,13 @@
 import MatrixActionTable from './MatrixActionTable';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 function MatrixActions(props) {
   const values = {
-    ...props.cyberdeckData.attributes,
-    ...props.cyberdeckData.skills,
-    runningSilent: props.cyberdeckData.runningSilent,
-    grid: props.cyberdeckData.grid,
-    mode: props.cyberdeckData.mode,
+    ...props.attributes,
+    ...props.skills,
+    ...props.deckingDevice,
     matrixActionBonus: 0,
   };
 
@@ -87,11 +86,27 @@ function MatrixActions(props) {
 }
 
 MatrixActions.propTypes = {
-  cyberdeckData: PropTypes.object,
   matrixActions: PropTypes.object,
+  deckingDevice: PropTypes.object,
+  attributes: PropTypes.object,
+  skills: PropTypes.object,
 };
 
-export default MatrixActions;
+function mapStateToProps(state) {
+  return {
+    deckingDevice: state.deckingDevice,
+    attributes: state.attributes,
+    skills: state.skills,
+    matrixActions: state.matrixActions,
+  };
+}
+
+const mapDispatchToProps = {};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MatrixActions);
 
 const Main = styled.div`
   font-family: Open Sans;

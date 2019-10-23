@@ -31,10 +31,10 @@ class Program extends React.Component {
     console.log(value);
     this.handleAddCountValue(value);
     const name = program.modify;
-    this.props.onHandleConfigStats(
-      name,
-      this.props.cyberdeckData.attributes[name] + value
-    );
+    // this.props.onHandleConfigStats(
+    //   name,
+    //   this.props.cyberdeckData.attributes[name] + value
+    // );
   }
 
   handleButtonOver() {
@@ -65,11 +65,8 @@ class Program extends React.Component {
 }
 
 Program.propTypes = {
-  //onHandleProgramChange: PropTypes.func,
-  onHandleConfigStats: PropTypes.func,
   setProgramDescription: PropTypes.func,
   program: PropTypes.object,
-  cyberdeckData: PropTypes.object,
 };
 
 function mapStateToProps(state) {
