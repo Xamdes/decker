@@ -42,13 +42,15 @@ class Stat extends React.Component {
           <TitleHeader className="card-header">{this.props.title}</TitleHeader>
           <div className="card-body">
             <div className="card-text">
-              <Input
-                key={1}
-                name={this.props.name}
-                type="number"
-                onChange={(event) => this.handleStatChange(event)}
-                value={this.props.value}
-              />
+              <label>
+                <Input
+                  key={1}
+                  name={this.props.name}
+                  type="number"
+                  onChange={(event) => this.handleStatChange(event)}
+                  value={this.props.value}
+                />
+              </label>
             </div>
           </div>
         </CardStyle>
