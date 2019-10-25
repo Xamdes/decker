@@ -63,9 +63,16 @@ export function mainReducer(state = initialState, action) {
       });
     }
     case 'LOAD': {
-      // eslint-disable-next-line no-unused-vars
+      const newState = action.value;
       return produce(state, (draft) => {
-        draft = action.value;
+        draft.deckingDevice = newState.deckingDevice;
+        draft.matrixActions = newState.matrixActions;
+        draft.characterName = newState.characterName;
+        draft.playerName = newState.playerName;
+        draft.metaType = newState.metaType;
+        draft.attributes = newState.attributes;
+        draft.skills = newState.skills;
+        draft.programDescription = newState.programDescription;
       });
     }
     default:

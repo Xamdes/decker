@@ -24,7 +24,7 @@ export const setDeckingDeviceStat = (text, value) => ({
   value,
 });
 
-export const load = (text, value) => ({
+export const load = (value) => ({
   type: 'LOAD',
   value,
 });

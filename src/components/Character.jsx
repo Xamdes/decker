@@ -13,7 +13,6 @@ class Character extends React.Component {
   }
 
   writeState = () => {
-    console.log('write');
     var blob = new Blob([JSON.stringify(this.props.state, null, 2)], {
       type: 'application/json',
     });
@@ -21,16 +20,14 @@ class Character extends React.Component {
   };
 
   handleFileSelect = (event) => {
-    var file = event.target.file; // FileList object
-    console.log(file);
-    var reader = new FileReader();
-
-    reader.onload = function(event) {
-      // the_url = event.target.result;
+    const file = event.target.files[0]; // FileList object
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      //Parse the file to a JSON object
+      this.props.load(JSON.parse(event.target.result));
     };
 
-    // when the file is read it triggers the onload event above.
-    reader.readAsDataURL(file);
+    reader.readAsText(file);
   };
 
   render() {
@@ -54,6 +51,7 @@ class Character extends React.Component {
 
 Character.propTypes = {
   state: PropTypes.object,
+  load: PropTypes.func,
 };
 
 // eslint-disable-next-line react-redux/mapStateToProps-no-store
