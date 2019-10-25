@@ -14,7 +14,6 @@ class Character extends React.Component {
 
   handleFileName = (event) => {
     const name = event.target.value;
-    console.log(name);
     this.props.setCharacterName(name);
   };
 

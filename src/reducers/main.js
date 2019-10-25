@@ -28,8 +28,6 @@ const initialState = {
 };
 
 export function mainReducer(state = initialState, action) {
-  console.log('taking action');
-  console.log(action.type);
   switch (action.type) {
     case 'INCREMENT': {
       return produce(state, (draft) => {
@@ -78,7 +76,6 @@ export function mainReducer(state = initialState, action) {
       });
     }
     case 'SETCHARACTERNAME': {
-      console.log('work');
       return produce(state, (draft) => {
         draft.characterName = action.value;
       });
