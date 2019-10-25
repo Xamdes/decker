@@ -8,26 +8,34 @@ import { setSkill } from '../data/actions.js';
 // import PropTypes from 'prop-types';
 
 function Skills(props) {
-  const names = Object.keys(props.skills);
-  const ranks = Object.values(props.skills);
   const skillsTable = [];
-  names.forEach((name, index) => {
+
+  const handleStatChange = (event) => {
+    const text = event.target.name;
+    const newValue = parseInt(event.target.value);
+    props.setSkill(text, newValue);
+  };
+
+  props.skills.forEach((skill) => {
     skillsTable.push({
-      name,
-      ranks: ranks[index],
+      name: skill.name,
+      ranks: skill.ranks,
       modify: (
-        <button
-          type="button"
-          className="btn btn-success"
-          onClick={() => props.setSkill(name, ranks[index] + 1)}>
-          Increase
-        </button>
+        <label>
+          <Input
+            key={1}
+            name={skill.name}
+            type="number"
+            onChange={(event) => handleStatChange(event)}
+            value={skill.ranks}
+          />
+        </label>
       ),
     });
   });
   const columns = [
     {
-      Header: 'Matrix Action',
+      Header: 'Name',
       accessor: 'name',
       style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
     },
@@ -65,7 +73,7 @@ function Skills(props) {
 }
 
 Skills.propTypes = {
-  skills: PropTypes.object,
+  skills: PropTypes.array,
   setSkill: PropTypes.func,
 };
 
@@ -88,4 +96,12 @@ const Main = styled.div`
   color: black;
   font-weight: normal;
   text-transform: capitalize;
+`;
+
+const Input = styled.input`
+  font-family: Open Sans;
+  color: black;
+  font-size: 1em;
+  width: 100px;
+  text-align: center;
 `;

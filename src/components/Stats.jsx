@@ -60,18 +60,25 @@ class Stats extends React.Component {
     ];
     const renderStats = [];
     skillStats.forEach((stat, index) => {
-      const statLowerCase = stat.toLowerCase();
+      const skillLowerCase = stat.toLowerCase();
       renderStats.push(
         <Stat
           key={index}
-          name={statLowerCase}
+          name={skillLowerCase}
           title={stat}
           actionType={'SETSKILL'}
-          value={this.props.skills[statLowerCase]}
+          value={this.findSkillRanks(skillLowerCase)}
         />
       );
     });
     return renderStats;
+  };
+
+  findSkillRanks = (skillName) => {
+    const index = this.props.skills.findIndex((skill) => {
+      return skill.name === skillName;
+    });
+    return this.props.skills[index].ranks;
   };
 
   render() {
@@ -93,7 +100,7 @@ class Stats extends React.Component {
 
 Stats.propTypes = {
   attributes: PropTypes.object,
-  skills: PropTypes.object,
+  skills: PropTypes.array,
   deckingDevice: PropTypes.object,
 };
 

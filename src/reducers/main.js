@@ -1,7 +1,7 @@
 import produce from 'immer';
 const initialDeckingDevice = require('../data/initialDeckingDevice.json');
 const defaultMatrixActions = require('../data/matrixActions.json');
-const initialSkills = require('../data/initialSkillsOld.json');
+const initialSkills = require('../data/initialSkills.json');
 
 const initialState = {
   // count: 10,
@@ -50,13 +50,22 @@ export function mainReducer(state = initialState, action) {
       });
     }
     case 'SETSKILL': {
+      const index = state.skills.findIndex((skill) => {
+        return skill.name === action.text;
+      });
       return produce(state, (draft) => {
-        draft.skills[action.text] = action.value;
+        draft.skills[index].ranks = action.value;
       });
     }
     case 'SETDECKINGDEVICESTAT': {
       return produce(state, (draft) => {
         draft.deckingDevice.attributes[action.text] = action.value;
+      });
+    }
+    case 'LOAD': {
+      // eslint-disable-next-line no-unused-vars
+      return produce(state, (draft) => {
+        draft = action.value;
       });
     }
     default:

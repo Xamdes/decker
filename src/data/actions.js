@@ -23,3 +23,8 @@ export const setDeckingDeviceStat = (text, value) => ({
   text,
   value,
 });
+
+export const load = (text, value) => ({
+  type: 'LOAD',
+  value,
+});

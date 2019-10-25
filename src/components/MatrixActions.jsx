@@ -7,11 +7,13 @@ import { connect } from 'react-redux';
 function MatrixActions(props) {
   const values = {
     ...props.attributes,
-    ...props.skills,
     ...props.deckingDevice,
     ...props.deckingDevice.attributes,
     matrixActionBonus: 0,
   };
+  props.skills.forEach((skill) => {
+    values[skill.name] = skill.ranks;
+  });
 
   const actionsSorted = props.matrixActions.actions.sort((a, b) => {
     const itemOneName = a.name.toLowerCase();
@@ -88,7 +90,7 @@ MatrixActions.propTypes = {
   matrixActions: PropTypes.object,
   deckingDevice: PropTypes.object,
   attributes: PropTypes.object,
-  skills: PropTypes.object,
+  skills: PropTypes.array,
 };
 
 function mapStateToProps(state) {

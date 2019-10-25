@@ -21,7 +21,6 @@ class Stat extends React.Component {
   handleStatChange(event) {
     const text = this.props.name;
     const newValue = parseInt(event.target.value);
-    console.log(newValue);
     switch (this.props.actionType) {
       case 'SETSKILL':
         this.props.setSkill(text, newValue);
@@ -66,18 +65,11 @@ Stat.propTypes = {
   setDeckingDeviceStat: PropTypes.func,
   title: PropTypes.string,
   actionType: PropTypes.string,
-  attributes: PropTypes.object,
-  skills: PropTypes.object,
-  deckingDevice: PropTypes.object,
   value: PropTypes.number,
 };
 
-function mapStateToProps(state) {
-  return {
-    attributes: state.attributes,
-    skills: state.skills,
-    deckingDevice: state.deckingDevice,
-  };
+function mapStateToProps() {
+  return {};
 }
 
 const mapDispatchToProps = {
