@@ -28,3 +28,8 @@ export const load = (value) => ({
   type: 'LOAD',
   value,
 });
+
+export const setCharacterName = (value) => ({
+  type: 'SETCHARACTERNAME',
+  value,
+});
