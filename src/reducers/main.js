@@ -1,7 +1,7 @@
 import produce from 'immer';
 const initialDeckingDevice = require('../data/initialDeckingDevice.json');
 const defaultMatrixActions = require('../data/matrixActions.json');
-const initialSkills = require('../data/initialSkills.json');
+const initialSkills = require('../data/initialSkillsOld.json');
 
 const initialState = {
   // count: 10,

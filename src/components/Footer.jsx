@@ -9,14 +9,14 @@ function Footer() {
   return (
     <Main className="container bg-secondary text-white">
       <img src={toppsLogo} alt="Topps Logo" height="42" />
-      <div>{toppsCopyright}</div>
+      <p>{toppsCopyright}</p>
     </Main>
   );
 }
 
 export default Footer;
 
-const Main = styled.p`
+const Main = styled.div`
   font-family: Open Sans;
   padding-top: 10px;
 `;
