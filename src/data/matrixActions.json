@@ -104,8 +104,8 @@
       "actionType": "VARIABLE ACTION",
       "marks": "Varies",
       "test": {
-        "offense": ["(Varies)", "Electronic Warfare", "Intuition"],
-        "defense": ["(Varies)", "Intuition", "Firewall"]
+        "offense": ["Electronic Warfare", "Intuition"],
+        "defense": [ "Intuition", "Firewall"]
       },
       "limit": "Sleaze",
       "description": "",

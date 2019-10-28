@@ -1,31 +1,5 @@
 import produce from 'immer';
-const initialDeckingDevice = require('../data/initialDeckingDevice.json');
-const defaultMatrixActions = require('../data/matrixActions.json');
-const initialSkills = require('../data/initialSkills.json');
-
-const initialState = {
-  // count: 10,
-  programDescription: '',
-  deckingDevice: initialDeckingDevice,
-  matrixActions: defaultMatrixActions,
-  characterName: '',
-  playerName: '',
-  metaType: '',
-  attributes: {
-    body: 1,
-    agility: 1,
-    reaction: 1,
-    strength: 1,
-    willpower: 1,
-    logic: 1,
-    intuition: 1,
-    charisma: 1,
-    edge: 1,
-    essence: 1,
-    initiative: 1,
-  },
-  skills: initialSkills,
-};
+import { initialState } from '../data/initialState.js';
 
 export function mainReducer(state = initialState, action) {
   switch (action.type) {
@@ -46,20 +20,17 @@ export function mainReducer(state = initialState, action) {
     }
     case 'SETATTRIBUTE': {
       return produce(state, (draft) => {
-        draft.attributes[action.text] = action.value;
+        draft.attributes[action.text].ranks = action.value;
       });
     }
     case 'SETSKILL': {
-      const index = state.skills.findIndex((skill) => {
-        return skill.name === action.text;
-      });
       return produce(state, (draft) => {
-        draft.skills[index].ranks = action.value;
+        draft.skills[action.text].ranks = action.value;
       });
     }
     case 'SETDECKINGDEVICESTAT': {
       return produce(state, (draft) => {
-        draft.deckingDevice.attributes[action.text] = action.value;
+        draft.deckingDevice.attributes[action.text].ranks = action.value;
       });
     }
     case 'LOAD': {

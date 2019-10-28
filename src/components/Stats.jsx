@@ -24,7 +24,7 @@ class Stats extends React.Component {
           name={statLowerCase}
           title={stat}
           actionType={'SETDECKINGDEVICESTAT'}
-          value={this.props.deckingDevice.attributes[statLowerCase]}
+          value={this.props.deckingDevice.attributes[statLowerCase].ranks}
         />
       );
     });
@@ -42,7 +42,7 @@ class Stats extends React.Component {
           name={statLowerCase}
           title={stat}
           actionType={'SETATTRIBUTE'}
-          value={this.props.attributes[statLowerCase]}
+          value={this.props.attributes[statLowerCase].ranks}
         />
       );
     });
@@ -67,18 +67,11 @@ class Stats extends React.Component {
           name={skillLowerCase}
           title={stat}
           actionType={'SETSKILL'}
-          value={this.findSkillRanks(skillLowerCase)}
+          value={this.props.skills[skillLowerCase].ranks}
         />
       );
     });
     return renderStats;
-  };
-
-  findSkillRanks = (skillName) => {
-    const index = this.props.skills.findIndex((skill) => {
-      return skill.name === skillName;
-    });
-    return this.props.skills[index].ranks;
   };
 
   render() {
@@ -100,7 +93,7 @@ class Stats extends React.Component {
 
 Stats.propTypes = {
   attributes: PropTypes.object,
-  skills: PropTypes.array,
+  skills: PropTypes.object,
   deckingDevice: PropTypes.object,
 };
 

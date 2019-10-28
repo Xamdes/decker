@@ -9,11 +9,9 @@ function MatrixActions(props) {
     ...props.attributes,
     ...props.deckingDevice,
     ...props.deckingDevice.attributes,
+    ...props.skills,
     matrixActionBonus: 0,
   };
-  props.skills.forEach((skill) => {
-    values[skill.name] = skill.ranks;
-  });
 
   const actionsSorted = props.matrixActions.actions.sort((a, b) => {
     const itemOneName = a.name.toLowerCase();
@@ -28,10 +26,23 @@ function MatrixActions(props) {
 
   const actionValues = (action) => {
     const placeholder = false;
-    const actionLimit = action.limit.toLowerCase();
-    const offenseLimit = isNaN(values[actionLimit])
-      ? 'None'
-      : values[actionLimit];
+    let offenseLimit = 'None';
+    switch (action.limit) {
+      case 'Attack':
+        offenseLimit = props.deckingDevice.attributes['attack'].ranks;
+        break;
+      case 'Data Processing':
+        offenseLimit = props.deckingDevice.attributes['data processing'].ranks;
+        break;
+      case 'Firewall':
+        offenseLimit = props.deckingDevice.attributes['firewall'].ranks;
+        break;
+      case 'Sleaze':
+        offenseLimit = props.deckingDevice.attributes['sleaze'].ranks;
+        break;
+      default:
+        offenseLimit = 'None';
+    }
 
     let offenseCalc = 0 + values.matrixActionBonus;
     let defenseCalc = 0 + values.matrixActionBonus;
@@ -44,14 +55,20 @@ function MatrixActions(props) {
 
     const defenseNames = action.test.defense.join(' + ');
 
-    action.test.offense.map((item) => {
-      const itemLower = item.toLowerCase();
-      offenseCalc += isNaN(values[itemLower]) ? 0 : values[itemLower];
+    action.test.offense.map((text) => {
+      const textLower = text.toLowerCase();
+      const item = values[textLower];
+      if (typeof item === 'object' && item !== null) {
+        offenseCalc += item.ranks;
+      }
     });
 
-    action.test.defense.map((item) => {
-      const itemLower = item.toLowerCase();
-      defenseCalc += isNaN(values[itemLower]) ? 0 : values[itemLower];
+    action.test.defense.map((text) => {
+      const textLower = text.toLowerCase();
+      const item = values[textLower];
+      if (typeof item === 'object' && item !== null) {
+        defenseCalc += item.ranks;
+      }
     });
 
     defenseCalc = !defenseCalc ? 'N/A' : defenseCalc;
@@ -90,7 +107,7 @@ MatrixActions.propTypes = {
   matrixActions: PropTypes.object,
   deckingDevice: PropTypes.object,
   attributes: PropTypes.object,
-  skills: PropTypes.array,
+  skills: PropTypes.object,
 };
 
 function mapStateToProps(state) {

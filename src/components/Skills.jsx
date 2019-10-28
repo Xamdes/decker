@@ -16,18 +16,18 @@ function Skills(props) {
     props.setSkill(text, newValue);
   };
 
-  props.skills.forEach((skill) => {
+  Object.keys(props.skills).forEach((skill) => {
     skillsTable.push({
-      name: skill.name,
-      ranks: skill.ranks,
+      name: skill,
+      ranks: props.skills[skill].ranks,
       modify: (
         <label>
           <Input
             key={1}
-            name={skill.name}
+            name={skill}
             type="number"
             onChange={(event) => handleStatChange(event)}
-            value={skill.ranks}
+            value={props.skills[skill].ranks}
           />
         </label>
       ),
@@ -73,7 +73,7 @@ function Skills(props) {
 }
 
 Skills.propTypes = {
-  skills: PropTypes.array,
+  skills: PropTypes.object,
   setSkill: PropTypes.func,
 };
 
