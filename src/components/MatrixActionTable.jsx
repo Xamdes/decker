@@ -11,11 +11,21 @@ function MatrixActionTable(props) {
       Header: 'Matrix Action',
       accessor: 'name',
       style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
+      filterMethod: (filter, rows) => {
+        const searchFor = filter.value.toLowerCase();
+        const name = rows.name.toLowerCase();
+        return name.indexOf(searchFor) !== -1;
+      },
     },
     {
       Header: 'Type',
       accessor: 'actionType',
       style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
+      filterMethod: (filter, rows) => {
+        const searchFor = filter.value.toLowerCase();
+        const actionType = rows.actionType.toLowerCase();
+        return actionType.indexOf(searchFor) !== -1;
+      },
     },
     {
       Header: 'Limit',

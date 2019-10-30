@@ -19,9 +19,8 @@ function Skills(props) {
   Object.keys(props.skills).forEach((skill) => {
     skillsTable.push({
       name: skill,
-      ranks: props.skills[skill].ranks,
-      modify: (
-        <label>
+      ranks: (
+        <label key={props.skills[skill].ranks}>
           <Input
             key={1}
             name={skill}
@@ -33,21 +32,27 @@ function Skills(props) {
       ),
     });
   });
+
   const columns = [
     {
       Header: 'Name',
       accessor: 'name',
       style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
+      filterMethod: (filter, rows) => {
+        const searchFor = filter.value.toLowerCase();
+        const name = rows.name.toLowerCase();
+        return name.indexOf(searchFor) !== -1;
+      },
     },
     {
       Header: 'Ranks',
       accessor: 'ranks',
       style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
-    },
-    {
-      Header: 'Modify',
-      accessor: 'modify',
-      style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
+      filterMethod: (filter, rows) => {
+        const searchFor = filter.value;
+        const ranks = rows.modify.key;
+        return searchFor === ranks;
+      },
     },
   ];
 
