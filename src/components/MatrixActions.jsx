@@ -52,8 +52,12 @@ function MatrixActions(props) {
     defenseCalc += values.runningSilent ? -2 : 0;
 
     const offenseNames = action.test.offense.join(' + ');
-
     const defenseNames = action.test.defense.join(' + ');
+    const combatRolls = 'Offense: '.concat(
+      offenseNames,
+      '\n Defense: ',
+      defenseNames
+    );
 
     action.test.offense.map((text) => {
       const textLower = text.toLowerCase();
@@ -74,17 +78,24 @@ function MatrixActions(props) {
     defenseCalc = !defenseCalc ? 'N/A' : defenseCalc;
     offenseCalc = !offenseCalc ? 'N/A' : offenseCalc;
 
+    const combatValues = 'Offense: '.concat(
+      offenseCalc,
+      ' Limit: [',
+      offenseLimit,
+      ']',
+      '\n Defense: ',
+      defenseCalc
+    );
+
     const desc = placeholder
       ? 'Placeholder Description Text'
       : action.description;
 
     return {
       ...action,
-      defenseCalc,
-      defenseNames,
       desc,
-      offenseCalcLimit: offenseCalc.toString() + ' [' + offenseLimit + ']',
-      offenseNames,
+      combatRolls,
+      combatValues,
     };
   };
 

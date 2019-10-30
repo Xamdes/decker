@@ -18,7 +18,7 @@ function MatrixActionTable(props) {
       },
     },
     {
-      Header: 'Type',
+      Header: 'Action Type',
       accessor: 'actionType',
       style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
       filterMethod: (filter, rows) => {
@@ -31,26 +31,21 @@ function MatrixActionTable(props) {
       Header: 'Limit',
       accessor: 'limit',
       style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
+      filterMethod: (filter, rows) => {
+        const searchFor = filter.value.toLowerCase();
+        const limit = rows.limit.toLowerCase();
+        return limit.indexOf(searchFor) !== -1;
+      },
     },
     {
-      Header: 'Offense Value',
-      accessor: 'offenseCalcLimit',
-      style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
+      Header: 'Values',
+      accessor: 'combatValues',
+      style: { width: 'auto', height: 'auto', whiteSpace: 'pre-line' },
     },
     {
-      Header: 'Defense Value',
-      accessor: 'defenseCalc',
-      style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
-    },
-    {
-      Header: 'Offense Roll',
-      accessor: 'offenseNames',
-      style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
-    },
-    {
-      Header: 'Defense Roll',
-      accessor: 'defenseNames',
-      style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
+      Header: 'Combat Rolls',
+      accessor: 'combatRolls',
+      style: { width: 'auto', height: 'auto', whiteSpace: 'pre-line' },
     },
     {
       Header: 'Marks',
@@ -69,6 +64,7 @@ function MatrixActionTable(props) {
         width: 'auto',
         height: 'auto',
         whiteSpace: 'normal',
+        textAlign: 'center',
       },
     },
   ];
@@ -79,13 +75,14 @@ function MatrixActionTable(props) {
         className="table table-sm bg-info -striped -highlight"
         data={props.actions}
         columns={columns}
-        resizable={false}
+        resizable={true}
         filterable={true}
         minRows={0}
         defaultPageSize={100}
         showPagination={false}
         style={{
           width: 'auto',
+          minWidth: '20',
           height: 'auto',
           wordWrap: 'normal',
         }}
