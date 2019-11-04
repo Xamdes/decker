@@ -74,6 +74,11 @@ function MatrixActionTable(props) {
         whiteSpace: 'normal',
         textAlign: 'center',
       },
+      filterMethod: (filter, rows) => {
+        const searchFor = filter.value.toLowerCase();
+        const limit = rows.source.toLowerCase();
+        return limit.indexOf(searchFor) !== -1;
+      },
     },
   ];
 

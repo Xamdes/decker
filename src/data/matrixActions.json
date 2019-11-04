@@ -23,32 +23,7 @@
         "defense": ["None"]
       },
       "limit": "Data Processing",
-      "description": "",
-      "source": "Kill Code p.37"
-    },
-    {
-      "name": "DENIAL OF SERVICE",
-      "actionType": "SIMPLE ACTION",
-      "marks": "See Description",
-      "test": {
-        "offense": ["Cybercombat", "Logic"],
-        "defense": ["Willpower", "Firewall"]
-      },
-      "limit": "Data Processing",
-      "description": "",
-      "source": "Kill Code p.37"
-    },
-
-    {
-      "name": "I AM THE FIREWALL",
-      "actionType": "COMPLEX ACTION/INTERRUPT [–5 INITIATIVE SCORE]",
-      "marks": "None",
-      "test": {
-        "offense": ["Computer", "Intuition"],
-        "defense": ["None"]
-      },
-      "limit": "Data Processing",
-      "description": "",
+      "description": "Increase the current Initiative Score of a number of personas on whom you have marks by 1 for every 2 hits. The number of personas affected cannot exceed your Data Processing.",
       "source": "Kill Code p.37"
     },
     {
@@ -410,18 +385,6 @@
       "limit": "Data Processing",
       "description": "Find physical location of device or persona in matrix, know location as long as at least 1 mark",
       "source": "Core p.243"
-    },
-    {
-      "name": "CALIBRATION",
-      "actionType": "SIMPLE ACTION",
-      "marks": "1",
-      "test": {
-        "offense": ["Electronic Warfare", "Logic"],
-        "defense": ["None"]
-      },
-      "limit": "Data Processing",
-      "description": "Increase the current Initiative Score of a number of personas on whom you have marks by 1 for every 2 hits. The number of personas affected cannot exceed your Data Processing.",
-      "source": "Kill Code p.37"
     },
     {
       "name": "DENIAL OF SERVICE",
