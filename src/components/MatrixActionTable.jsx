@@ -10,6 +10,7 @@ function MatrixActionTable(props) {
     {
       Header: 'Matrix Action',
       accessor: 'name',
+      width: '200',
       style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
       filterMethod: (filter, rows) => {
         const searchFor = filter.value.toLowerCase();
@@ -20,6 +21,7 @@ function MatrixActionTable(props) {
     {
       Header: 'Action Type',
       accessor: 'actionType',
+      width: '200',
       style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
       filterMethod: (filter, rows) => {
         const searchFor = filter.value.toLowerCase();
@@ -30,6 +32,7 @@ function MatrixActionTable(props) {
     {
       Header: 'Limit',
       accessor: 'limit',
+      width: '200',
       style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
       filterMethod: (filter, rows) => {
         const searchFor = filter.value.toLowerCase();
@@ -40,26 +43,31 @@ function MatrixActionTable(props) {
     {
       Header: 'Values',
       accessor: 'combatValues',
+      width: '300',
       style: { width: 'auto', height: 'auto', whiteSpace: 'pre-line' },
     },
     {
       Header: 'Combat Rolls',
       accessor: 'combatRolls',
+      width: '300',
       style: { width: 'auto', height: 'auto', whiteSpace: 'pre-line' },
     },
     {
       Header: 'Marks',
       accessor: 'marks',
+      width: '115',
       style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
     },
     {
       Header: 'Description',
       accessor: 'desc',
-      style: { width: 'auto', height: 'auto', whiteSpace: 'normal' },
+      width: '700',
+      style: { width: '200', height: 'auto', whiteSpace: 'normal' },
     },
     {
       Header: 'Source',
       accessor: 'source',
+      width: '100',
       style: {
         width: 'auto',
         height: 'auto',
