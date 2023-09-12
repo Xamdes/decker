@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
+require('@babel/polyfill');
 const crypto = require("crypto");
 const crypto_orig_createHash = crypto.createHash;
 crypto.createHash = algorithm => crypto_orig_createHash(algorithm == "md4" ? "sha256" : algorithm);
@@ -17,6 +18,7 @@ module.exports = [
 
     entry: [
       'react-hot-loader/patch',
+      '@babel/polyfill',
       './src/index.jsx',
       resolve(__dirname, 'src') + '/index.jsx',
     ],
@@ -68,6 +70,29 @@ module.exports = [
     module: {
       rules: [
         {
+          test: /\.jsx?$/,
+          enforce: 'pre',
+          loader: 'eslint-loader',
+          exclude: /node_modules/,
+          options: {
+            emitWarning: true,
+            configFile: './.eslintrc.json',
+          },
+        },
+        {
+          test: /\.jsx?$/,
+          loader: 'babel-loader',
+          exclude: /node_modules/,
+          options: {
+            presets: ['@babel/preset-react', '@babel/preset-env'],
+            plugins: [
+              'react-hot-loader/babel',
+              'styled-jsx/babel',
+              ['@babel/plugin-proposal-class-properties', { loose: true }],
+            ],
+          },
+        },
+        {
           test: /\.css$/,
           use: ['style-loader', 'css-loader'],
         },
@@ -85,6 +110,7 @@ module.exports = [
 
     entry: [
       'react-hot-loader/patch',
+      '@babel/polyfill',
       './src/index.jsx',
       'webpack-dev-server/client?http://localhost:8080',
       'webpack/hot/only-dev-server',
@@ -144,6 +170,29 @@ module.exports = [
 
     module: {
       rules: [
+        {
+          test: /\.jsx?$/,
+          enforce: 'pre',
+          loader: 'eslint-loader',
+          exclude: /node_modules/,
+          options: {
+            emitWarning: true,
+            configFile: './.eslintrc.json',
+          },
+        },
+        {
+          test: /\.jsx?$/,
+          loader: 'babel-loader',
+          exclude: /node_modules/,
+          options: {
+            presets: ['@babel/preset-react', '@babel/preset-env'],
+            plugins: [
+              'react-hot-loader/babel',
+              'styled-jsx/babel',
+              ['@babel/plugin-proposal-class-properties', { loose: true }],
+            ],
+          },
+        },
         {
           test: /\.css$/,
           use: ['style-loader', 'css-loader'],
