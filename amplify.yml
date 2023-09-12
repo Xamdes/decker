@@ -4,9 +4,10 @@ frontend:
     preBuild:
       commands:
         - npm ci
+        - npm run fresh
     build:
       commands:
-        - npm run fresh
+        - npm run build
   artifacts:
     baseDirectory: build
     files:
