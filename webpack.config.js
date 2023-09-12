@@ -25,7 +25,7 @@ module.exports = [
 
     output: {
       filename: 'app.bundle.js',
-      path: resolve(__dirname, 'build'),
+      path: resolve(__dirname, 'public'),
       publicPath: '',
     },
 
@@ -76,7 +76,7 @@ module.exports = [
         template: 'template.ejs',
         appMountId: 'react-app-root',
         title: 'Shadowrun 5e Fansite',
-        filename: resolve(__dirname, 'build', 'index.html'),
+        filename: resolve(__dirname, 'public', 'index.html'),
         favicon: 'src/images/favicon.ico',
       }),
     ],
@@ -133,7 +133,7 @@ module.exports = [
 
     output: {
       filename: 'app.bundle.js',
-      path: resolve(__dirname, 'build'),
+      path: resolve(__dirname, 'public'),
       publicPath: '',
     },
 
@@ -145,7 +145,7 @@ module.exports = [
 
     devServer: {
       hot: true,
-      contentBase: resolve(__dirname, 'build'),
+      contentBase: resolve(__dirname, 'public'),
       publicPath: '/',
       headers: {
         'Access-Control-Allow-Origin': '*',
@@ -178,7 +178,7 @@ module.exports = [
         template: 'template.ejs',
         appMountId: 'react-app-root',
         title: 'Shadowrun 5e Fansite',
-        filename: resolve(__dirname, 'build', 'index.html'),
+        filename: resolve(__dirname, 'public', 'index.html'),
         favicon: 'src/images/favicon.ico',
       }),
     ],

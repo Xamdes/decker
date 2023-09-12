@@ -4,16 +4,20 @@
   "description": "Helper site for Decking in Shadowrun 5e",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config-name production",
-    "clean": "rm -rf ./build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build-pre": "webpack --config-name production",
+    "clean": "rm -rf ./public",
     "commit": "bash ./bin/commit.sh",
-    "fresh": "rm -rf ./build && webpack --config-name production && babel-node ./src/sitemap.js && babel-node ./src/robots.js",
+    "fresh": "rm -rf ./public && webpack --config-name production && babel-node ./src/sitemap.js && babel-node ./src/robots.js",
     "gen": "bash ./bin/generate-component.sh",
     "git-config": "bash ./bin/git-config.sh",
     "lint": "eslint \"src/**\" \"src/**/**\" || true",
     "lint-fix": "eslint \"src/**\" \"src/**/**\" --fix || true",
     "sitemap": "babel-node ./src/sitemap.js && babel-node ./src/robots.js",
-    "start": "webpack-dev-server --config-name dev-server",
+    "start-wb": "webpack-dev-server --config-name dev-server",
     "start-web": "webpack-dev-server --config-name dev-server --open",
     "web": "open http://localhost:8080",
     "webpack": "webpack",
@@ -40,6 +44,7 @@
     "react-router": "^4.3.0",
     "react-router-dom": "5.1.2",
     "react-router-sitemap": "^1.2.0",
+    "react-scripts": "^5.0.1",
     "react-table": "6.10.3",
     "redux": "4.0.4",
     "styled-components": "4.4.0",
@@ -55,15 +60,16 @@
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
     "@babel/register": "^7.6.2",
+    "@babel/plugin-proposal-private-property-in-object":"7.21.11",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "babel-register": "^6.26.0",
     "css-loader": "^1.0.0",
-    "eslint": "^5.16.0",
+    "eslint": "^7.0.0",
     "eslint-loader": "^2.2.1",
-    "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-react": "7.16.0",
-    "eslint-plugin-react-redux": "^3.0.1",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-redux": "^4.0.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "3.2.0",
     "style-loader": "1.0.0",
@@ -79,5 +85,17 @@
   "bugs": {
     "url": "https://github.com/Xamdes/decker/issues"
   },
-  "homepage": "https://github.com/Xamdes/decker#readme"
+  "homepage": "https://github.com/Xamdes/decker#readme",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

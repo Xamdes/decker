@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Xamdes/decker/static/css/main.b7342006.css",
+    "main.js": "/Xamdes/decker/static/js/main.f5ba5b5a.js",
+    "static/media/sr5_logo_full.png": "/Xamdes/decker/static/media/sr5_logo_full.cfe95f2a4f7e7f0c1876.png",
+    "static/media/topps_logo.png": "/Xamdes/decker/static/media/topps_logo.9ce7e37243d87431cb54.png",
+    "index.html": "/Xamdes/decker/index.html",
+    "main.b7342006.css.map": "/Xamdes/decker/static/css/main.b7342006.css.map",
+    "main.f5ba5b5a.js.map": "/Xamdes/decker/static/js/main.f5ba5b5a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b7342006.css",
+    "static/js/main.f5ba5b5a.js"
+  ]
+}
