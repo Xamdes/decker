@@ -58,7 +58,6 @@ module.exports = [
         APINAME: JSON.stringify(configApiUrl),
       }),
       new webpack.HotModuleReplacementPlugin(),
-      new webpack.NamedModulesPlugin(),
       new HtmlWebpackPlugin({
         template: 'template.ejs',
         appMountId: 'react-app-root',
@@ -160,7 +159,6 @@ module.exports = [
         APINAME: JSON.stringify(''),
       }),
       new webpack.HotModuleReplacementPlugin(),
-      new webpack.NamedModulesPlugin(),
       new HtmlWebpackPlugin({
         template: 'template.ejs',
         appMountId: 'react-app-root',
