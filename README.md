@@ -19,7 +19,7 @@
 - npm run gen [component-name][optional-component]
   - generates a component bast on given component name
   - puts component in ./src/components/ directory
-  - will prepend imput in a component file
+  - will prepend input in a component file
   - npm run gen App Header
     - puts import Header from './Header'; into App component
 - npm run commit '[message]'

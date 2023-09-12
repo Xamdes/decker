@@ -1,6 +1,6 @@
 {
   "name": "decker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helper site for Decking in Shadowrun 5e",
   "main": "index.js",
   "scripts": {
@@ -30,6 +30,7 @@
     "immer": "^4.0.2",
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.4.1",
+    "metrohash": "^2.8.0",
     "popper.js": "^1.16.0",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
