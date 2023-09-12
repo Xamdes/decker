@@ -31,7 +31,7 @@
     "fetch": "^1.1.0",
     "file-saver": "^2.0.2",
     "immer": "^4.0.2",
-    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-fetch": "^3.0.0",
     "jquery": "^3.7.1",
     "metrohash": "^2.8.0",
     "postcss": "^8.4.29",
