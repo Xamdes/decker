@@ -26,7 +26,6 @@
   "author": "Steven Colburn",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@babel/polyfill": "^7.6.0",
     "ajv": "^6.10.2",
     "bootstrap": "^4.3.1",
     "fetch": "^1.1.0",
@@ -35,7 +34,6 @@
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.7.1",
     "metrohash": "^2.8.0",
-    "popper.js": "^1.16.0",
     "postcss": "^8.4.29",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-normalize": "^10.0.1",
@@ -66,6 +64,7 @@
     "@babel/preset-env": "^7.22.15",
     "@babel/preset-react": "^7.22.15",
     "@babel/register": "^7.22.15",
+    "@popperjs/core": "^2.11.8",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
     "babel-register": "^6.26.0",
@@ -77,9 +76,9 @@
     "eslint-plugin-react-redux": "^4.0.0",
     "file-loader": "^5.0.0",
     "html-webpack-plugin": "5.5.3",
-    "style-loader": "2.0.0",
-    "webpack-cli": "4.0.0",
-    "webpack-dev-server": "4.0.0"
+    "style-loader": "3.3.3",
+    "webpack-cli": "5.1.4",
+    "webpack-dev-server": "4.15.1"
   },
   "keywords": [],
   "repository": {
