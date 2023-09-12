@@ -2,7 +2,7 @@
 const webpack = require('webpack');
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 require('@babel/polyfill');
 const crypto = require("crypto");
 const crypto_orig_createHash = crypto.createHash;
@@ -34,23 +34,10 @@ module.exports = [
     },
 
     optimization: {
-      minimizer: [
-        new UglifyJsPlugin({
-          parallel: true,
-          uglifyOptions: {
-            drop_console: true,
-            keep_infinity: true,
-            mangle: true,
-            compress: {
-              passes: 3,
-            },
-            warnings: false,
-            output: {
-              comments: false,
-            },
-          },
-        }),
-      ],
+        minimize: true,
+        minimizer: [
+            new TerserPlugin(),
+        ],
     },
 
     performance: {
