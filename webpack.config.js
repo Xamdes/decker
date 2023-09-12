@@ -88,7 +88,6 @@ module.exports = [
             plugins: [
               'react-hot-loader/babel',
               'styled-jsx/babel',
-              ['@babel/plugin-proposal-class-properties', { loose: true }],
             ],
           },
         },
@@ -189,7 +188,6 @@ module.exports = [
             plugins: [
               'react-hot-loader/babel',
               'styled-jsx/babel',
-              ['@babel/plugin-proposal-class-properties', { loose: true }],
             ],
           },
         },
