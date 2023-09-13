@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>
+      <%= htmlWebpackPlugin.options.title %>
+    </title>
     <meta charset="utf-8" />
-    <meta
-      name="description"
-      content="Work in Progress Shadowrun 5e Fansite for decking. "
-    />
-    <meta
-      name="keywords"
-      content="HTML, JavaScript, React, Redux, Shadowrun, Shadowrun 5e, Decking, WIP, Fan Website"
-    />
+    <meta name="description" content="Shadowrun 5e Fansite" />
+    <meta name="keywords"
+      content="HTML, JavaScript, React, Redux, Shadowrun, Shadowrun 5e, Decking, WIP, Fan Website" />
     <meta name="author" content="Xamdes" />
   </head>
+
   <body>
     <% if (htmlWebpackPlugin.options.appMountId) { %>
-    <div id="<%= htmlWebpackPlugin.options.appMountId%>"></div>
-    <% } %>
+      <div id="<%= htmlWebpackPlugin.options.appMountId%>"></div>
+      <% } %>
   </body>
+
 </html>

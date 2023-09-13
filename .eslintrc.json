@@ -26,7 +26,7 @@
       "classes": true,
       "spread": true
     },
-    "ecmaVersion": 2019,
+    "ecmaVersion": 2023,
     "sourceType": "module"
   },
   "plugins": ["react", "react-redux", "babel"],

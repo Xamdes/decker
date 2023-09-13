@@ -13,7 +13,7 @@ function MatrixActions(props) {
     matrixActionBonus: 0,
   };
 
-  const actionsSorted = props.matrixActions.actions.sort((a, b) => {
+  const actionsSorted = props.matrixActions.actions.toSorted((a, b) => {
     const itemOneName = a.name.toLowerCase();
     const itemOneLimit = a.limit.toLowerCase();
     const itemTwoName = b.name.toLowerCase();

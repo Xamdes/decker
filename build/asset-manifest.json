@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Xamdes/decker/static/css/main.42450466.css",
-    "main.js": "/Xamdes/decker/static/js/main.7d3278a6.js",
+    "main.css": "/Xamdes/decker/static/css/main.b7342006.css",
+    "main.js": "/Xamdes/decker/static/js/main.b4681d93.js",
     "static/media/sr5_logo_full.png": "/Xamdes/decker/static/media/sr5_logo_full.cfe95f2a4f7e7f0c1876.png",
     "static/media/topps_logo.png": "/Xamdes/decker/static/media/topps_logo.9ce7e37243d87431cb54.png",
     "index.html": "/Xamdes/decker/index.html",
-    "main.42450466.css.map": "/Xamdes/decker/static/css/main.42450466.css.map",
-    "main.7d3278a6.js.map": "/Xamdes/decker/static/js/main.7d3278a6.js.map"
+    "main.b7342006.css.map": "/Xamdes/decker/static/css/main.b7342006.css.map",
+    "main.b4681d93.js.map": "/Xamdes/decker/static/js/main.b4681d93.js.map"
   },
   "entrypoints": [
-    "static/css/main.42450466.css",
-    "static/js/main.7d3278a6.js"
+    "static/css/main.b7342006.css",
+    "static/js/main.b4681d93.js"
   ]
 }

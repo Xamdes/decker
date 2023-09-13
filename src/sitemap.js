@@ -13,4 +13,4 @@ const router = (
   </Switch>
 );
 
-new Sitemap(router).build('https://cyber-ex.net').save('./build/sitemap.xml');
+new Sitemap(router).build('https://shadowrunfans.net').save('./build/sitemap.xml');

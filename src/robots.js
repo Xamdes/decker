@@ -6,7 +6,7 @@ const writeContent = [
   'Disallow:',
   '',
   '# Sitemap files',
-  'Sitemap: https://cyber-ex.net/sitemap.xml',
+  'Sitemap: https://shadowrunfans.net/sitemap.xml',
 ].join('\n');
 
 fs.writeFile('./build/robots.txt', writeContent, function(err) {
