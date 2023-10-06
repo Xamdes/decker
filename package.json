@@ -35,7 +35,7 @@
     "isomorphic-fetch": "^3.0.0",
     "jquery": "^3.7.1",
     "metrohash": "^2.8.0",
-    "postcss": "^8.4.29",
+    "postcss": "^8.4.31",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-normalize": "^10.0.1",
     "postcss-preset-env": "^9.1.3",
