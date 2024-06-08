@@ -2,4 +2,7 @@
 *.json
 *.ico
 *.ignore
+*.png
+*.jpg
+*.txt
 webpack.config.js

@@ -20,6 +20,8 @@ function Header() {
       {createLink('Skills', '/skills')}
       {space}
       {createLink('Matrix', '/matrix')}
+      {space}
+      {createLink('Lite Matrix', '/literules')}
     </Main>
   );
 }

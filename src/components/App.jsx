@@ -1,6 +1,7 @@
 import Skills from './Skills';
 import Character from './Character';
 import Matrix from './Matrix';
+import MatrixLiteRules from './MatrixLiteRules';
 import Error404 from './Error404';
 import Header from './Header';
 import styled from 'styled-components';
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/matrix" component={Matrix} />
         <Route exact path="/character" component={Character} />
         <Route exact path="/skills" component={Skills} />
+        <Route exact path="/literules" component={MatrixLiteRules} />
         <Route component={Error404} />
       </Switch>
       <Footer />
