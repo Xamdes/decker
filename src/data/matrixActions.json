@@ -400,14 +400,14 @@
     },
     {
       "name": "I AM THE FIREWALL",
-      "actionType": "COMPLEX ACTION/INTERRUPT [–5 INITIATIVE SCORE]",
+      "actionType": "COMPLEX ACTION/INTERRUPT [-5 INITIATIVE SCORE]",
       "marks": "None",
       "test": {
         "offense": ["Computer", "Intuition"],
         "defense": []
       },
       "limit": "Data Processing",
-      "description": "Allies require an AR feed from the user in order to gain the bonus. The number of bonus dice is equal to the number of hits on the test. Bonus lasts until the beginning of the hacker’s next Initiative Pass. The hacker can only share their feed with a number of users equal to or less than their Data Processing attribute.",
+      "description": "Allies require an AR feed from the user in order to gain the bonus. The number of bonus dice is equal to the number of hits on the test. Bonus lasts until the beginning of the hacker's next Initiative Pass. The hacker can only share their feed with a number of users equal to or less than their Data Processing attribute.",
       "source": "Kill Code p.38"
     },
     {
@@ -419,19 +419,19 @@
         "defense": ["Willpower", "Firewall"]
       },
       "limit": "Attack",
-      "description": "Target must be a persona not running in VR. Haywire disables all of the target’s PAN-related functions. Physical devices still function, so smart-guns can still fire and chemsuits still offer protection, but without wireless or PAN functions. This effect lasts until the target succeeds an extended Computer + Logic [Data Processing] (Hacker’s Net Hits, Simple Action) test with a threshold equal to the net hits from the attacker’s roll. See Kill Code p.38-39 for more info.",
+      "description": "Target must be a persona not running in VR. Haywire disables all of the target's PAN-related functions. Physical devices still function, so smart-guns can still fire and chemsuits still offer protection, but without wireless or PAN functions. This effect lasts until the target succeeds an extended Computer + Logic [Data Processing] (Hacker's Net Hits, Simple Action) test with a threshold equal to the net hits from the attacker's roll. See Kill Code p.38-39 for more info.",
       "source": "Kill Code p.38-39"
     },
     {
       "name": "INTERVENE",
-      "actionType": "INTERRUPT ACTION [–5 INITIATIVE SCORE]",
+      "actionType": "INTERRUPT ACTION [-5 INITIATIVE SCORE]",
       "marks": "None",
       "test": {
         "offense": ["Computer", "Intuition"],
         "defense": []
       },
       "limit": "Data Processing",
-      "description": "This allows the hacker to give an immediate defense bonus to the owner of a device slaved to the hacker’s PAN. This action can be taken only if the device making the attack is wirelessly enabled and the hacker is aware of it. When you take this action, your Initiative Score is reduced by 5. Roll your Computer + Intuition [Data Processing], adding the number of hits to your ally’s Defense test. This bonus applies only to the current Defense test—it cannot be carried over to any other Combat Turn or Initiative Pass.",
+      "description": "This allows the hacker to give an immediate defense bonus to the owner of a device slaved to the hacker's PAN. This action can be taken only if the device making the attack is wirelessly enabled and the hacker is aware of it. When you take this action, your Initiative Score is reduced by 5. Roll your Computer + Intuition [Data Processing], adding the number of hits to your ally's Defense test. This bonus applies only to the current Defense test—it cannot be carried over to any other Combat Turn or Initiative Pass.",
       "source": "Kill Code p.39"
     },
     {
@@ -443,7 +443,7 @@
         "defense": ["Logic", "Firewall"]
       },
       "limit": "Sleaze",
-      "description": "This action allows a hacker to impersonate a persona on the Matrix. This action requires 2 marks on one target being impersonated and 2 marks on a second target you are trying to fool. For every net hit scored on the test against the second target, you have convinced them you are target one for one minute. This can be used to impersonate someone online causing creative mischief, but processes like changing device owners or performing major financial actions (like bank transfers) have too many double-checks for Masquerade to work. If the persona you’re impersonating logs off, those marks are immediately lost, and the disguise drops. While masquerading, you are never considered the owner with regard to any of the impersonated persona’s devices.",
+      "description": "This action allows a hacker to impersonate a persona on the Matrix. This action requires 2 marks on one target being impersonated and 2 marks on a second target you are trying to fool. For every net hit scored on the test against the second target, you have convinced them you are target one for one minute. This can be used to impersonate someone online causing creative mischief, but processes like changing device owners or performing major financial actions (like bank transfers) have too many double-checks for Masquerade to work. If the persona you're impersonating logs off, those marks are immediately lost, and the disguise drops. While masquerading, you are never considered the owner with regard to any of the impersonated persona's devices.",
       "source": "Kill Code p.39"
     },
     {
@@ -455,7 +455,7 @@
         "defense": ["Willpower", "Firewall"]
       },
       "limit": "Sleaze",
-      "description": "Target must be a persona not running in VR. If the target has wireless-enabled AR, they are flooded with Matrix spam, taking a penalty to all actions equal to [net hits] until the start of the attacker’s next Combat Turn. If the attacker uses Hacking + Logic, they may immediately act as if the net hits on the attack were net hits on a Matrix Perception test, and they gain any relevant information.",
+      "description": "Target must be a persona not running in VR. If the target has wireless-enabled AR, they are flooded with Matrix spam, taking a penalty to all actions equal to [net hits] until the start of the attacker's next Combat Turn. If the attacker uses Hacking + Logic, they may immediately act as if the net hits on the attack were net hits on a Matrix Perception test, and they gain any relevant information.",
       "source": "Kill Code p.39"
     },
     {
@@ -467,7 +467,7 @@
         "defense": ["Willpower", "Firewall"]
       },
       "limit": "Attack",
-      "description": "Target must be a persona not running in VR. If the target has wireless-enabled AR, they are flooded with Matrix spam, taking a penalty to all actions equal to [net hits] until the start of the attacker’s next Combat Turn. If the attacker uses Cybercombat + Logic, the attack also deals Matrix damage equal to net hits.",
+      "description": "Target must be a persona not running in VR. If the target has wireless-enabled AR, they are flooded with Matrix spam, taking a penalty to all actions equal to [net hits] until the start of the attacker's next Combat Turn. If the attacker uses Cybercombat + Logic, the attack also deals Matrix damage equal to net hits.",
       "source": "Kill Code p.39"
     },
     {
@@ -491,7 +491,7 @@
         "defense": ["Intuition", "Firewall"]
       },
       "limit": "Sleaze",
-      "description": "This action allows a decker or technomancer to slightly alter the operation of multiple physical devices so they respond to the hacker’s commands. If the hacker has at least 1 mark on the host, a successful Test allows them to control one similar simple device at gamemaster discretion slaved to that host for every net hit. This action cannot be used to make an attack. The hacker can sustain controlling these devices as a Complex Action each Combat Turn. See book for more info.",
+      "description": "This action allows a decker or technomancer to slightly alter the operation of multiple physical devices so they respond to the hacker's commands. If the hacker has at least 1 mark on the host, a successful Test allows them to control one similar simple device at gamemaster discretion slaved to that host for every net hit. This action cannot be used to make an attack. The hacker can sustain controlling these devices as a Complex Action each Combat Turn. See book for more info.",
       "source": "Kill Code p.39"
     },
     {
@@ -503,7 +503,7 @@
         "defense": ["Sleaze", "Intuition"]
       },
       "limit": "Data Processing",
-      "description": "The hacker may “tag” a number of targets on a single PAN, equal to their net hits, within their line of sight. They can then relay those tags wirelessly to allies. Tagging a target negates up to 2 dice in pen-alties from Visibility and Light/Glare to any affected ranged attack rolls allies may be making against that target, including blind-fire due to invisibility or shoot-ing through cover. Allies who can see a tag may also take one additional Take Aim Action against that tar-get as a Free Action on each Initiative Pass.Tags may be sustained by spending a Sim-ple Action to refresh the tags each Combat Turn. When using a PI-Tac, the hacker may add the PI-Tac’s level to the number of targets they may tag. Note: In order for allies to receive this bonus, they must have the ability to see AROs.",
+      "description": "The hacker may “tag” a number of targets on a single PAN, equal to their net hits, within their line of sight. They can then relay those tags wirelessly to allies. Tagging a target negates up to 2 dice in pen-alties from Visibility and Light/Glare to any affected ranged attack rolls allies may be making against that target, including blind-fire due to invisibility or shoot-ing through cover. Allies who can see a tag may also take one additional Take Aim Action against that tar-get as a Free Action on each Initiative Pass.Tags may be sustained by spending a Sim-ple Action to refresh the tags each Combat Turn. When using a PI-Tac, the hacker may add the PI-Tac's level to the number of targets they may tag. Note: In order for allies to receive this bonus, they must have the ability to see AROs.",
       "source": "Kill Code p.40"
     },
     {
@@ -515,7 +515,7 @@
         "defense": ["Logic", "firewall"]
       },
       "limit": "Sleaze",
-      "description": "Target must be a persona or device. If successful, place one mark on the target. The user is now aware of the Matrix actions the target is going to use before they use them, and they may attempt to stop them. A Watchdog mark allows the hacker to use Haywire or Popup as Interrupt Actions (for –10 initiative) or Squelch as an Interrupt Action (for –5 initiative) against the target with the Watchdog mark. This ability lasts as long as the target is marked by the user.",
+      "description": "Target must be a persona or device. If successful, place one mark on the target. The user is now aware of the Matrix actions the target is going to use before they use them, and they may attempt to stop them. A Watchdog mark allows the hacker to use Haywire or Popup as Interrupt Actions (for -10 initiative) or Squelch as an Interrupt Action (for -5 initiative) against the target with the Watchdog mark. This ability lasts as long as the target is marked by the user.",
       "source": "Kill Code p.40"
     },
     {
