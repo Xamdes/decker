@@ -31,11 +31,9 @@ class Program extends React.Component {
     const value = this.state.count >= max ? -max : increment;
     this.handleAddCountValue(value);
     const name = program.modify;
-    const modify = this.props.deckingDeviceAttributes[name];
-    if (modify) {
-      console.log('test');
-      this.props.setDeckingDeviceStat(name, modify + value);
-    }
+    const currentRanks = this.props.deckingDeviceAttributes[name].ranks;
+    const newVal = currentRanks + value;
+    this.props.setDeckingDeviceStat(name, newVal);
   }
 
   handleKeyDown(e) {

@@ -14,7 +14,7 @@ class Stats extends React.Component {
     super(props);
   }
   listDeckAttribs = () => {
-    const deckingStats = ['Attack', 'Sleaze', 'Data Processing', 'Firewall'];
+    const deckingStats = ['Attack', 'Sleaze', 'Data Processing', 'Firewall','Pilot','Agent'];
     const renderStats = [];
     deckingStats.forEach((stat, index) => {
       const statLowerCase = stat.toLowerCase();
