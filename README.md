@@ -24,7 +24,7 @@
     - puts import Header from './Header'; into App component
 - npm run commit '[message]'
   - runs git commit -m using npm
-- npm run git-cinfig '[name]' '[email]'
+- npm run git-config '[name]' '[email]'
   - configures local git username and email
 - npm run start
   - starts webpack-dev-server
