@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
-require('babel-register');
+require('@babel/register');
 const Sitemap = require('react-router-sitemap').default;
 
 const router = (

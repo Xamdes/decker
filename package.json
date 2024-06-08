@@ -70,7 +70,6 @@
     "@popperjs/core": "^2.11.8",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
-    "babel-register": "^6.26.0",
     "css-loader": "^7.1.2",
     "eslint": "^7.0.0",
     "eslint-loader": "^4.0.0",
