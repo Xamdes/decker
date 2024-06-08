@@ -541,6 +541,66 @@
       "limit": "Data Processing",
       "description": "Extended 30 min test and only possible on grids. The number of hits required to track the persona is equal to 10 + the Sleaze rating of the persona who marked the device.",
       "source": "Data Trails p.179"
+    },
+    {
+      "name": "BREAK TARGET LOCK",
+      "actionType": "SIMPLE ACTION",
+      "marks": "None",
+      "test": {
+        "offense": ["Electronic Warfare", "Intuition"],
+        "defense": ["Logic", "Sensors"]
+      },
+      "limit": "Data Processing",
+      "description": "Passive targeting and active targeting with sensors are described on p. 184 of SR5. If you know that you've been locked (or suspect it), you can to try to break it. Choose an enemy that has (or you think has) a lock on you, and make the Opposed Test. For every net hit, you reduce the target's lock on you by one hit. Your RCC's Noise Reduction rating is added as a dice pool bonus for this action.",
+      "source": "Rigger 5 p.30"
+    },
+    {
+      "name": "CONFUSE PILOT",
+      "actionType": "SPECIAL ACTION",
+      "marks": "Owner",
+      "test": {
+        "offense": ["Electronic Warfare", "Logic"],
+        "defense": ["Pilot","Firewall"]
+      },
+      "limit": "Attack",
+      "description": "You send a stream of code to a device with a pilot (usually a drone, but sometimes an autonomous vehicle or gun emplacement) that resembles valid instructions but is in fact gobbledygook. If you succeed, the pilot becomes confused, and makes an immediate Simple Pilot x 2 Test to figure out what it's going to do next (p. 269, SR5) the threshold for this test is equal to half of your net hits. Your RCC's Noise Reduction Rating is added as a dice pool bonus for this action.",
+      "source": "Rigger 5 p.30"
+    },
+    {
+      "name": "DETECT TARGET LOCK",
+      "actionType": "SPECIAL ACTION",
+      "marks": "Owner",
+      "test": {
+        "offense": ["Computer", "Logic"],
+        "defense": []
+      },
+      "limit": "Data Processing",
+      "description": "Threshold 2 | Passive targeting and active targeting with sensors are described on p. 184 of SR5. An active target lock sends wireless and other signals that hackers and riggers have learned to detect. The RCC, commlink, or deck that you're using must be wireless-enabled to perform this action. Your RCC's Noise Reduction rating is added as a dice pool bonus for this action.",
+      "source": "Rigger 5 p.30"
+    },
+    {
+      "name": "SUPPRESS NOISE",
+      "actionType": "SPECIAL ACTION",
+      "marks": "Owner",
+      "test": {
+        "offense": ["Electronic Warfare", "Logic"],
+        "defense": []
+      },
+      "limit": "Data Processing",
+      "description": "As described on p. 268, SR5, this action allows riggers to use their RCC to reduce noise between themselves and their vehicles or drones. Reduce noise by the hits on this test, cumulative with any other forms of noise reduction. This effect lasts for the remainder of the current Combat Turn. Your RCC's Noise Reduction rating is added as a dice pool bonus for this action.",
+      "source": "Rigger 5 p.30"
+    },
+    {
+      "name": "TARGET DEVICE",
+      "actionType": "SPECIAL ACTION",
+      "marks": "Owner",
+      "test": {
+        "offense": ["Electronic Warfare", "Logic"],
+        "defense": []
+      },
+      "limit": "Data Processing",
+      "description": "Pick a wireless-enabled device you've spotted on the Matrix. You can target that device and feed targeting data to any pilot program or person with a Sensor rating or smartlink that is slaved to your RCC. For the rest of the Combat Turn, the slaved attackers receive a dice pool bonus equal to your net hits when targeting the device you're tracking for them. Your RCC's Noise Reduction rating is added as a dice pool bonus for this action.",
+      "source": "Rigger 5 p.30"
     }
   ]
 }
