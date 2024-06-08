@@ -31,9 +31,14 @@ class Program extends React.Component {
     const value = this.state.count >= max ? -max : increment;
     this.handleAddCountValue(value);
     const name = program.modify;
-    const currentRanks = this.props.deckingDeviceAttributes[name].ranks;
-    const newVal = currentRanks + value;
-    this.props.setDeckingDeviceStat(name, newVal);
+    console.log(name);
+    if(name != 'None')
+    {
+      const currentRanks = this.props.deckingDeviceAttributes[name].ranks;
+      const newVal = currentRanks + value;
+      this.props.setDeckingDeviceStat(name, newVal);
+    }
+
   }
 
   handleKeyDown(e) {

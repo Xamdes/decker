@@ -26,7 +26,7 @@
   {
     "name": "Edit",
     "description": "+2 to Data Processing limit on Edit tests.",
-    "modify": "edit",
+    "modify": "None",
     "max": 1,
     "increment": 1,
     "source": "Core p.245"
@@ -42,7 +42,7 @@
   {
     "name": "Signal Scrub",
     "description": "-2 Noise",
-    "modify": "noise",
+    "modify": "None",
     "max": 1,
     "increment": 1,
     "source": "Core p.245"
@@ -58,7 +58,7 @@
   {
     "name": "Virtual Machine",
     "description": "Run 2 additional programs but take 1 additional unresisted matrix damage each time your persona takes matrix damage.",
-    "modify": "programs",
+    "modify": "None",
     "max": 1,
     "increment": 1,
     "source": "Core p.245"
@@ -123,7 +123,7 @@
   {
     "name": "Demolitions",
     "description": "+1 to Data Bomb rating.",
-    "modify": "dataBomb",
+    "modify": "None",
     "max": 1,
     "increment": 1,
     "source": "Core p.245"
@@ -131,7 +131,7 @@
   {
     "name": "Exploit",
     "description": "+2 to Sleaze when using Hack on the Fly",
-    "modify": "hackOntheFly",
+    "modify": "None",
     "max": 1,
     "increment": 1,
     "source": "Core p.245"
@@ -187,7 +187,7 @@
   {
     "name": "Sneak",
     "description": "+2 dice pool to defend agaisnt trace icon actions. DemiGod doesn't get physical location on convergence.",
-    "modify": "iconActions",
+    "modify": "None",
     "max": 1,
     "increment": 1,
     "source": "Core p.246"

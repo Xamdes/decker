@@ -116,7 +116,6 @@ module.exports = [
     output: {
       filename: 'app.bundle.js',
       path: resolve(__dirname, 'public'),
-      publicPath: '',
     },
 
     resolve: {
@@ -127,8 +126,7 @@ module.exports = [
 
     devServer: {
       hot: true,
-      contentBase: resolve(__dirname, 'public'),
-      publicPath: '/',
+      static: './public',
       headers: {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': '*',
