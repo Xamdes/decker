@@ -31,7 +31,6 @@ class Program extends React.Component {
     const value = this.state.count >= max ? -max : increment;
     this.handleAddCountValue(value);
     const name = program.modify;
-    console.log(name);
     if(name != 'None')
     {
       const currentRanks = this.props.deckingDeviceAttributes[name].ranks;
