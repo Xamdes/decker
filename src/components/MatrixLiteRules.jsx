@@ -11,7 +11,7 @@ import styled from 'styled-components';
 function MatrixLiteRules(){
   return (
     <Main className="bg-info">
-      <p>Lite Matrix Rules: <a href="https://www.reddit.com/r/Shadowrun/comments/7nhmcr/lite_matrix_rules/">Reddit Link</a></p>
+      <p>Matrix Lite Rules by <a href="https://www.reddit.com/user/LeVentNoir/">LaVentNoir</a>: <a href="https://www.reddit.com/r/Shadowrun/comments/7nhmcr/lite_matrix_rules/">Source Link</a></p>
       <p>The Following rules make hacking a device a one roll thing, defended systems much more about the defenders than raw hardware, remote hacking much harder, and makes Watch Dogs style jumping from device to device possible.</p>
       <p>There are edge cases, such as technomancers, that need cleaning up, but the basic framework is here for you to use. As always GM discretion.</p>
       <p>System refers to Device or Host and Hosts, due to their skyborne nature, are always visible..</p>

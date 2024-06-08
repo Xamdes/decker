@@ -21,7 +21,7 @@ function Header() {
       {space}
       {createLink('Matrix', '/matrix')}
       {space}
-      {createLink('Lite Matrix', '/literules')}
+      {createLink('Matrix Lite', '/literules')}
     </Main>
   );
 }
