@@ -4,7 +4,9 @@
     "attack": { "ranks": 1 },
     "sleaze": { "ranks": 1 },
     "data processing": { "ranks": 1 },
-    "firewall": { "ranks": 1 }
+    "firewall": { "ranks": 1 },
+    "agent": { "ranks": 1 },
+    "pilot": { "ranks": 1 }
   },
   "config": [],
   "deviceRating": 1,
