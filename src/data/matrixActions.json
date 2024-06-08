@@ -564,7 +564,7 @@
       },
       "limit": "Attack",
       "description": "You send a stream of code to a device with a pilot (usually a drone, but sometimes an autonomous vehicle or gun emplacement) that resembles valid instructions but is in fact gobbledygook. If you succeed, the pilot becomes confused, and makes an immediate Simple Pilot x 2 Test to figure out what it's going to do next (p. 269, SR5) the threshold for this test is equal to half of your net hits. Your RCC's Noise Reduction Rating is added as a dice pool bonus for this action.",
-      "source": "Rigger 5 p.30"
+      "source": "Rigger 5 p.30 "
     },
     {
       "name": "DETECT TARGET LOCK",
