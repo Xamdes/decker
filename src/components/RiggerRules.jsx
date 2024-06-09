@@ -26,7 +26,7 @@ function RiggerRules(){
             <li>Initiative: (Data Processing + Intuition + 3d6)</li>
             <li>+2 to Handling Limit</li>
             <li>Control Rig Rating is added to the limts for Vehicles/Drones: (Sensor, Speed, Handling, and Accuracy for mounted weapons)</li>
-            <li>Control Rig adds extra device to Vehicle Skill Tests based on its rating i.e. Rating 2 gives +2d6 dice </li
+            <li>Control Rig adds extra device to Vehicle Skill Tests based on its rating that is Rating 2 gives +2d6 dice </li>
             <li>Control Rig Rating reduces the Threshold for Vehicle Tests to a minimum of 1</li>
             <li>Treat vehicle actions as Matrix actions: (Vehicle Control Tests, Gunnery Tests, and Sensor Tests)</li>
             <li>For example shooting a mounted weapon would be the following: Gunnery + Logic + Control Rig Rating [Accuracy + Control Rig Rating ]</li>
@@ -38,7 +38,7 @@ function RiggerRules(){
             <li>Initiative: (Data Processing + Intuition + 4d6)</li>
             <li>+2 to Handling Limit</li>
             <li>Control Rig Rating is added to the limts for Vehicles/Drones: (Sensor, Speed, Handling, and Accuracy for mounted weapons)</li>
-            <li>Control Rig adds extra device to Vehicle Skill Tests based on its rating i.e. Rating 2 gives +2d6 dice </li>
+            <li>Control Rig adds extra device to Vehicle Skill Tests based on its rating that is Rating 2 gives +2d6 dice </li>
             <li>Control Rig Rating reduces the Threshold for Vehicle Tests to a minimum of 1</li>
             <li>Treat vehicle actions as Matrix actions: (Vehicle Control Tests, Gunnery Tests, and Sensor Tests)</li>
             <li>+2 dice on all Matrix actions: (Normal Bonus for Hot Sim)</li>
