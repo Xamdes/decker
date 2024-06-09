@@ -2,10 +2,12 @@ import Skills from './Skills';
 import Character from './Character';
 import Matrix from './Matrix';
 import MatrixLiteRules from './MatrixLiteRules';
+import RiggerRules from './RiggerRules';
 import Error404 from './Error404';
 import Header from './Header';
 import styled from 'styled-components';
 import Footer from './Footer';
+import Rules from './Rules';
 import { Switch, Route } from 'react-router-dom';
 import shadowrunLogo from '../data/sr5_publicity_kit/sr5_logo_full.png';
 
@@ -24,7 +26,9 @@ function App() {
         <Route exact path="/matrix" component={Matrix} />
         <Route exact path="/character" component={Character} />
         <Route exact path="/skills" component={Skills} />
-        <Route exact path="/literules" component={MatrixLiteRules} />
+        <Route exact path="/rules" component={Rules} />
+        <Route exact path="/rules/matrixliterules" component={MatrixLiteRules} />
+        <Route exact path="/rules/riggerrules" component={RiggerRules} />
         <Route component={Error404} />
       </Switch>
       <Footer />
