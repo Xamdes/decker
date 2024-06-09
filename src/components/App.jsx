@@ -20,7 +20,7 @@ function App() {
         <span> </span>
         {title}
       </Title>
-      <Header />
+      <Header></Header>
       <Switch>
         <Route exact path="/" />
         <Route exact path="/matrix" component={Matrix} />
@@ -31,7 +31,7 @@ function App() {
         <Route exact path="/rules/riggerrules" component={RiggerRules} />
         <Route component={Error404} />
       </Switch>
-      <Footer />
+      <Footer></Footer>
     </Main>
   );
 }
